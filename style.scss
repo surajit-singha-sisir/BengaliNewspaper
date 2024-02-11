@@ -1,0 +1,34 @@
+body{
+    margin: auto;
+    width: 90%;
+    box-sizing: border-box;
+    font-family: 'SolaimanLipi', Helvetica, sans-serif;
+}
+
+@import 'var';
+
+
+a{
+    text-decoration: none;
+    color: $TXT;
+}
+
+// DATE BLOCK
+@import 'dateBlock'; 
+
+//NAV BAR
+@import 'navBar';
+
+
+
+
+
+
+
+
+@import 'responsive'; // Responsive
+
+
+
+
+

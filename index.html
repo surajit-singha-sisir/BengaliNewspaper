@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link href="https://fonts.cdnfonts.com/css/solaimanlipi" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- DATE BLOCK -->
+
+    <div class="dateBlock">
+      <!-- -- 1 -- .dateBlock >> p >> a -->
+      <div class="titlePopUp" title="বাংলা, ইংরেজি ও হিজরি তারিখ">
+        <p>
+          আজ (বাংলা) বৃহঃস্পতিবার ১১ই মাঘ ১৪৩০ বঙ্গাব্দ, ২৫ জানুয়ারি ২০২৪
+          খ্রিষ্টাব্দ, ১৩ রজব ১৪৪৫ হিজরি
+        </p>
+      </div>
+      <!-- -- 2 -- .dateBlock >> .socialMedia -->
+      <div class="socialMedia">
+        <a href="#" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#" title="Messenger"
+          ><i class="fa-brands fa-facebook-messenger"></i
+        ></a>
+        <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="#" title="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#" title="Linkedin"><i class="fa-brands fa-linkedin"></i></a>
+      </div>
+    </div>
+
+    <!-- DESKTOP NAV BAR -->
+    <nav class="navBar">
+      <!-- Responsive Container -->
+      <div class="logoNav">
+        <!-- Humburger -->
+        <div class="humburger-icon" id="hamburger-icon" onclick="resNav()">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+        <!-- Logo -->
+        <a href="#"><img alt="Logo" src="logo.png" /></a>
+      </div>
+
+      <!-- Nav Menu -->
+      <ul class="navMenu">
+        <li><a href="#" title="প্রথম পাতা">প্রথম পাতা</a></li>
+        <li><a href="#" title="সিলেট">সিলেট</a></li>
+        <li><a href="#" title="দেশ">দেশ</a></li>
+        <li><a href="#" title="রাজনীতি">রাজনীতি</a></li>
+        <li><a href="#" title="খেলাধুলা">খেলাধুলা</a></li>
+        <li><a href="#" title="আন্তর্জাতিক">আন্তর্জাতিক</a></li>
+        <li><a href="#" title="বাণিজ্য">বাণিজ্য</a></li>
+        <li><a href="#" title="চাকরি">চাকরি</a></li>
+        <li><a href="#" title="বিনোদন">বিনোদন</a></li>
+        <li><a href="#" title="ধর্ম">ধর্ম</a></li>
+      </ul>
+
+      <!-- Search Bar -->
+      <label class="search-box">
+        <input id="search-box" type="text" class="search-input" />
+        <button id="search-button" type="submit">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </label>
+    </nav>
+
+    <!-- RESPONSIVE HUMBURGER -->
+    <nav class="resNav">
+      <section class="col1">
+        <ul>
+          <h2>বাংলাদেশ</h2>
+          <li>
+            <i class="fa fa-angle-right"></i>
+            <a href="#" title="রাজধানী">রাজধানী</a>
+          </li>
+          <li>
+            <i class="fa fa-angle-right"></i> <a href="#" title="জেলা">জেলা</a>
+          </li>
+          <li>
+            <i class="fa fa-angle-right"></i>
+            <a href="#" title="করোনাভাইরাস">করোনাভাইরাস</a>
+          </li>
+          <li>
+            <i class="fa fa-angle-right"></i>
+            <a href="#" title="পরিবেশ">পরিবেশ</a>
+          </li>
+          <li>
+            <i class="fa fa-angle-right"></i>
+            <a href="#" title="অপরাধ">অপরাধ</a>
+          </li>
+        </ul>
+      </section>
+      <section class="col2">
+        <ul>
+          <h2>বিশ্ব</h2>
+          <li>
+            <i class="fa fa-angle-right"></i> <a href="#" title="ভারত">ভারত</a>
+          </li>
+          <li>
+            <i class="fa fa-angle-right"></i> <a href="#" title="চীন">চীন</a>
+          </li>
+          <li>
+            <i class="fa fa-angle-right"></i>
+            <a href="#" title="মধ্যপ্রাচ্য">মধ্যপ্রাচ্য</a>
+          </li>
+          <li>
+            <i class="fa fa-angle-right"></i>
+            <a href="#" title="যুক্তরাষ্ট্র">যুক্তরাষ্ট্র</a>
+          </li>
+          <li>
+            <i class="fa fa-angle-right"></i>
+            <a href="#" title="এশিয়া">এশিয়া</a>
+          </li>
+          <li>
+            <i class="fa fa-angle-right"></i>
+            <a href="#" title="ইউরোপ">ইউরোপ</a>
+          </li>
+          <li>
+            <i class="fa fa-angle-right"></i>
+            <a href="#" title="আফ্রিকা">আফ্রিকা</a>
+          </li>
+          <li>
+            <i class="fa fa-angle-right"></i>
+            <a href="#" title="লাতিন আমেরিকা">লাতিন আমেরিকা</a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="col3">
+        <ul>
+          <h2>বিশ্ব</h2>
+          <li>
+            <i class="fa fa-angle-right"></i> <a href="#" title="ভারত">ভারত</a>
+          </li>
+          <li>
+            <i class="fa fa-angle-right"></i> <a href="#" title="চীন">চীন</a>
+          </li>
+          <li>
+            <i class="fa fa-angle-right"></i>
+            <a href="#" title="মধ্যপ্রাচ্য">মধ্যপ্রাচ্য</a>
+          </li>
+          <li>
+            <i class="fa fa-angle-right"></i>
+            <a href="#" title="যুক্তরাষ্ট্র">যুক্তরাষ্ট্র</a>
+          </li>
+          <li>
+            <i class="fa fa-angle-right"></i>
+            <a href="#" title="এশিয়া">এশিয়া</a>
+          </li>
+          <li>
+            <i class="fa fa-angle-right"></i>
+            <a href="#" title="ইউরোপ">ইউরোপ</a>
+          </li>
+          <li>
+            <i class="fa fa-angle-right"></i>
+            <a href="#" title="আফ্রিকা">আফ্রিকা</a>
+          </li>
+          <li>
+            <i class="fa fa-angle-right"></i>
+            <a href="#" title="লাতিন আমেরিকা">লাতিন আমেরিকা</a>
+          </li>
+        </ul>
+      </section>
+      <section class="col4">
+        <ul>
+          <h2>বিনোদন</h2>
+          <li>
+            <i class="fa fa-angle-right"></i>
+            <a href="#" title="টেলিভিশন">টেলিভিশন</a>
+          </li>
+          <li>
+            <i class="fa fa-angle-right"></i>
+            <a href="#" title="ওটিটি">ওটিটি</a>
+          </li>
+          <li>
+            <i class="fa fa-angle-right"></i>
+            <a href="#" title="ঢালিউড">ঢালিউড</a>
+          </li>
+          <li>
+            <i class="fa fa-angle-right"></i>
+            <a href="#" title="টালিউড">টালিউড</a>
+          </li>
+          <li>
+            <i class="fa fa-angle-right"></i>
+            <a href="#" title="বলিউড">বলিউড</a>
+          </li>
+          <li>
+            <i class="fa fa-angle-right"></i>
+            <a href="#" title="হলিউড">হলিউড</a>
+          </li>
+          <li>
+            <i class="fa fa-angle-right"></i>
+            <a href="#" title="বিশ্ব চলচ্চিত্র">বিশ্ব চলচ্চিত্র</a>
+          </li>
+          <li>
+            <i class="fa fa-angle-right"></i> <a href="#" title="গান">গান</a>
+          </li>
+          <li>
+            <i class="fa fa-angle-right"></i> <a href="#" title="নাটক">নাটক</a>
+          </li>
+          <li>
+            <i class="fa fa-angle-right"></i>
+            <a href="#" title="আলাপন">আলাপন</a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="col5">
+        <ul>
+          <h2>চাকরি</h2>
+          <li>
+            <i class="fa fa-angle-right"></i>
+            <a href="#" title="নিয়োগ">নিয়োগ</a>
+          </li>
+          <li>
+            <i class="fa fa-angle-right"></i>
+            <a href="#" title="পরামর্শ">পরামর্শ</a>
+          </li>
+          <li>
+            <i class="fa fa-angle-right"></i>
+            <a href="#" title="সাক্ষাৎকার">সাক্ষাৎকার</a>
+          </li>
+        </ul>
+      </section>
+      <section class="col6">
+        <ul>
+          <h2>খেলা</h2>
+          <li>
+            <i class="fa fa-angle-right"></i>
+            <a href="#" title="ক্রিকেট">ক্রিকেট</a>
+          </li>
+          <li>
+            <i class="fa fa-angle-right"></i>
+            <a href="#" title="ফুটবল">ফুটবল</a>
+          </li>
+          <li>
+            <i class="fa fa-angle-right"></i>
+            <a href="#" title="অন্য খেলা">অন্য খেলা</a>
+          </li>
+          <li>
+            <i class="fa fa-angle-right"></i>
+            <a href="#" title="সাক্ষাৎকার">সাক্ষাৎকার</a>
+          </li>
+          <li>
+            <i class="fa fa-angle-right"></i>
+            <a href="#" title="ফটো ফিচার">ফটো ফিচার</a>
+          </li>
+          <li>
+            <i class="fa fa-angle-right"></i>
+            <a href="#" title="কুইজ">কুইজ</a>
+          </li>
+        </ul>
+      </section>
+    </nav>
+  </body>
+
+  <script>
+    // SEARCH BUTTON
+    document.addEventListener("DOMContentLoaded", function () {
+      const searchButton = document.getElementById("search-button");
+      const searchInput = document.getElementById("search-box");
+
+      searchButton.addEventListener("click", function () {
+        if (!searchInput.classList.contains("active")) {
+          expandInput(searchInput);
+          searchInput.style.width = "80vw";
+          searchButton.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+        } else {
+          collapseInput(searchInput);
+          searchButton.innerHTML =
+            '<i class="fa-solid fa-magnifying-glass"></i>';
+        }
+      });
+    });
+
+    function expandInput(input) {
+      input.classList.add("active");
+      input.style.width = "0";
+      input.style.display = "block";
+      const maxWidth = input.offsetWidth;
+    }
+
+    function collapseInput(input) {
+      input.style.width = "0";
+      input.style.display = "none";
+      input.classList.remove("active");
+    }
+// RES NAV TOGGLE
+    function toggleResNav() {
+      var resNav = document.querySelector(".resNav");
+      resNav.classList.toggle("show");
+    }
+
+    document.getElementById("hamburger-icon").addEventListener("click", toggleResNav);
+  </script>
+</html>
