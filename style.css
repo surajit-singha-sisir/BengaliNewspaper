@@ -17,26 +17,22 @@ a {
   align-items: center;
   flex-wrap: wrap;
   border-bottom: 1px solid #ccc;
+  /* -- 1 -- .dateBlock >> p */
+  /* -- 2 -- .dateBlock >> .socialMedia >> a */
 }
-
-/* -- 1 -- .dateBlock >> p */
 .dateBlock p {
-  font-size: 1.2vw;
+  font-size: 16px;
   color: #121212;
 }
-
-.titlePopUp {
+.dateBlock .titlePopUp {
   position: relative;
   cursor: help; /* Change cursor to indicate it's clickable */
 }
-
-/* -- 2 -- .dateBlock >> .socialMedia >> a */
-.socialMedia > a {
+.dateBlock .socialMedia > a {
   display: inline-block;
-  font-size: 1.5vw;
+  font-size: 20px;
 }
-
-.socialMedia > a:hover {
+.dateBlock .socialMedia > a > a:hover {
   color: #B22121;
   text-decoration: none;
   transition: 0.1s;
@@ -61,11 +57,11 @@ a {
 }
 
 .logoNav .humburger-icon {
-  font-size: 2vw;
+  font-size: 30px;
 }
 
 .logoNav img {
-  width: 5vw;
+  width: 100px;
   height: auto;
 }
 
@@ -102,7 +98,6 @@ a {
 }
 
 .search-box {
-  transition: width 0.6s, border-radius 0.6s, background 0.6s, box-shadow 0.6s;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -110,8 +105,7 @@ a {
 }
 .search-box input {
   position: absolute;
-  height: 2.8rem;
-  width: 0;
+  height: 2.4rem;
   display: none;
   transform: translateX(-100%);
   border: 1px solid #ffd3d3;
@@ -120,11 +114,6 @@ a {
   padding: 0 10px;
   text-align: center;
   transition: width 0.5s cubic-bezier(0, 1.22, 0.66, 1.39);
-}
-.search-box input.active {
-  width: 80vw;
-  display: block;
-  border: 1px solid #be0101;
 }
 .search-box button {
   height: 40px;
@@ -203,7 +192,7 @@ a {
   transition: all 0.3s ease;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 720px) {
   /* DATE BLOCK & SOCIAL MEDIA ICON */
   .dateBlock {
     display: flex;
@@ -214,157 +203,59 @@ a {
     border-bottom: 1px solid #ccc;
     margin-bottom: 10px;
   }
-  /* -- 1 -- .dateBlock >> p */
-  .dateBlock p {
-    color: #121212;
-  }
-  /* -- 2 -- .dateBlock >> .socialMedia >> a */
-  .socialMedia > a {
-    display: none;
-  }
-  .navBar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #F1EBEB;
-  }
-  .logoNav {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-  }
-  .logoNav .humburger-icon {
+  .dateBlock .titlePopUp p {
     font-size: 4vw;
-  }
-  .logoNav img {
-    width: 10vw;
-  }
-  .navMenu {
-    list-style: none;
-    display: none;
-    gap: 2vw;
-    font-size: 2vw;
-  }
-  .navMenu li {
-    position: relative;
-  }
-  .navMenu li a {
-    text-decoration: none;
-    color: #121212;
-    position: relative;
-    transition: color 0.3s ease;
-  }
-  .navMenu li a:hover {
-    color: #343434;
-  }
-  .navMenu li::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: #03695b;
-    transition: width 0.3s ease;
-  }
-  .navMenu li:hover::after {
-    width: 100%;
-  }
-  .search-box {
-    transition: width 0.6s, border-radius 0.6s, background 0.6s, box-shadow 0.6s;
-    display: none;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-  }
-  .search-box input {
-    position: absolute;
-    height: 2.8rem;
-    width: 0;
-    display: none;
-    transform: translateX(-100%);
-    border: 1px solid #ffd3d3;
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
-    border-radius: 50px;
-    padding: 0 10px;
+    color: #B22121;
+    transition: all 0.5s ease;
     text-align: center;
-    transition: width 0.5s cubic-bezier(0, 1.22, 0.66, 1.39);
+    margin-bottom: -1px;
   }
-  .search-box input.active {
-    width: 80vw;
-    display: block;
-    border: 1px solid #be0101;
-  }
-  .search-box button {
-    height: 40px;
-    width: 40px;
-    border: none;
-    outline: none;
-    color: #F8F8FF;
-    padding: 10px;
-    border-color: #F1EBEB;
-    border-style: solid;
-    border-radius: 50%;
-    background-color: #9c4787;
-    cursor: pointer;
-    transition: all 0.3s;
-  }
-  .search-box button:focus,
-  .search-box button:active {
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
-  }
-  .search-box button i {
-    position: relative;
-    transform: translateX(-10%);
-  }
-  .resNav {
+  .dateBlock .socialMedia {
     display: none;
-    justify-content: space-evenly;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    background: #CEBFBF;
-    border-bottom: 1px solid #dddddd;
-  }
-  .resNav h2 {
-    font-size: 2vw;
-    margin-bottom: 0.5vw;
-    border-bottom: 1px solid #ccc;
-  }
-  .resNav a {
-    font-size: 1.7vw;
-  }
-  .resNav section {
     transition: all 0.5s ease;
   }
-  .resNav.show {
+  .navBar .logoNav .humburger-icon {
+    font-size: 35px;
+    color: #343434;
+  }
+  .navBar .logoNav .logo img {
+    width: 80px;
+  }
+  .navBar .navMenu {
     display: flex;
+    flex-wrap: nowrap;
+    position: relative;
+    font-size: 20px;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #F1EBEB;
+    line-height: 1;
+    overflow: auto;
+    overflow-y: hidden;
+    /* Disable text selection while grabbing */
+    /* Allow horizontal scrolling by mouse wheel */
   }
-  .resNav ul {
-    transition: all 0.5s ease-in-out;
+  .navBar .navMenu li {
+    padding: 0 10px 10px 10px;
   }
-  .resNav li {
-    list-style: none;
-    margin-top: 0.1vw;
-    padding-bottom: 5px;
+  .navBar .navMenu .navMenu:active {
+    cursor: grabbing; /* Change cursor on active grabbing */
   }
-  .resNav li i {
-    color: #03695b;
-    font-size: 1vw;
+  .navBar .navMenu .navMenu::-webkit-scrollbar {
+    width: 0; /* Hide scrollbar */
   }
-  .resNav li:hover i {
-    transform: rotate(360deg);
-    transition: transform 0.4s ease-in-out;
+  .navBar .navMenu .navMenu li {
+    padding: 0 10px 10px 10px;
   }
-  .resNav li:hover i::before {
-    transform: rotate(360deg);
-    content: "\f101";
+  .navBar .navMenu .navMenu * {
+    -webkit-user-select: none;
+       -moz-user-select: none;
+            user-select: none;
   }
-  .resNav li a {
-    padding-bottom: 5px;
+  .navBar .navMenu .navMenu {
+    scroll-behavior: smooth; /* Enable smooth scrolling */
   }
-  .resNav li a:hover {
-    color: #B22121;
-    border-bottom: 1px dotted #943E3E;
-    transition: all 0.3s ease;
+  .navBar .navMenu .navMenu:hover {
+    overflow-x: auto; /* Allow horizontal scrolling on hover */
   }
 }/*# sourceMappingURL=style.css.map */

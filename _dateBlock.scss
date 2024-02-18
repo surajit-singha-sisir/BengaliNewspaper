@@ -1,35 +1,35 @@
 /* DATE BLOCK & SOCIAL MEDIA ICON */
-.dateBlock{
+.dateBlock {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     border-bottom: 1px solid #ccc;
-}
-/* -- 1 -- .dateBlock >> p */
-.dateBlock p{
-    font-size: map-get($FONT, 16PX);
-    color: $TXT;
-}
 
-.titlePopUp {
-    position: relative;
-    cursor: help; /* Change cursor to indicate it's clickable */
-}
+    /* -- 1 -- .dateBlock >> p */
+    & p {
+        font-size: 16px;
+        color: $TXT;
+    }
 
+    & .titlePopUp {
+        position: relative;
+        cursor: help; /* Change cursor to indicate it's clickable */
+    }
 
-/* -- 2 -- .dateBlock >> .socialMedia >> a */
-.socialMedia > a{
-    display:inline-block;
-    font-size: map-get($FONT, 18PX);
-}
-.socialMedia > a:hover{
-    color: $CAT;
-    text-decoration: none;
-    transition: 0.1s;
-    transform: scale(1.1);
-    padding: 5px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    /* -- 2 -- .dateBlock >> .socialMedia >> a */
+    .socialMedia > a {
+        display: inline-block;
+        font-size: 20px;
 
+        & > a:hover {
+            color: $CAT;
+            text-decoration: none;
+            transition: 0.1s;
+            transform: scale(1.1);
+            padding: 5px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px #00000033;
+        }
+    }
 }
