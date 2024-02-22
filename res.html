@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Grid</title>
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(40%, 1fr));
+            grid-gap: 10px;
+            padding: 10px;
+        }
+
+        .item {
+            background-color: #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .item img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item"><img src="https://dummyimage.com/800x600/265/202236.jpg" alt="Image 1"></div>
+        <div class="item"><img src="https://dummyimage.com/800x600/265/202236.jpg" alt="Image 2"></div>
+        <div class="item"><img src="https://dummyimage.com/800x600/265/202236.jpg" alt="Image 3"></div>
+        <div class="item"><img src="https://dummyimage.com/800x600/265/202236.jpg" alt="Image 2"></div>
+        <div class="item"><img src="https://dummyimage.com/800x600/265/202236.jpg" alt="Image 3"></div>
+        <!-- Add more items as needed -->
+    </div>
+</body>
+</html>

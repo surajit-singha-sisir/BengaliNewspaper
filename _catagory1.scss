@@ -1,0 +1,107 @@
+// .category1 {
+
+//     margin: 0 auto;
+//     display: flex;
+//     justify-content: space-between;
+//     flex-direction: row;
+//     flex-wrap: wrap;
+//     width: 90%;
+//     /* Maximum width for responsiveness */
+
+//     & .newsBox {
+//         width: 100%;
+//         gap: 10px;
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
+//         flex-direction: row;
+//         position: relative;
+//         transition: background-color 0.3s ease;
+
+//         & img{
+//             aspect-ratio: 4/3;
+//             max-width: 100%;
+//             height: auto;
+//         }
+//         &:before,
+//         &:after {
+//             content: "";
+//             position: absolute;
+//             width: 0;
+//             height: 0;
+//             background-color: #F1EBEB;
+//             transition: all 0.2s ease;
+//             z-index: -1;
+//         }
+
+//         &:hover:before,
+//         &:hover:after {
+//             width: calc(100% + 20px);
+//             height: calc(100% + 20px);
+//         }
+//     }
+// }
+
+.category1Name {
+    color: #b22121;
+    & i {
+        font-size: 1rem;
+        margin-right: 15px;
+    }
+    & h1 {
+        display: flex;
+        align-items: center;
+        margin-left: 5%;
+    }
+}
+.category1 {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    gap: 40px;
+    margin: 0 auto;
+    position: relative;
+
+    & img {
+        width: 100%;
+        height: auto;
+    }
+
+    & .newsBox {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+
+        &:before,
+        &:after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 0;
+            background-color: #f1ebeb;
+            transition: all 0.2s ease;
+            z-index: -1;
+        }
+
+        &:hover:before,
+        &:hover:after {
+            width: calc(100% + 20px);
+            height: calc(100% + 20px);
+            background-color: #f1ebeb;
+            position: absolute;
+        }
+
+        & h3 {
+            max-height: 5em;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: normal;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            font-size: 1.1rem;
+        }
+    }
+}

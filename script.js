@@ -38,47 +38,29 @@ document
   .getElementById("hamburger-icon")
   .addEventListener("click", toggleResNav);
 
-//REPLACE HTML CLASS CONTENT
-$(document).ready(function () {
-  if ($(window).width() <= 720) {
-    //REPLACE (FROM - TO)
-    $(".navBar .logoNav .humburger-icon").appendTo(
-      ".navBarRes .logoNavRes .humburger-icon-Res"
-    );
-    //REPLACE (FROM - TO)
-    $(".navBar .logoNav .logo").appendTo(".navBarRes .logoNavRes .logo-Res");
-    //REPLACE (FROM - TO)
-    $(".navBar .navMenu").appendTo(".navBarRes .navMenuRes");
-    //REPLACE (FROM - TO)
-    $(".navBar .search-box").appendTo(".navBarRes .search-box-Res");
 
-    //HIDE
-    $(".blockA .block1").hide();
-  }
+
+
+  // gallery js 
+
+  // grab all panel classes
+const panels = document.querySelectorAll(".panel");
+
+// loop through the node list
+panels.forEach((panel) => {
+  // listen for a click
+  panel.addEventListener("click", () => {
+    removeActive();
+    // if clicked -> add a class of active (so also flex = 5)
+    panel.classList.add("active");
+  });
 });
 
-
-
-// $(document).ready(function () {
-//   // Function to handle responsive changes
-//   function handleResponsive() {
-//     if ($(window).width() < 720) {
-//       // REPLACE (FROM - TO)
-//       $(".navBar .logoNav .humburger-icon").appendTo(".navBarRes .logoNavRes .humburger-icon-Res");
-//       // REPLACE (FROM - TO)
-//       $(".navBar .logoNav .logo").appendTo(".navBarRes .logoNavRes .logo-Res");
-//       // REPLACE (FROM - TO)
-//       $(".navBar .navMenu").appendTo(".navBarRes .navMenuRes");
-//       // REPLACE (FROM - TO)
-//       $(".navBar .search-box").appendTo(".navBarRes .search-box-Res");
-
-//     } else {
-//       // HIDE
-//       $(".navBar").show();
-//     }
-//   }
-
-//   // Call the function initially and on window resize
-//   $(window).on('resize', handleResponsive);
-//   handleResponsive();
-// });
+// function to remove active class from elements
+function removeActive() {
+  // loop through panels
+  panels.forEach((panel) => {
+    // remove active classes from panel objects
+    panel.classList.remove("active");
+  });
+}

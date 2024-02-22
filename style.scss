@@ -1,6 +1,5 @@
 body{
     margin: auto;
-    width: 90%;
     box-sizing: border-box;
     font-family: 'SolaimanLipi', Helvetica, sans-serif;
 }
@@ -19,16 +18,33 @@ a{
 //NAV BAR
 @import 'navBar';
 
+// MARQUEE
+@import 'marquee';
+
+//TOP LEAD CONTAINER
+@import 'top_lead';
 
 
 
 
+// CATAGORY 1
+@import 'catagory1';
 
 
 
-@import 'responsive'; // Responsive
+@import 'responsive'; 
+
+
+// Responsive
 
 
 
-
+// home ads 1 
+.HomeAds1 {
+    background-color: grey;
+    width: 90%;
+    height:226px;
+    margin: 0 auto;
+    margin-top:30px;
+}
 
