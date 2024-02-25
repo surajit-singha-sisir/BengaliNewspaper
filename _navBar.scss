@@ -1,10 +1,21 @@
+$NAV: #3c3564;
+$TXT: #ffffff;
+$DES: #3ee3e3;
+$NAV_HOVER: #a0a0a0;
+$COPY: #fda9a9;
+$FONT: (26PX: 26px); // Adjust font sizes as needed
+
+.stickNav {
+    position: sticky;
+    top: 0;
+    z-index: 4;
+}
+
 .navBar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: $NAV;
-    position: sticky;
-    top: 0;
     padding: 0 5%;
     z-index: 4;
 }
@@ -114,15 +125,16 @@
 // RESPONSIVE NAV BAR
 .resNav {
     width: 100%;
-    position: absolute;
+    position: relative;
     display: none;
     justify-content: space-evenly;
     flex-wrap: wrap;
     background: $COPY;
-    z-index: 3;
+    transition: all 0.3s ease; // Added transition
     
+    z-index: 3;
 
-    & div{
+    & section div{
         position: relative;
         display: flex;
         justify-content: space-between;
@@ -131,7 +143,7 @@
         width: 90%;
         margin: 0 auto;        
         & h2{
-            line-height: 0;
+            line-height: 1;
         }
         & i{
             display: none;
@@ -144,7 +156,9 @@
     }
 
     & section {
-        margin-bottom: -15px;
+        display: flex;
+        align-items: flex-end;
+        flex-direction: column;
     }
 
     &.show {
@@ -152,7 +166,8 @@
     }
 
     & ul {
-        transition: all 0.5s ease-in-out;
+        width: $fullWidth;
+        text-align: left;
     }
 
     & li {
@@ -181,115 +196,22 @@
     }
 }
 
-// 1400x720px LAPTOP
-@media screen and (max-width: 1400px) {
-    
-    .logoNav .humburger-icon {
-        font-size: 25px;
-    }
-    
-    .logoNav img {
-        width: 60px; //Logo Width
-        height: auto;
-    }
-    .resNav {
-        & a {
-            font-size: 24px;
-        }
-    }
-    .navMenu {
-        gap: 20px;
-        & li a {
-            font-size: 25px;
-        }
-    }
-
-    .search-box {
-        & button {
-            height: 50px;
-            width: 50px;
-
-            & i {
-                font-size: 20px;
-            }
-        }
-
-        & input{
-            height: 50px;
-        }
-    }
-}
-
-// 1080 TABLET PHONE
+// Mobile view adjustments
 @media screen and (max-width: 720px) {
-    .logoNav .humburger-icon {
-        font-size: 20px;
-    }
-    
-    .logoNav img {
-        width: 50px; //Logo Width
-        height: auto;
-    }
     .resNav {
-        & a {
-            font-size: 18px;
-        }
+        background-color: $NAV; // Add solid background
+        padding: 20px; // Adjust padding
     }
+
+    .resNav i.fa-chevron-right {
+        display: inline; // Display the chevron icon
+    }
+
+    .resNav section div {
+        justify-content: center; // Center align content
+    }
+
     .navMenu {
-        gap: 15px;
-        & li a {
-            font-size: 25px;
-        }
-    }
-
-    .search-box {
-        & button {
-            height: 40px;
-            width: 40px;
-
-            & i {
-                font-size: 15px;
-            }
-        }
-
-        & input{
-            height: 50px;
-        }
-    }
-}
-
-// 720 TABLET PHONE
-@media screen and (max-width: 1080px) {
-    .navMenu{
-        display: none;
-    }
-    .logoNav .humburger-icon {
-        font-size: 20px;
-    }
-    
-    .logoNav img {
-        width: 50px; //Logo Width
-        height: auto;
-    }
-    .resNav {
-
-        & a {
-            font-size: 18px;
-        }
-    }
-
-    .search-box {
-        & button {
-            height: 40px;
-            width: 40px;
-
-            & i {
-                font-size: 15px;
-            }
-        }
-
-        & input{
-            height: 30px;
-        }
+        display: none; // Hide navMenu in mobile view
     }
 }

@@ -1,4 +1,5 @@
 
+// 1080px SCREEN
 @media screen and (max-width: 1080px) {
     //TOP LEAD CONTAINER
     .TopLeadContainer {
@@ -25,7 +26,8 @@
 }
 
 
-@media screen and (max-width: 720px) {
+// 786px SCREEN
+@media screen and (max-width: 768px) {
     /* DATE BLOCK & SOCIAL MEDIA ICON */
     .dateBlock {
         display: flex;
@@ -52,7 +54,7 @@
 
     // THE NAV BAR
     .resNav {
-        flex-direction: column;
+        
         & div {
             & h2 {
                 line-height: 0;
@@ -138,5 +140,22 @@
             }
         }
     }
+
+//CATEOGRY
+    .newsBox {
+        flex: 1 30%;
+    }
+
+
+
+
+
 }
 
+
+// 576px SCREEN
+@media screen and (max-width: 576px) {
+    .newsBox {
+        flex-basis: calc(100% - 1rem);
+    }
+}

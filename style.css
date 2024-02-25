@@ -42,13 +42,17 @@ a {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
+.stickNav {
+  position: sticky;
+  top: 0;
+  z-index: 4;
+}
+
 .navBar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #F1EBEB;
-  position: sticky;
-  top: 0;
+  background-color: #3c3564;
   padding: 0 5%;
   z-index: 4;
 }
@@ -72,7 +76,7 @@ a {
   list-style: none;
   display: flex;
   gap: 35px;
-  font-size: 1.9vw;
+  font-size: 26px;
 }
 .navMenu li {
   position: relative;
@@ -80,12 +84,12 @@ a {
 .navMenu li a {
   text-decoration: none;
   text-wrap: nowrap;
-  color: #121212;
+  color: #ffffff;
   position: relative;
   transition: color 0.3s ease;
 }
 .navMenu li a:hover {
-  color: #343434;
+  color: #3ee3e3;
 }
 .navMenu li::after {
   content: "";
@@ -94,7 +98,7 @@ a {
   left: 0;
   width: 0;
   height: 2px;
-  background-color: #03695b;
+  background-color: #a0a0a0;
   transition: width 0.3s ease;
 }
 .navMenu li:hover::after {
@@ -125,7 +129,7 @@ a {
   border: none;
   outline: none;
   color: #F8F8FF;
-  border-color: #F1EBEB;
+  border-color: #3c3564;
   border-style: solid;
   border-radius: 50%;
   background-color: #9c4787;
@@ -144,14 +148,15 @@ a {
 
 .resNav {
   width: 100%;
-  position: absolute;
+  position: relative;
   display: none;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  background: #CEBFBF;
+  background: #fda9a9;
+  transition: all 0.3s ease;
   z-index: 3;
 }
-.resNav div {
+.resNav section div {
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -160,23 +165,26 @@ a {
   width: 90%;
   margin: 0 auto;
 }
-.resNav div h2 {
-  line-height: 0;
+.resNav section div h2 {
+  line-height: 1;
 }
-.resNav div i {
+.resNav section div i {
   display: none;
 }
 .resNav a {
   font-size: 28px;
 }
 .resNav section {
-  margin-bottom: -15px;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
 }
 .resNav.show {
   display: flex;
 }
 .resNav ul {
-  transition: all 0.5s ease-in-out;
+  width: 90%;
+  text-align: left;
 }
 .resNav li {
   list-style: none;
@@ -184,7 +192,7 @@ a {
   padding-bottom: 5px;
 }
 .resNav li i {
-  color: #03695b;
+  color: #a0a0a0;
   font-size: 15px;
 }
 .resNav li:hover i::before {
@@ -199,85 +207,19 @@ a {
   transition: all 0.3s ease;
 }
 
-@media screen and (max-width: 1400px) {
-  .logoNav .humburger-icon {
-    font-size: 25px;
-  }
-  .logoNav img {
-    width: 60px;
-    height: auto;
-  }
-  .resNav a {
-    font-size: 24px;
-  }
-  .navMenu {
-    gap: 20px;
-  }
-  .navMenu li a {
-    font-size: 25px;
-  }
-  .search-box button {
-    height: 50px;
-    width: 50px;
-  }
-  .search-box button i {
-    font-size: 20px;
-  }
-  .search-box input {
-    height: 50px;
-  }
-}
 @media screen and (max-width: 720px) {
-  .logoNav .humburger-icon {
-    font-size: 20px;
+  .resNav {
+    background-color: #3c3564;
+    padding: 20px;
   }
-  .logoNav img {
-    width: 50px;
-    height: auto;
+  .resNav i.fa-chevron-right {
+    display: inline;
   }
-  .resNav a {
-    font-size: 18px;
+  .resNav section div {
+    justify-content: center;
   }
-  .navMenu {
-    gap: 15px;
-  }
-  .navMenu li a {
-    font-size: 25px;
-  }
-  .search-box button {
-    height: 40px;
-    width: 40px;
-  }
-  .search-box button i {
-    font-size: 15px;
-  }
-  .search-box input {
-    height: 50px;
-  }
-}
-@media screen and (max-width: 1080px) {
   .navMenu {
     display: none;
-  }
-  .logoNav .humburger-icon {
-    font-size: 20px;
-  }
-  .logoNav img {
-    width: 50px;
-    height: auto;
-  }
-  .resNav a {
-    font-size: 18px;
-  }
-  .search-box button {
-    height: 40px;
-    width: 40px;
-  }
-  .search-box button i {
-    font-size: 15px;
-  }
-  .search-box input {
-    height: 30px;
   }
 }
 .marqueeBlock {
@@ -398,62 +340,75 @@ a {
   margin-left: 2rem;
 }
 
-.category1Name {
-  color: #b22121;
-}
-.category1Name i {
-  font-size: 1rem;
-  margin-right: 15px;
-}
-.category1Name h1 {
-  display: flex;
-  align-items: center;
-  margin-left: 5%;
-}
-
-.category1 {
-  display: flex;
-  justify-content: space-between;
+.category {
+  margin-bottom: 20px;
   width: 90%;
-  gap: 40px;
   margin: 0 auto;
-  position: relative;
 }
-.category1 img {
-  width: 100%;
-  height: auto;
-}
-.category1 .newsBox {
+.category .catName {
+  color: red;
   display: flex;
-  justify-content: center;
   align-items: center;
-  flex-direction: column;
+}
+.category .catName i {
+  margin-right: 1rem;
+}
+.category .catName h2 {
+  font-size: 1.5rem;
+}
+.category .category1 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
   position: relative;
 }
-.category1 .newsBox:before, .category1 .newsBox:after {
+.category .category1 .newsBox {
+  flex: 1 1;
+  border-radius: 5px;
+  position: relative;
+  transition: all 0.3s ease; /* Add transition effect */
+}
+.category .category1 .newsBox::after {
   content: "";
   position: absolute;
-  width: 0;
-  height: 0;
-  background-color: #f1ebeb;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
   transition: all 0.2s ease;
   z-index: -1;
 }
-.category1 .newsBox:hover:before, .category1 .newsBox:hover:after {
-  width: calc(100% + 20px);
-  height: calc(100% + 20px);
-  background-color: #f1ebeb;
-  position: absolute;
+.category .category1 .newsBox:hover::after {
+  width: calc(100% + 1rem);
+  height: calc(100% + 1rem);
+  background-color: #F1EBEB;
+  box-shadow: 1px 3px 4px 2px rgba(0, 0, 0, 0.25);
+  transition: background-color 0.5s ease;
 }
-.category1 .newsBox h3 {
-  max-height: 5em;
+.category .category1 .newsBox img {
+  width: 100%;
+  height: auto;
+  min-width: 10rem;
+}
+.category .category1 .newsTitle h2 {
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: normal;
   display: -webkit-box;
   -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  font-size: 1.1rem;
+  -webkit-box-orient: block-axis;
+  font-size: 1.3rem;
+  margin-bottom: 0.5em;
+}
+.category .category1 .newsTitle i {
+  color: #8d8d8d;
+}
+.category .category1 .newsTitle p {
+  font-size: 14px;
+  color: #343434;
+  margin: 0;
 }
 
 @media screen and (max-width: 1080px) {
@@ -470,7 +425,7 @@ a {
     margin-left: 2rem;
   }
 }
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 768px) {
   /* DATE BLOCK & SOCIAL MEDIA ICON */
   .dateBlock {
     display: flex;
@@ -491,9 +446,6 @@ a {
   .dateBlock .socialMedia {
     display: none;
     transition: all 0.5s ease;
-  }
-  .resNav {
-    flex-direction: column;
   }
   .resNav div h2 {
     line-height: 0;
@@ -545,6 +497,14 @@ a {
   .TopLeadContainer .row1 .overlay h3 {
     font-size: 1em;
     margin-left: 2rem;
+  }
+  .newsBox {
+    flex: 1 30%;
+  }
+}
+@media screen and (max-width: 576px) {
+  .newsBox {
+    flex-basis: calc(100% - 1rem);
   }
 }
 .HomeAds1 {
