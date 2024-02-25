@@ -1,13 +1,13 @@
 // CATEGORY CSS
 .category {
+    margin: 0 auto;
     margin-bottom: 20px;
     width: $fullWidth;
-    margin: 0 auto;
 
     & .catName {
-        color: red;
         display: flex;
         align-items: center;
+        color: red;
         
         & i {
             margin-right: 1rem;
@@ -20,56 +20,56 @@
 
     & .category1 {
         display: flex;
+        position: relative;
         flex-wrap: wrap;
         gap: 1rem;
-        position: relative;
 
         & .newsBox {
-            flex: 1 1;
-            border-radius: 5px;
             position: relative;
+            flex: 1 1;
             transition: all 0.3s ease; /* Add transition effect */
+            border-radius: 5px;
 
             &::after {
-                content: "";
-                position: absolute;
-                justify-content: center;
-                align-items: center;
                 display: flex;
+                position: absolute;
                 top: 50%;
                 left: 50%;
+                justify-content: center;
+                align-items: center;
                 transform: translate(-50%, -50%);
-                background-color: #ffffff;
-                transition: all 0.2s ease;
                 z-index: -1;
+                transition: all 0.2s ease;
+                background-color: #ffffff;
+                content: "";
             }
 
             &:hover::after {
-                width: calc(100% + 1rem);
-                height: calc(100% + 1rem);
-                background-color: #F1EBEB;
-                box-shadow: 1px 3px 4px 2px rgba(0, 0, 0, .25);
 
                 transition: background-color 0.5s ease;
+                box-shadow: 1px 3px 4px 2px rgba(0, 0, 0, .25);
+                background-color: #F1EBEB;
+                width: calc(100% + 1rem);
+                height: calc(100% + 1rem);
             }
             
             & img {
                 width: 100%;
-                height: auto;
                 min-width: 10rem;
+                height: auto;
             }
         }
 
         .newsTitle {
 
             & h2 {
-                overflow: hidden;
-                text-overflow: ellipsis;
-                display: -webkit-box;
-                -webkit-line-clamp: 2;
                 -webkit-box-orient: block-axis;
-                font-size: 1.3rem;
+                display: -webkit-box;
                 margin-bottom: 0.5em;
+                -webkit-line-clamp: 2;
+                overflow: hidden;
+                font-size: 1.3rem;
+                text-overflow: ellipsis;
             }
 
             & i{
@@ -77,9 +77,9 @@
             }
 
             & p {
-                font-size: 14px;
-                color: #343434;
                 margin: 0;
+                color: #343434;
+                font-size: 14px;
             }
         }
     }

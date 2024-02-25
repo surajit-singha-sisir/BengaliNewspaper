@@ -1,6 +1,6 @@
 body{
-    margin: auto;
     box-sizing: border-box;
+    margin: auto;
     font-family: 'SolaimanLipi', Helvetica, sans-serif;
 }
 
@@ -8,8 +8,8 @@ body{
 
 
 a{
-    text-decoration: none;
     color: $TXT;
+    text-decoration: none;
 }
 
 // DATE BLOCK
@@ -41,10 +41,10 @@ a{
 
 // home ads 1 
 .HomeAds1 {
+    margin: 0 auto;
+    margin-top:30px;
     background-color: grey;
     width: 90%;
     height:226px;
-    margin: 0 auto;
-    margin-top:30px;
 }
 
