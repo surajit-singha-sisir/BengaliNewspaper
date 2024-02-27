@@ -1,0 +1,72 @@
+// GALLERY CAROUSAL
+.gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 90%;
+    margin: 0 auto;
+    overflow: hidden;
+    & p {
+        text-align: center;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: block-axis;
+        overflow: hidden;
+    }
+
+    & h2 {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: #aa0000;
+    }
+
+    .gallery-container {
+        position: relative;
+
+        .gallery-item {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 0.5rem;
+
+            & span {
+                position: relative;
+                width: 2%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50px;
+                overflow: hidden;
+                transition: all 0.5s ease;
+            }
+
+            & span img {
+                width: auto;
+                height: 25rem;
+            }
+
+            & span.active {
+                width: 18%;
+                height: auto;
+                border-radius: 10px;
+            }
+
+            & span p {
+                position: absolute;
+                display: none;
+                padding: 10px;
+            }
+
+            & span.active p {
+                display: block;
+                bottom: 0;
+            }
+
+            & span.active img {
+                height: 25rem;
+            }
+        }
+    }
+}

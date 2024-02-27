@@ -156,6 +156,12 @@
     .clm3 {
         display: flex;
         flex-direction: column;
+
+        .shortNewsFlex {
+            & img {
+                width: 50% !important;
+            }
+        }
     }
 }
 
@@ -163,5 +169,33 @@
 @media screen and (max-width: 576px) {
     .newsBox {
         flex-basis: calc(100% - 1rem);
+    }
+    // 3 Column NEWS VIEW (clm3)
+    .clm3 {
+        display: flex;
+        flex-direction: column;
+
+        .shortNewsFlex {
+            gap: 0rem !important;
+            & img {
+                width: 40% !important;
+            }
+
+            .shortNewsTexts {
+                & h2 {
+                    display: -webkit-box;
+                    padding-left: 8px; //8px Gap
+                    -webkit-line-clamp: 4 !important;
+                    -webkit-box-orient: block-axis;
+                    margin-bottom: 0.5rem;
+                    overflow: hidden;
+                    margin-top: 0;
+                    font-size: 1.1rem !important;
+                }
+                & p {
+                    display: none !important;
+                }
+            }
+        }
     }
 }

@@ -32,12 +32,15 @@
 
         .shortNewsFlex {
             display: flex;
-            gap: 1rem;
+            gap: 0rem;
             flex: 1 1;
             margin-bottom: 1rem;
             padding-bottom: 1rem;
             border-bottom: 1px solid #c4c4c4;
 
+            &:hover{
+                color: #972b2b;
+            }
             & img {
                 margin-top: 0;
                 width: 100%;
@@ -45,28 +48,55 @@
                 object-fit: contain;
                 max-width: 15rem;
             }
-            .shortNewsTexts{
+            .shortNewsTexts {
                 width: 100%;
             }
 
-            .shortNewsTexts h2 {
-                display: -webkit-box;
-                text-overflow: ellipsis;
-                -webkit-line-clamp: 2;
-                -webkit-box-orient: block-axis;
-                margin-bottom: 0.5rem;
-                overflow: hidden;
-                margin-top: 0;
-                font-size: 1.2em;
+            .shortNewsTexts {
+                & h2 {
+                    display: -webkit-box;
+                    padding-left: 10px; // Gap Left 10px
+                    text-overflow: ellipsis;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: block-axis;
+                    margin-bottom: 0.5rem;
+                    overflow: hidden;
+                    margin-top: 0;
+                    font-size: 1.2em;
+                }
+                & p {
+                    display: -webkit-box;
+                    padding-left: 10px; // Gap Left 10px
+                    text-overflow: ellipsis;
+                    -webkit-line-clamp: 3;
+                    -webkit-box-orient: block-axis;
+                    margin-bottom: 0.5rem;
+                    overflow: hidden;
+                }
             }
+        }
 
-            .shortNewsTexts p {
-                display: -webkit-box;
-                text-overflow: ellipsis;
-                -webkit-line-clamp: 3;
-                -webkit-box-orient: block-axis;
-                margin-bottom: 0.5rem;
-                overflow: hidden;
+        & .submit {
+            width: 30%;
+            background-color: white;
+            height: 2rem;
+            border: transparent;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+            margin: 0 auto;
+            background: $NAV;
+            box-shadow: #a3a3a3 4px 6px 12px;
+            border-radius: 50px;
+
+            &:hover {
+                background: linear-gradient(
+                    90deg,
+                    rgba(33, 29, 128, 1) 0%,
+                    rgba(34, 112, 129, 1) 50%,
+                    rgba(33, 29, 128, 1) 100%
+                );
             }
         }
     }

@@ -1,58 +1,54 @@
-body{
+body {
     box-sizing: border-box;
     margin: auto;
-    font-family: 'SolaimanLipi', Helvetica, sans-serif;
+    font-family: "SolaimanLipi", Helvetica, sans-serif;
 }
 
-@import 'var';
+@import "var";
 
-
-a{
+a {
     color: $TXT;
     text-decoration: none;
 }
 
 // DATE BLOCK
-@import 'dateBlock'; 
+@import "dateBlock";
 
 //NAV BAR
-@import 'navBar';
+@import "navBar";
 
 // MARQUEE
-@import 'marquee';
+@import "marquee";
 
 //TOP LEAD CONTAINER
-@import 'top_lead';
-
-
-
+@import "top_lead";
 
 // CATAGORY 1
-@import 'catagory1';
+@import "catagory1";
 
 // ADS
-@import 'ads';
+@import "ads";
 
 // 3 Column clm3
-@import 'clm3.scss';
+@import "clm3.scss";
 
+// GALLERY CAROUSAL
+@import 'gallery';
 
-
-
+//FOOTER
+@import "footer";
 
 
 
 
 // Responsive
-@import 'responsive'; 
+@import "responsive";
 
-
-// home ads 1 
+// home ads 1
 .HomeAds1 {
     margin: 0 auto;
-    margin-top:30px;
+    margin-top: 30px;
     background-color: grey;
     width: 90%;
-    height:226px;
+    height: 226px;
 }
-

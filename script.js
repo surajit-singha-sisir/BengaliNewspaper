@@ -64,3 +64,16 @@ function removeActive() {
     panel.classList.remove("active");
   });
 }
+
+// GALLERY SCECTION
+        function toggleActive(event) {
+            const spans = document.querySelectorAll('.gallery-item span');
+            spans.forEach(span => {
+                span.classList.remove('active');
+            });
+            if (event.target.tagName === 'IMG' || event.target.tagName === 'P') {
+                event.target.parentNode.classList.add('active');
+            } else if (event.target.tagName === 'SPAN') {
+                event.target.classList.add('active');
+            }
+        }
