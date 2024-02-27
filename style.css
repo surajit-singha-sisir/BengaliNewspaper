@@ -411,6 +411,97 @@ a {
   font-size: 14px;
 }
 
+.adsFull {
+  width: 90%;
+  margin: 0 auto;
+}
+.adsFull img {
+  width: 100%;
+  height: auto;
+}
+
+.clm3 {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 1rem;
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 1.5rem;
+}
+.clm3 .clm3Left,
+.clm3 .clm3Right {
+  display: flex;
+  flex-direction: column;
+}
+.clm3 .clm3Left .heading,
+.clm3 .clm3Right .heading {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: red;
+}
+.clm3 .clm3Left .heading i,
+.clm3 .clm3Right .heading i {
+  margin-right: 1rem;
+}
+.clm3 .clm3Left .shortNews,
+.clm3 .clm3Right .shortNews {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+.clm3 .clm3Left .shortNewsFlex,
+.clm3 .clm3Right .shortNewsFlex {
+  display: flex;
+  gap: 1rem;
+  flex: 1 1;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #c4c4c4;
+}
+.clm3 .clm3Left .shortNewsFlex img,
+.clm3 .clm3Right .shortNewsFlex img {
+  margin-top: 0;
+  width: 100%;
+  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+  max-width: 15rem;
+}
+.clm3 .clm3Left .shortNewsFlex .shortNewsTexts,
+.clm3 .clm3Right .shortNewsFlex .shortNewsTexts {
+  width: 100%;
+}
+.clm3 .clm3Left .shortNewsFlex .shortNewsTexts h2,
+.clm3 .clm3Right .shortNewsFlex .shortNewsTexts h2 {
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: block-axis;
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+  margin-top: 0;
+  font-size: 1.2em;
+}
+.clm3 .clm3Left .shortNewsFlex .shortNewsTexts p,
+.clm3 .clm3Right .shortNewsFlex .shortNewsTexts p {
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: block-axis;
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+}
+.clm3 .clm3Center {
+  background-color: green;
+  display: flex;
+}
+.clm3 .clm3Center img {
+  width: 100%;
+  height: auto;
+}
+
 @media screen and (max-width: 1080px) {
   .TopLeadContainer .row1 {
     display: grid;
@@ -423,6 +514,9 @@ a {
   .TopLeadContainer .row1 .overlay h3 {
     font-size: 1em;
     margin-left: 2rem;
+  }
+  .clm3 .shortNewsFlex img {
+    width: 40% !important;
   }
 }
 @media screen and (max-width: 768px) {
@@ -500,6 +594,10 @@ a {
   }
   .newsBox {
     flex: 1 30%;
+  }
+  .clm3 {
+    display: flex;
+    flex-direction: column;
   }
 }
 @media screen and (max-width: 576px) {
