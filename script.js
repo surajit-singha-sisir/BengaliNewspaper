@@ -38,12 +38,9 @@ document
   .getElementById("hamburger-icon")
   .addEventListener("click", toggleResNav);
 
+// gallery js
 
-
-
-  // gallery js 
-
-  // grab all panel classes
+// grab all panel classes
 const panels = document.querySelectorAll(".panel");
 
 // loop through the node list
@@ -66,14 +63,28 @@ function removeActive() {
 }
 
 // GALLERY SCECTION
-        function toggleActive(event) {
-            const spans = document.querySelectorAll('.gallery-item span');
-            spans.forEach(span => {
-                span.classList.remove('active');
-            });
-            if (event.target.tagName === 'IMG' || event.target.tagName === 'P') {
-                event.target.parentNode.classList.add('active');
-            } else if (event.target.tagName === 'SPAN') {
-                event.target.classList.add('active');
-            }
-        }
+function toggleActive(event) {
+  const spans = document.querySelectorAll(".gallery-item span");
+  spans.forEach((span) => {
+    span.classList.remove("active");
+  });
+  if (event.target.tagName === "IMG" || event.target.tagName === "P") {
+    event.target.parentNode.classList.add("active");
+  } else if (event.target.tagName === "SPAN") {
+    event.target.classList.add("active");
+  }
+}
+
+
+
+  $(document).ready(function () {
+    $('#searchIcon').click(function () {
+      $('.search-input').toggleClass('active'); // Toggle the 'active' class to show/hide input
+      $(this).toggleClass('fa-search fa-x'); // Toggle the search icon to cross
+    });
+
+    $('#closeIcon').click(function () {
+      $('.search-input').removeClass('active'); // Hide the input when close icon is clicked
+      $('#searchIcon').removeClass('fa-x').addClass('fa-search'); // Change the cross back to search icon
+    });
+  });
