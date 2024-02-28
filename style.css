@@ -728,13 +728,6 @@ footer {
     grid-template-columns: 1fr 1fr;
     grid-template-areas: "item1 item1" "item2 item3" "item4 item5";
   }
-  .TopLeadContainer .row1 .overlay h2 {
-    font-size: 1.2em;
-  }
-  .TopLeadContainer .row1 .overlay h3 {
-    font-size: 1em;
-    margin-left: 2rem;
-  }
   .clm3 .shortNewsFlex img {
     width: 40% !important;
   }
@@ -804,13 +797,6 @@ footer {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-areas: "item1" "item2" "item3" "item4" "item5";
-  }
-  .TopLeadContainer .row1 .overlay h2 {
-    font-size: 1.2em;
-  }
-  .TopLeadContainer .row1 .overlay h3 {
-    font-size: 1em;
-    margin-left: 2rem;
   }
   .newsBox {
     flex: 1 30%;
