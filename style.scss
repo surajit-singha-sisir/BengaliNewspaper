@@ -31,7 +31,7 @@ a {
 @import "ads";
 
 // 3 Column clm3
-@import "clm3.scss";
+@import "clm3";
 
 // GALLERY CAROUSAL
 @import 'gallery';
@@ -40,8 +40,8 @@ a {
 @import "footer";
 
 
-
-
+// 2ND PAGE
+@import 'newsView';
 // Responsive
 @import "responsive";
 

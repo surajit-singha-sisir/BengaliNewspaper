@@ -4,105 +4,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://fonts.cdnfonts.com/css/solaimanlipi" rel="stylesheet" />
-    <title>Document</title>
+    <title>Responsive Two-Column Grid with Flexbox</title>
+    <style>
+        .grid-container {
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+            margin: 0 auto;
+            width: 90%;
+        }
+
+        .column-60 {
+            background-color: #f1f1f1;
+            flex: 60%;
+        }
+
+        .column-40 {
+            background-color: #f1f1f1;
+            flex: 40%;
+        }
+
+        .grid-item {
+            border: 1px solid #ccc;
+            /* Border for visualization */
+        }
+
+        /* Make it responsive */
+        @media only screen and (max-width: 768px) {
+            .grid-container {
+                flex-direction: column;
+                /* Make it a single column on smaller screens */
+            }
+
+            .column-60,
+            .column-40 {
+                flex: 0 0 auto;
+                /* Reset flex to auto to take full width */
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <style>
-        body {
-            font-family: 'SolaimanLipi', serif;
-            margin: 0;
-            padding: 0;
-        }
 
-        .gallery {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            width: 100%;
-            background-color: red;
-        }
-
-        .gallery-container {
-            width: 90%;
-            margin: 0 auto;
-            margin-bottom: 20px;
-        }
-
-        .gallery-item {
-            display: flex;
-            gap: 1rem;
-            background-color: blue;
-            height: 20rem;
-            justify-content: center;
-            display: flex;
-            align-items: center;
-
-        }
-
-        .gallery-item span {
-            width: 10%;
-            background-color: aqua;
-            border: 1px solid;
-            overflow: hidden;
-            text-align: center;
-            /* center the text inside the span */
-        }
-
-        .gallery-item span img {
-            max-width: 100%;
-            /* ensure the image doesn't exceed the width of its container */
-            height: auto;
-        }
-
-        .gallery-item span p {
-            text-align: center;
-            display: none;
-        }
-    </style>
-
-    <section class="gallery">
-        <!-- TITLE -->
-        <h2>ছবি ঘর</h2>
-
-        <!-- GALLERY -->
-        <div class="gallery-container">
-
-            <div class="gallery-item" onclick="toggleActive(event)">
-                <!-- IMG 1 -->
-                <span>
-                    <img src="https://via.placeholder.com/1920x1080" alt="">
-                    <p>তবে বড় ধাক্কা আসে গত বছর। এ বছর ভাগনারের বিদ্রোহ এবং বাহিনীটির প্রতিষ্ঠাতা ইয়েভগেনি</p>
-                </span>
-                <!-- IMG 2 -->
-                <span>
-                    <img src="https://via.placeholder.com/1920x1080" alt="">
-                    <p>তবে বড় ধাক্কা আসে গত বছর। এ বছর ভাগনারের বিদ্রোহ এবং বাহিনীটির প্রতিষ্ঠাতা ইয়েভগেনি</p>
-                </span>
-                <!-- IMG 3 -->
-                <span>
-                    <img src="https://via.placeholder.com/1920x1080" alt="">
-                    <p>তবে বড় ধাক্কা আসে গত বছর। এ বছর ভাগনারের বিদ্রোহ এবং বাহিনীটির প্রতিষ্ঠাতা ইয়েভগেনি</p>
-                </span>
-                <!-- IMG 4 -->
-                <span>
-                    <img src="https://via.placeholder.com/1920x1080" alt="">
-                    <p>তবে বড় ধাক্কা আসে গত বছর। এ বছর ভাগনারের বিদ্রোহ এবং বাহিনীটির প্রতিষ্ঠাতা ইয়েভগেনি</p>
-                </span>
-                <!-- IMG 5 -->
-                <span>
-                    <img src="https://via.placeholder.com/1920x1080" alt="">
-                    <p>তবে বড় ধাক্কা আসে গত বছর। এ বছর ভাগনারের বিদ্রোহ এবং বাহিনীটির প্রতিষ্ঠাতা ইয়েভগেনি</p>
-                </span>
-            </div>
-
+    <div class="grid-container">
+        <div class="column-60 grid-item">
+            <!-- Content for the first column -->
+            <p>This is the first column which takes up 60% of the width.</p>
         </div>
-    </section>
+        <div class="column-40 grid-item">
+            <!-- Content for the second column -->
+            <p>This is the second column which takes up 40% of the width.</p>
+        </div>
+    </div>
 
 </body>
 

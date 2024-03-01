@@ -143,6 +143,17 @@
             }
         }
     }
+
+    // NEWS PAGE
+    .postBody {
+        flex-direction: column;
+        /* Make it a single column on smaller screens */
+
+        & .rightSection{
+            background-color: $NAV;
+            padding-bottom: 20px;
+        }
+    }
 }
 
 // 576px SCREEN
