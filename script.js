@@ -88,3 +88,6 @@ function toggleActive(event) {
       $('#searchIcon').removeClass('fa-x').addClass('fa-search'); // Change the cross back to search icon
     });
   });
+
+
+  

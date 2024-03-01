@@ -4,60 +4,342 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Two-Column Grid with Flexbox</title>
-    <style>
-        .grid-container {
-            display: flex;
-            flex-direction: row;
-            gap: 1rem;
-            margin: 0 auto;
-            width: 90%;
-        }
-
-        .column-60 {
-            background-color: #f1f1f1;
-            flex: 60%;
-        }
-
-        .column-40 {
-            background-color: #f1f1f1;
-            flex: 40%;
-        }
-
-        .grid-item {
-            border: 1px solid #ccc;
-            /* Border for visualization */
-        }
-
-        /* Make it responsive */
-        @media only screen and (max-width: 768px) {
-            .grid-container {
-                flex-direction: column;
-                /* Make it a single column on smaller screens */
-            }
-
-            .column-60,
-            .column-40 {
-                flex: 0 0 auto;
-                /* Reset flex to auto to take full width */
-            }
-        }
-    </style>
+    <title>Toggle Tabs</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.cdnfonts.com/css/solaimanlipi" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <div class="grid-container">
-        <div class="column-60 grid-item">
-            <!-- Content for the first column -->
-            <p>This is the first column which takes up 60% of the width.</p>
+    <style>
+        body {
+            font-family: 'SolaimanLipi', serif;
+            margin: 0;
+        }
+
+        .tab-container {
+            width: 100%;
+            overflow: hidden;
+            margin: 0 auto;
+            background-color: #dff1f1;
+        }
+
+        .tab {
+            display: flex;
+            overflow-x: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .tab-btn {
+            font-family: 'solaimanLipi', serif;
+            width: 100%;
+            padding: 10px 20px;
+            border: none;
+            background-color: #f0f0f0;
+            cursor: pointer;
+            background-color: #943E3E;
+            color: white;
+            border: 1px solid #c5c5c5;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            transition: background-color 0.1s ease, font-size 0.1s ease;
+        }
+
+        .tab-btn:hover {
+            background-color: #803e3e;
+        }
+
+        .tab-btn.active {
+            background-color: #592E2E;
+        }
+
+        .hotNews::after {
+            content: 'hot';
+            font-size: 0.5rem;
+            background-color: red;
+            padding: 0.1rem;
+            position: absolute;
+            margin: -0.5rem 0.5rem;
+        }
+
+        .hotNews:hover::after {
+            background-color: #09ff00;
+            color: black;
+        }
+
+        .tab-content {
+            overflow: hidden;
+        }
+
+        .tab-item {
+            display: none;
+        }
+
+        .tab-item.active {
+            display: block;
+            animation: slideInRight 0.5s ease forwards;
+        }
+
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100%);
+            }
+
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        .tabCol {
+                float: right;
+                width: 95%;
+                padding: 0.5rem 0;
+
+            }
+
+            .colContents {
+                background-color: #fcf3ec;
+                border-top-left-radius: 0.5rem;
+                border-bottom-left-radius: 0.5rem;
+                transition: all 0.2s ease-in-out;
+            }
+
+            .colContents:hover {
+                margin-left: -0.5rem;
+            }
+
+            .newsCont {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                margin-left: 1rem;
+                margin-right: 1.5rem;
+                padding: 0.8rem;
+            }
+
+            .newsCont a {
+                color: #121212;
+                font-size: 1.2rem;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: block-axis;
+                overflow: hidden;
+            }
+
+            .newsCont a:hover {
+                color: red;
+            }
+    </style>
+    <!-- TAB TOGGLE -->
+    <div class="tab-container">
+        <div class="tab">
+            <button class="tab-btn active" data-tab="tab1">আন্তর্জাতিক</button>
+            <button class="tab-btn" data-tab="tab2">জাতীয়</button>
+            <button class="tab-btn hotNews" data-tab="tab3">হট নিউজ</button>
         </div>
-        <div class="column-40 grid-item">
-            <!-- Content for the second column -->
-            <p>This is the second column which takes up 40% of the width.</p>
+
+        <div class="tab-content">
+            <!-- TAB CONTENT 1 -->
+            <div id="tab1" class="tab-item active">
+                <!-- TAB CONTENTS 1-->
+                <section class="tabCol">
+                    <div class="colContents">
+                        <div class="newsCont">
+                            <i class="fa-solid fa-circle"></i>
+                            <a href="#">ভিকারুননিসার এক শিক্ষক ও প্রাক্তন–বর্তমান চার শিক্ষার্থীর মৃত্যু</a>
+                        </div>
+                    </div>
+                </section>
+                <!-- TAB CONTENTS 1 END-->
+
+                <!-- TAB CONTENTS 2-->
+                <section class="tabCol">
+                    <div class="colContents">
+                        <div class="newsCont">
+                            <i class="fa-solid fa-circle"></i>
+                            <a href="#">ভিকারুননিসার এক শিক্ষক ও প্রাক্তন–বর্তমান চার শিক্ষার্থীর মৃত্যু</a>
+                        </div>
+                    </div>
+                </section>
+                <!-- TAB CONTENTS 2 END-->
+
+                <!-- TAB CONTENTS 3 -->
+                <section class="tabCol">
+                    <div class="colContents">
+                        <div class="newsCont">
+                            <i class="fa-solid fa-circle"></i>
+                            <a href="#">ভিকারুননিসার এক শিক্ষক ও প্রাক্তন–বর্তমান চার শিক্ষার্থীর মৃত্যু</a>
+                        </div>
+                    </div>
+                </section>
+                <!-- TAB CONTENTS 3 END-->
+
+                <!-- TAB CONTENTS 4 -->
+                <section class="tabCol">
+                    <div class="colContents">
+                        <div class="newsCont">
+                            <i class="fa-solid fa-circle"></i>
+                            <a href="#">ভিকারুননিসার এক শিক্ষক ও প্রাক্তন–বর্তমান চার শিক্ষার্থীর মৃত্যু</a>
+                        </div>
+                    </div>
+                </section>
+                <!-- TAB CONTENTS 4 END-->
+
+                <!-- TAB CONTENTS 5 -->
+                <section class="tabCol">
+                    <div class="colContents">
+                        <div class="newsCont">
+                            <i class="fa-solid fa-circle"></i>
+                            <a href="#">রাষ্ট্রের কাছ থেকে নাগরিক হিসেবে আমাদের আশা–ভরসার শেষ নেই। কিন্তু এই রাষ্ট্র
+                                আপনাকে-আমাকে নিরাপদভাবে বাঁচিয়ে রাখার কতটা চেষ্টা করে আসলে?</a>
+                        </div>
+                    </div>
+                </section>
+                <!-- TAB CONTENTS 5 END-->
+            </div>
+
+            <!-- TAB CONTENT 2 -->
+            <div id="tab2" class="tab-item">
+                <!-- TAB CONTENTS 1-->
+                <section class="tabCol">
+                    <div class="colContents">
+                        <div class="newsCont">
+                            <i class="fa-solid fa-circle"></i>
+                            <a href="#">রাষ্ট্রের কাছ থেকে নাগরিক হিসেবে আমাদের আশা–ভরসার শেষ নেই। কিন্তু এই রাষ্ট্র
+                                আপনাকে-আমাকে নিরাপদভাবে বাঁচিয়ে রাখার কতটা চেষ্টা করে আসলে?</a>
+                        </div>
+                    </div>
+                </section>
+                <!-- TAB CONTENTS 1 END-->
+
+                <!-- TAB CONTENTS 2-->
+                <section class="tabCol">
+                    <div class="colContents">
+                        <div class="newsCont">
+                            <i class="fa-solid fa-circle"></i>
+                            <a href="#">রাষ্ট্রের কাছ থেকে নাগরিক হিসেবে আমাদের আশা–ভরসার শেষ নেই। কিন্তু এই রাষ্ট্র
+                                আপনাকে-আমাকে নিরাপদভাবে বাঁচিয়ে রাখার কতটা চেষ্টা করে আসলে?</a>
+                        </div>
+                    </div>
+                </section>
+                <!-- TAB CONTENTS 2 END-->
+
+                <!-- TAB CONTENTS 3 -->
+                <section class="tabCol">
+                    <div class="colContents">
+                        <div class="newsCont">
+                            <i class="fa-solid fa-circle"></i>
+                            <a href="#">রাষ্ট্রের কাছ থেকে নাগরিক হিসেবে আমাদের আশা–ভরসার শেষ নেই। কিন্তু এই রাষ্ট্র
+                                আপনাকে-আমাকে নিরাপদভাবে বাঁচিয়ে রাখার কতটা চেষ্টা করে আসলে?</a>
+                        </div>
+                    </div>
+                </section>
+                <!-- TAB CONTENTS 3 END-->
+
+                <!-- TAB CONTENTS 4 -->
+                <section class="tabCol">
+                    <div class="colContents">
+                        <div class="newsCont">
+                            <i class="fa-solid fa-circle"></i>
+                            <a href="#">রাষ্ট্রের কাছ থেকে নাগরিক হিসেবে আমাদের আশা–ভরসার শেষ নেই। কিন্তু এই রাষ্ট্র
+                                আপনাকে-আমাকে নিরাপদভাবে বাঁচিয়ে রাখার কতটা চেষ্টা করে আসলে?</a>
+                        </div>
+                    </div>
+                </section>
+                <!-- TAB CONTENTS 4 END-->
+
+                <!-- TAB CONTENTS 5 -->
+                <section class="tabCol">
+                    <div class="colContents">
+                        <div class="newsCont">
+                            <i class="fa-solid fa-circle"></i>
+                            <a href="#">রাষ্ট্রের কাছ থেকে নাগরিক হিসেবে আমাদের আশা–ভরসার শেষ নেই। কিন্তু এই রাষ্ট্র
+                                আপনাকে-আমাকে নিরাপদভাবে বাঁচিয়ে রাখার কতটা চেষ্টা করে আসলে?</a>
+                        </div>
+                    </div>
+                </section>
+                <!-- TAB CONTENTS 5 END-->
+            </div>
+
+            <!-- TAB CONTENT 3 -->
+            <div id="tab3" class="tab-item">
+                <!-- TAB CONTENTS 1-->
+                <section class="tabCol">
+                    <div class="colContents">
+                        <div class="newsCont">
+                            <i class="fa-solid fa-circle"></i>
+                            <a href="#">ভিকারুননিসা নূন পরিবারের এই পাঁচ সদস্যের প্রতি শ্রদ্ধা জানাতে প্রতিষ্ঠানটির ভারপ্রাপ্ত অধ্যক্ষ কেকা রায় চৌধুরী</a>
+                        </div>
+                    </div>
+                </section>
+                <!-- TAB CONTENTS 1 END-->
+
+                <!-- TAB CONTENTS 2-->
+                <section class="tabCol">
+                    <div class="colContents">
+                        <div class="newsCont">
+                            <i class="fa-solid fa-circle"></i>
+                            <a href="#">ভিকারুননিসা নূন পরিবারের এই পাঁচ সদস্যের প্রতি শ্রদ্ধা জানাতে প্রতিষ্ঠানটির ভারপ্রাপ্ত অধ্যক্ষ কেকা রায় চৌধুরী</a>
+                        </div>
+                    </div>
+                </section>
+                <!-- TAB CONTENTS 2 END-->
+
+                <!-- TAB CONTENTS 3 -->
+                <section class="tabCol">
+                    <div class="colContents">
+                        <div class="newsCont">
+                            <i class="fa-solid fa-circle"></i>
+                            <a href="#">ভিকারুননিসা নূন পরিবারের এই পাঁচ সদস্যের প্রতি শ্রদ্ধা জানাতে প্রতিষ্ঠানটির ভারপ্রাপ্ত অধ্যক্ষ কেকা রায় চৌধুরী</a>
+                        </div>
+                    </div>
+                </section>
+                <!-- TAB CONTENTS 3 END-->
+
+                <!-- TAB CONTENTS 4 -->
+                <section class="tabCol">
+                    <div class="colContents">
+                        <div class="newsCont">
+                            <i class="fa-solid fa-circle"></i>
+                            <a href="#">ভিকারুননিসা নূন পরিবারের এই পাঁচ সদস্যের প্রতি শ্রদ্ধা জানাতে প্রতিষ্ঠানটির ভারপ্রাপ্ত অধ্যক্ষ কেকা রায় চৌধুরী</a>
+                        </div>
+                    </div>
+                </section>
+                <!-- TAB CONTENTS 4 END-->
+
+                <!-- TAB CONTENTS 5 -->
+                <section class="tabCol">
+                    <div class="colContents">
+                        <div class="newsCont">
+                            <i class="fa-solid fa-circle"></i>
+                            <a href="#">ভিকারুননিসা নূন পরিবারের এই পাঁচ সদস্যের প্রতি শ্রদ্ধা জানাতে প্রতিষ্ঠানটির ভারপ্রাপ্ত অধ্যক্ষ কেকা রায় চৌধুরী</a>
+                        </div>
+                    </div>
+                </section>
+                <!-- TAB CONTENTS 5 END-->
+            </div>
         </div>
     </div>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".tab-btn").click(function () {
+                var tab_id = $(this).attr('data-tab');
+
+                $(".tab-btn").removeClass('active');
+                $(".tab-item").removeClass('active');
+
+                $(this).addClass('active');
+                $("#" + tab_id).addClass('active');
+            });
+        });
+
+    </script>
 </body>
 
 </html>
