@@ -1,934 +1,899 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link href="https://fonts.cdnfonts.com/css/solaimanlipi" rel="stylesheet" />
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
-      integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="style.css" />
-  </head>
 
-  <body>
-    <!-- DATE BLOCK -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.cdnfonts.com/css/solaimanlipi" rel="stylesheet" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous" />
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-    <div
-      class="flexJustifySpaceBetweenAlignCenter width__90 marginAuto paddingTB__05"
-    >
-      <!-- .dateBlock >> p >> a -->
-      <div class="text__09 cursor__Help" title="বাংলা, ইংরেজি ও হিজরি তারিখ">
-        <p class="dateBlock">
-          আজ (বাংলা) বৃহঃস্পতিবার ১১ই মাঘ ১৪৩০ বঙ্গাব্দ, ২৫ জানুয়ারি ২০২৪
-          খ্রিষ্টাব্দ, ১৩ রজব ১৪৪৫ হিজরি
-        </p>
-      </div>
-      <!-- .dateBlock >> .socialMedia -->
-      <div class="socialMedia flexRow gap__05">
-        <a href="#" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
-        <a href="#" title="Messenger"
-          ><i class="fa-brands fa-facebook-messenger"></i
-        ></a>
-        <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-        <a href="#" title="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
-        <a href="#" title="Linkedin"><i class="fa-brands fa-linkedin"></i></a>
-      </div>
+<body>
+  <!-- DATE BLOCK -->
+
+  <div class="flexJustifySpaceBetweenAlignCenter width__90 marginAuto paddingTB__05">
+    <!-- .dateBlock >> p >> a -->
+    <div class="text__09 cursor__Help" title="বাংলা, ইংরেজি ও হিজরি তারিখ">
+      <p class="dateBlock">
+        আজ (বাংলা) বৃহঃস্পতিবার ১১ই মাঘ ১৪৩০ বঙ্গাব্দ, ২৫ জানুয়ারি ২০২৪
+        খ্রিষ্টাব্দ, ১৩ রজব ১৪৪৫ হিজরি
+      </p>
     </div>
+    <!-- .dateBlock >> .socialMedia -->
+    <div class="socialMedia flexRow gap__05">
+      <a href="#" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+      <a href="#" title="Messenger"><i class="fa-brands fa-facebook-messenger"></i></a>
+      <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+      <a href="#" title="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+      <a href="#" title="Linkedin"><i class="fa-brands fa-linkedin"></i></a>
+    </div>
+  </div>
 
-    <!-- NAVIGATION BAR -->
-    <div class="relativeNav position__Sticky top__0">
-      <span class="fullWidth">
-        <div class="navbar paddingTB__06">
-          <div class="left-section">
-            <i class="hamburger fa-solid fa-bars" onclick="toggleMenu()"></i>
-            <img class="logo" src="img.png" alt="" />
-          </div>
-          <div class="center-section">
-            <!-- Nav Menu -->
-            <ul class="navMenu">
-              <li><a href="newsView.html" title="প্রথম পাতা">প্রথম পাতা</a></li>
-              <li><a href="#" title="সিলেট">সিলেট</a></li>
-              <li><a href="#" title="দেশ">দেশ</a></li>
-              <li><a href="#" title="রাজনীতি">রাজনীতি</a></li>
-              <li><a href="#" title="খেলাধুলা">খেলাধুলা</a></li>
-              <li><a href="#" title="আন্তর্জাতিক">আন্তর্জাতিক</a></li>
-              <li><a href="#" title="বাণিজ্য">বাণিজ্য</a></li>
-              <li><a href="#" title="চাকরি">চাকরি</a></li>
-              <li><a href="#" title="বিনোদন">বিনোদন</a></li>
-              <li><a href="#" title="ধর্ম">ধর্ম</a></li>
-            </ul>
-          </div>
-          <div class="right-section">
-            <!-- Search bar -->
-            <i class="fa-solid fa-search" id="searchIcon"></i>
-            <i class="fa-solid fa-x" id="closeIcon"></i>
-          </div>
-          <!-- INPUT BOX -->
-          <div class="search-input">
-            <input type="text" placeholder="Search..." />
-          </div>
+  <!-- NAVIGATION BAR -->
+  <div class="relativeNav position__Sticky top__0">
+    <span class="fullWidth">
+      <div class="navbar paddingTB__06">
+        <div class="left-section">
+          <i class="hamburger fa-solid fa-bars" onclick="toggleMenu()"></i>
+          <img class="logo" src="img.png" alt="" />
         </div>
-      </span>
-
-      <section class="fullResNav">
-        <nav class="resNav">
-          <section class="col1 paddingTB__10">
-            <div class="paddingLB__1">
-              <h2>বাংলাদেশ</h2>
-              <i class="fa-solid fa-chevron-right"></i>
-            </div>
-            <ul class="marginTop__05 text__10">
-              <li>
-                <i class="fa fa-angle-right"></i>
-                <a href="newsView.html" title="রাজধানী">রাজধানী</a>
-              </li>
-              <li>
-                <i class="fa fa-angle-right"></i>
-                <a href="newsView.html" title="জেলা">জেলা</a>
-              </li>
-              <li>
-                <i class="fa fa-angle-right"></i>
-                <a href="#" title="করোনাভাইরাস">করোনাভাইরাস</a>
-              </li>
-              <li>
-                <i class="fa fa-angle-right"></i>
-                <a href="#" title="পরিবেশ">পরিবেশ</a>
-              </li>
-              <li>
-                <i class="fa fa-angle-right"></i>
-                <a href="#" title="অপরাধ">অপরাধ</a>
-              </li>
-            </ul>
-          </section>
-
-          <section class="col2 paddingTB__10">
-            <div class="paddingLB__1">
-              <h2>বিশ্ব</h2>
-              <i class="fa-solid fa-chevron-right"></i>
-            </div>
-            <ul class="marginTop__05 text__10">
-              <li>
-                <i class="fa fa-angle-right"></i>
-                <a href="#" title="ভারত">ভারত</a>
-              </li>
-              <li>
-                <i class="fa fa-angle-right"></i>
-                <a href="#" title="চীন">চীন</a>
-              </li>
-              <li>
-                <i class="fa fa-angle-right"></i>
-                <a href="#" title="মধ্যপ্রাচ্য">মধ্যপ্রাচ্য</a>
-              </li>
-              <li>
-                <i class="fa fa-angle-right"></i>
-                <a href="#" title="যুক্তরাষ্ট্র">যুক্তরাষ্ট্র</a>
-              </li>
-              <li>
-                <i class="fa fa-angle-right"></i>
-                <a href="#" title="এশিয়া">এশিয়া</a>
-              </li>
-              <li>
-                <i class="fa fa-angle-right"></i>
-                <a href="#" title="ইউরোপ">ইউরোপ</a>
-              </li>
-              <li>
-                <i class="fa fa-angle-right"></i>
-                <a href="#" title="আফ্রিকা">আফ্রিকা</a>
-              </li>
-              <li>
-                <i class="fa fa-angle-right"></i>
-                <a href="#" title="লাতিন আমেরিকা">লাতিন আমেরিকা</a>
-              </li>
-            </ul>
-          </section>
-
-          <section class="col3 paddingTB__10">
-            <div class="paddingLB__1">
-              <h2>বিদেশ</h2>
-              <i class="fa-solid fa-chevron-right"></i>
-            </div>
-            <ul class="marginTop__05 text__10">
-              <li>
-                <i class="fa fa-angle-right"></i>
-                <a href="#" title="ভারত">ভারত</a>
-              </li>
-              <li>
-                <i class="fa fa-angle-right"></i>
-                <a href="#" title="চীন">চীন</a>
-              </li>
-              <li>
-                <i class="fa fa-angle-right"></i>
-                <a href="#" title="মধ্যপ্রাচ্য">মধ্যপ্রাচ্য</a>
-              </li>
-              <li>
-                <i class="fa fa-angle-right"></i>
-                <a href="#" title="যুক্তরাষ্ট্র">যুক্তরাষ্ট্র</a>
-              </li>
-              <li>
-                <i class="fa fa-angle-right"></i>
-                <a href="#" title="এশিয়া">এশিয়া</a>
-              </li>
-              <li>
-                <i class="fa fa-angle-right"></i>
-                <a href="#" title="ইউরোপ">ইউরোপ</a>
-              </li>
-              <li>
-                <i class="fa fa-angle-right"></i>
-                <a href="#" title="আফ্রিকা">আফ্রিকা</a>
-              </li>
-              <li>
-                <i class="fa fa-angle-right"></i>
-                <a href="#" title="লাতিন আমেরিকা">লাতিন আমেরিকা</a>
-              </li>
-            </ul>
-          </section>
-          <section class="col4 paddingTB__10">
-            <div class="paddingLB__1">
-              <h2>বিনোদন</h2>
-              <i class="fa-solid fa-chevron-right"></i>
-            </div>
-            <ul class="marginTop__05 text__10">
-              <li>
-                <i class="fa fa-angle-right"></i>
-                <a href="#" title="টেলিভিশন">টেলিভিশন</a>
-              </li>
-              <li>
-                <i class="fa fa-angle-right"></i>
-                <a href="#" title="ওটিটি">ওটিটি</a>
-              </li>
-              <li>
-                <i class="fa fa-angle-right"></i>
-                <a href="#" title="ঢালিউড">ঢালিউড</a>
-              </li>
-              <li>
-                <i class="fa fa-angle-right"></i>
-                <a href="#" title="টালিউড">টালিউড</a>
-              </li>
-              <li>
-                <i class="fa fa-angle-right"></i>
-                <a href="#" title="বলিউড">বলিউড</a>
-              </li>
-              <li>
-                <i class="fa fa-angle-right"></i>
-                <a href="#" title="হলিউড">হলিউড</a>
-              </li>
-              <li>
-                <i class="fa fa-angle-right"></i>
-                <a href="#" title="বিশ্ব চলচ্চিত্র">বিশ্ব চলচ্চিত্র</a>
-              </li>
-              <li>
-                <i class="fa fa-angle-right"></i>
-                <a href="#" title="গান">গান</a>
-              </li>
-              <li>
-                <i class="fa fa-angle-right"></i>
-                <a href="#" title="নাটক">নাটক</a>
-              </li>
-              <li>
-                <i class="fa fa-angle-right"></i>
-                <a href="#" title="আলাপন">আলাপন</a>
-              </li>
-            </ul>
-          </section>
-
-          <section class="col5 paddingTB__10">
-            <div class="paddingLB__1">
-              <h2>চাকরি</h2>
-              <i class="fa-solid fa-chevron-right"></i>
-            </div>
-            <ul class="marginTop__05 text__10">
-              <li>
-                <i class="fa fa-angle-right"></i>
-                <a href="#" title="নিয়োগ">নিয়োগ</a>
-              </li>
-              <li>
-                <i class="fa fa-angle-right"></i>
-                <a href="#" title="পরামর্শ">পরামর্শ</a>
-              </li>
-              <li>
-                <i class="fa fa-angle-right"></i>
-                <a href="#" title="সাক্ষাৎকার">সাক্ষাৎকার</a>
-              </li>
-            </ul>
-          </section>
-          <section class="col6 paddingTB__10">
-            <div class="paddingLB__1">
-              <h2>খেলাধুলা</h2>
-              <i class="fa-solid fa-chevron-right"></i>
-            </div>
-            <ul class="marginTop__05 text__10">
-              <li>
-                <i class="fa fa-angle-right"></i>
-                <a href="#" title="ক্রিকেট">ক্রিকেট</a>
-              </li>
-              <li>
-                <i class="fa fa-angle-right"></i>
-                <a href="#" title="ফুটবল">ফুটবল</a>
-              </li>
-              <li>
-                <i class="fa fa-angle-right"></i>
-                <a href="#" title="অন্য খেলা">অন্য খেলা</a>
-              </li>
-              <li>
-                <i class="fa fa-angle-right"></i>
-                <a href="#" title="সাক্ষাৎকার">সাক্ষাৎকার</a>
-              </li>
-              <li>
-                <i class="fa fa-angle-right"></i>
-                <a href="#" title="ফটো ফিচার">ফটো ফিচার</a>
-              </li>
-              <li>
-                <i class="fa fa-angle-right"></i>
-                <a href="#" title="কুইজ">কুইজ</a>
-              </li>
-            </ul>
-          </section>
-        </nav>
-      </section>
-    </div>
-
-    <!-- MARQUEE TEXT BLOCK -->
-    <div class="marqueeBlock">
-      <div class="highlight">
-        <h2>শিরোনাম</h2>
-        <div class="marquee-bg"></div>
-        <marquee class="marquee" behavior="" direction="">
-          <ul>
-            <li>
-              <a href="#"
-                >আন্তর্জাতিক মাতৃভাষা ইনস্টিটিউটের মহাপরিচালক হাকিম আরিফ</a
-              >
-            </li>
-            <li>
-              <a href="#"
-                >ধরনের প্রতিষ্ঠানের উদ্দেশ্যকে ভিত্তি করে যে কর্মপরিকল্পনা
-                দরকার</a
-              >
-            </li>
-            <li>
-              <a href="#"
-                >আন্তর্জাতিক মাতৃভাষা ইনস্টিটিউটের সঙ্গে গবেষকদের সম্পৃক্ততা
-                বাড়ানো জরুরি</a
-              >
-            </li>
-            <li>
-              <a href="#"
-                >১৯৯৯ সালে ইউনেসকো একুশে ফেব্রুয়ারিকে আন্তর্জাতিক মাতৃভাষা দিবস
-                হিসেবে স্বীকৃতি দেওয়ার</a
-              >
-            </li>
-            <li><a href="#">এই ইনস্টিটিউটের ২৩টি দায়িত্ব পালন করার কথা</a></li>
+        <div class="center-section">
+          <!-- Nav Menu -->
+          <ul class="navMenu">
+            <li><a href="newsView.html" title="প্রথম পাতা">প্রথম পাতা</a></li>
+            <li><a href="#" title="সিলেট">সিলেট</a></li>
+            <li><a href="#" title="দেশ">দেশ</a></li>
+            <li><a href="#" title="রাজনীতি">রাজনীতি</a></li>
+            <li><a href="#" title="খেলাধুলা">খেলাধুলা</a></li>
+            <li><a href="#" title="আন্তর্জাতিক">আন্তর্জাতিক</a></li>
+            <li><a href="#" title="বাণিজ্য">বাণিজ্য</a></li>
+            <li><a href="#" title="চাকরি">চাকরি</a></li>
+            <li><a href="#" title="বিনোদন">বিনোদন</a></li>
+            <li><a href="#" title="ধর্ম">ধর্ম</a></li>
           </ul>
-        </marquee>
+        </div>
+        <div class="right-section">
+          <!-- Search bar -->
+          <i class="fa-solid fa-search" id="searchIcon"></i>
+          <i class="fa-solid fa-x" id="closeIcon"></i>
+        </div>
+        <!-- INPUT BOX -->
+        <div class="search-input">
+          <input type="text" placeholder="Search..." />
+        </div>
+      </div>
+      <!-- ARTICLE PROGRESS BAR -->
+      <div class="progress-bar">
+        <div class="progress-bar__mask"></div>
+      </div>
+    </span>
+
+    <section class="fullResNav">
+      <nav class="resNav">
+        <section class="col1 paddingTB__10">
+          <div class="paddingLB__1">
+            <h2>বাংলাদেশ</h2>
+            <i class="fa-solid fa-chevron-right"></i>
+          </div>
+          <ul class="marginTop__05 text__10">
+            <li>
+              <i class="fa fa-angle-right"></i>
+              <a href="newsView.html" title="রাজধানী">রাজধানী</a>
+            </li>
+            <li>
+              <i class="fa fa-angle-right"></i>
+              <a href="newsView.html" title="জেলা">জেলা</a>
+            </li>
+            <li>
+              <i class="fa fa-angle-right"></i>
+              <a href="#" title="করোনাভাইরাস">করোনাভাইরাস</a>
+            </li>
+            <li>
+              <i class="fa fa-angle-right"></i>
+              <a href="#" title="পরিবেশ">পরিবেশ</a>
+            </li>
+            <li>
+              <i class="fa fa-angle-right"></i>
+              <a href="#" title="অপরাধ">অপরাধ</a>
+            </li>
+          </ul>
+        </section>
+
+        <section class="col2 paddingTB__10">
+          <div class="paddingLB__1">
+            <h2>বিশ্ব</h2>
+            <i class="fa-solid fa-chevron-right"></i>
+          </div>
+          <ul class="marginTop__05 text__10">
+            <li>
+              <i class="fa fa-angle-right"></i>
+              <a href="#" title="ভারত">ভারত</a>
+            </li>
+            <li>
+              <i class="fa fa-angle-right"></i>
+              <a href="#" title="চীন">চীন</a>
+            </li>
+            <li>
+              <i class="fa fa-angle-right"></i>
+              <a href="#" title="মধ্যপ্রাচ্য">মধ্যপ্রাচ্য</a>
+            </li>
+            <li>
+              <i class="fa fa-angle-right"></i>
+              <a href="#" title="যুক্তরাষ্ট্র">যুক্তরাষ্ট্র</a>
+            </li>
+            <li>
+              <i class="fa fa-angle-right"></i>
+              <a href="#" title="এশিয়া">এশিয়া</a>
+            </li>
+            <li>
+              <i class="fa fa-angle-right"></i>
+              <a href="#" title="ইউরোপ">ইউরোপ</a>
+            </li>
+            <li>
+              <i class="fa fa-angle-right"></i>
+              <a href="#" title="আফ্রিকা">আফ্রিকা</a>
+            </li>
+            <li>
+              <i class="fa fa-angle-right"></i>
+              <a href="#" title="লাতিন আমেরিকা">লাতিন আমেরিকা</a>
+            </li>
+          </ul>
+        </section>
+
+        <section class="col3 paddingTB__10">
+          <div class="paddingLB__1">
+            <h2>বিদেশ</h2>
+            <i class="fa-solid fa-chevron-right"></i>
+          </div>
+          <ul class="marginTop__05 text__10">
+            <li>
+              <i class="fa fa-angle-right"></i>
+              <a href="#" title="ভারত">ভারত</a>
+            </li>
+            <li>
+              <i class="fa fa-angle-right"></i>
+              <a href="#" title="চীন">চীন</a>
+            </li>
+            <li>
+              <i class="fa fa-angle-right"></i>
+              <a href="#" title="মধ্যপ্রাচ্য">মধ্যপ্রাচ্য</a>
+            </li>
+            <li>
+              <i class="fa fa-angle-right"></i>
+              <a href="#" title="যুক্তরাষ্ট্র">যুক্তরাষ্ট্র</a>
+            </li>
+            <li>
+              <i class="fa fa-angle-right"></i>
+              <a href="#" title="এশিয়া">এশিয়া</a>
+            </li>
+            <li>
+              <i class="fa fa-angle-right"></i>
+              <a href="#" title="ইউরোপ">ইউরোপ</a>
+            </li>
+            <li>
+              <i class="fa fa-angle-right"></i>
+              <a href="#" title="আফ্রিকা">আফ্রিকা</a>
+            </li>
+            <li>
+              <i class="fa fa-angle-right"></i>
+              <a href="#" title="লাতিন আমেরিকা">লাতিন আমেরিকা</a>
+            </li>
+          </ul>
+        </section>
+        <section class="col4 paddingTB__10">
+          <div class="paddingLB__1">
+            <h2>বিনোদন</h2>
+            <i class="fa-solid fa-chevron-right"></i>
+          </div>
+          <ul class="marginTop__05 text__10">
+            <li>
+              <i class="fa fa-angle-right"></i>
+              <a href="#" title="টেলিভিশন">টেলিভিশন</a>
+            </li>
+            <li>
+              <i class="fa fa-angle-right"></i>
+              <a href="#" title="ওটিটি">ওটিটি</a>
+            </li>
+            <li>
+              <i class="fa fa-angle-right"></i>
+              <a href="#" title="ঢালিউড">ঢালিউড</a>
+            </li>
+            <li>
+              <i class="fa fa-angle-right"></i>
+              <a href="#" title="টালিউড">টালিউড</a>
+            </li>
+            <li>
+              <i class="fa fa-angle-right"></i>
+              <a href="#" title="বলিউড">বলিউড</a>
+            </li>
+            <li>
+              <i class="fa fa-angle-right"></i>
+              <a href="#" title="হলিউড">হলিউড</a>
+            </li>
+            <li>
+              <i class="fa fa-angle-right"></i>
+              <a href="#" title="বিশ্ব চলচ্চিত্র">বিশ্ব চলচ্চিত্র</a>
+            </li>
+            <li>
+              <i class="fa fa-angle-right"></i>
+              <a href="#" title="গান">গান</a>
+            </li>
+            <li>
+              <i class="fa fa-angle-right"></i>
+              <a href="#" title="নাটক">নাটক</a>
+            </li>
+            <li>
+              <i class="fa fa-angle-right"></i>
+              <a href="#" title="আলাপন">আলাপন</a>
+            </li>
+          </ul>
+        </section>
+
+        <section class="col5 paddingTB__10">
+          <div class="paddingLB__1">
+            <h2>চাকরি</h2>
+            <i class="fa-solid fa-chevron-right"></i>
+          </div>
+          <ul class="marginTop__05 text__10">
+            <li>
+              <i class="fa fa-angle-right"></i>
+              <a href="#" title="নিয়োগ">নিয়োগ</a>
+            </li>
+            <li>
+              <i class="fa fa-angle-right"></i>
+              <a href="#" title="পরামর্শ">পরামর্শ</a>
+            </li>
+            <li>
+              <i class="fa fa-angle-right"></i>
+              <a href="#" title="সাক্ষাৎকার">সাক্ষাৎকার</a>
+            </li>
+          </ul>
+        </section>
+        <section class="col6 paddingTB__10">
+          <div class="paddingLB__1">
+            <h2>খেলাধুলা</h2>
+            <i class="fa-solid fa-chevron-right"></i>
+          </div>
+          <ul class="marginTop__05 text__10">
+            <li>
+              <i class="fa fa-angle-right"></i>
+              <a href="#" title="ক্রিকেট">ক্রিকেট</a>
+            </li>
+            <li>
+              <i class="fa fa-angle-right"></i>
+              <a href="#" title="ফুটবল">ফুটবল</a>
+            </li>
+            <li>
+              <i class="fa fa-angle-right"></i>
+              <a href="#" title="অন্য খেলা">অন্য খেলা</a>
+            </li>
+            <li>
+              <i class="fa fa-angle-right"></i>
+              <a href="#" title="সাক্ষাৎকার">সাক্ষাৎকার</a>
+            </li>
+            <li>
+              <i class="fa fa-angle-right"></i>
+              <a href="#" title="ফটো ফিচার">ফটো ফিচার</a>
+            </li>
+            <li>
+              <i class="fa fa-angle-right"></i>
+              <a href="#" title="কুইজ">কুইজ</a>
+            </li>
+          </ul>
+        </section>
+      </nav>
+    </section>
+  </div>
+
+  <!-- MARQUEE TEXT BLOCK -->
+  <div class="marqueeBlock">
+    <div class="highlight">
+      <h2>শিরোনাম</h2>
+      <div class="marquee-bg"></div>
+      <marquee class="marquee" behavior="" direction="">
+        <ul>
+          <li>
+            <a href="#">আন্তর্জাতিক মাতৃভাষা ইনস্টিটিউটের মহাপরিচালক হাকিম আরিফ</a>
+          </li>
+          <li>
+            <a href="#">ধরনের প্রতিষ্ঠানের উদ্দেশ্যকে ভিত্তি করে যে কর্মপরিকল্পনা
+              দরকার</a>
+          </li>
+          <li>
+            <a href="#">আন্তর্জাতিক মাতৃভাষা ইনস্টিটিউটের সঙ্গে গবেষকদের সম্পৃক্ততা
+              বাড়ানো জরুরি</a>
+          </li>
+          <li>
+            <a href="#">১৯৯৯ সালে ইউনেসকো একুশে ফেব্রুয়ারিকে আন্তর্জাতিক মাতৃভাষা দিবস
+              হিসেবে স্বীকৃতি দেওয়ার</a>
+          </li>
+          <li><a href="#">এই ইনস্টিটিউটের ২৩টি দায়িত্ব পালন করার কথা</a></li>
+        </ul>
+      </marquee>
+    </div>
+  </div>
+
+  <div class="postBody">
+    <!-- LEFT -->
+    <div class="leftSection">
+      <!-- ADS -->
+      <div class="topAds">
+        <img class="resImg" src="https://dummyimage.com/1200x150/dda/fff" alt="Bottom Ads" />
+      </div>
+      <!-- CATEGORY -->
+      <div class="postCat">
+        <i class="bi bi-tag"></i>
+        <a href="#" title="এই ক্যাটাগরির সকল নিউজ দেখতে ক্লিক করুন">আন্তর্জাতিক</a>
+        <i class="bi bi-chevron-double-right"></i>
+        <a href="#" title="এই ক্যাটাগরির সকল নিউজ দেখতে ক্লিক করুন">বাংলাদেশ</a>
+      </div>
+
+      <!-- POST TITLE -->
+      <h1 class="text__16">রাজধানীর বেইলি রোডে বহুতল ভবনে আগুনে অন্তত তিনজন নিহত হয়েছেন</h1>
+      <!-- WRITER INFORMATION -->
+      <div
+        class="writerContainer flexJustifyStartAlignCenter gap__05 flexWrap border__Bottom marginBottom__20 paddingTB__08">
+        <span>
+          <i class="bi bi-person"></i>&nbsp;
+          <a href="#" title="লেখাটির লেখক">সুরজিত সিংহ শিশির</a>
+        </span>
+        <span>
+          <i class="bi bi-calendar"></i>&nbsp;
+          <a href="#" title="নিউজটি প্রকাশের সময়">১লা মার্চ, ২০২৪</a>
+        </span>
+
+        <span style="display: flex; align-items: center">
+          <i class="bi bi-stopwatch"></i>&nbsp;
+          <p title="সংবাদ প্রকাশের সময়">১৪:৩০ ঘটিকা</p>
+        </span>
+
+
+        <!-- SOCIAL SHARE -->
+        <span class="flexJustifySpaceBetweenAlignCenter gap__05 padding__05 border__01 border__Rad_05">
+
+          <span class="text__Align_Center border__01 paddingLR__10 border__Rad_05 text__Black">
+            <p>মোট শেয়ার</p>
+            <p>৫০</p>
+          </span>
+
+            <a class="flexJustifyCenterAlignCenter border__01 border__Rad_05 border__Gray paddingTB__05 paddingLR__10 bg__SeaGreen text__White gap__05" href="#" target="_blank" rel="noopener noreferrer">
+              <i class="bi bi-facebook text__15"></i>
+              <p class="text__10 ">১৫</p>
+            </a>
+          
+          <a href="#" target="_blank" rel="noopener noreferrer"><i class="bi bi-twitter-x"></i></a>
+
+          <a href="#" target="_blank" rel="noopener noreferrer"><i class="bi bi-instagram"></i></a>
+
+          <a href="#" target="_blank" rel="noopener noreferrer"><i class="bi bi-printer"></i></a>
+
+          <a href="#" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin"></i></a>
+
+          <a href="#" target="_blank" rel="noopener noreferrer"><i class="bi bi-whatsapp"></i></a>
+
+          <a href="#" target="_blank" rel="noopener noreferrer"><i class="bi bi-telegram"></i></a>
+          
+          <a href="#" target="_blank" rel="noopener noreferrer"><i class="bi bi-envelope"></i></a>
+
+        </span>
+      </div>
+      <!-- FEATURE IMAGE -->
+      <div class="featureImg">
+        <img class="resImg" src="https://dummyimage.com/800x600" alt="" />
+      </div>
+
+      <div class="postDescription">
+        <article>
+          খুলনা–বাগেরহাট আসা–যাওয়ার পথে সুযোগ পেলে ভ্যাট্টেপাড়ায় (ভাটিয়াপাড়া)
+          বিরতি নেওয়ার চেষ্টা করি। সেখানে এক প্রবীণ চা বিক্রেতা খুব আদর করে চা
+          পরিবেশন করেন। চায়ের চেয়ে মন টানে তাঁর কথায়। কত খবর যে জমা থাকে তাঁর
+          বুকে!! শুধু খেই ধরিয়ে দিলেই হলো। তিনিও জানতে চান, ‘কী ধান্দায় কোথায়
+          মেলা করছি। কত দিনের সফর? ফেরার পথে রাত হবে কি না? তাড়া থাকলে একটা
+          মিসড কল মাইরে দেবেন। সর (দুধের সর) উঠায়ে রাখব মালাই চা খাইয়ে যাবেন।’
+          এবার ফেরার পথে দেখি, সন্ধ্যার আগেই তাঁর দোকানের ঝাঁপ নামানো। খোঁজ
+          নিতেই জানা গেল, তাদের গ্রামের একজন বিষ খেয়েছে, তাকে নিয়ে ছোটাছুটি
+          চলছে। দোকান বন্ধ করে ছোটাছুটির দলের নেতৃত্ব দিতে গেছেন প্রবীণ চা
+          বিক্রেতা। আমার মিসড কলের সূত্র ধরে রাত ১১টার দিকে ফোন করলেন প্রবীণ।
+          তিনি তখনো রোগীর সঙ্গে মেডিকেলের পথে। ফোনে তিনি জানালেন, ‘আমরা পদ্মা
+          সেতুতে। মালা (ছদ্মনাম), পড়াশোনা না করে মোবাইল হাতড়াইতে ছিল। তাই
+          বাবায় তারে বকা দেয়। আর তাতেই রাগ করে মালা ঘাস মারার বিষ গিলে ফেলে।
+          মুমূর্ষু মালাকে নিয়ে এখন যমে মানুষের টানাটানি চলছে। অবস্থা কেরোসিন
+          (আশঙ্কাজনক)। কচি বেডিডা বাঁচবে কি না কওয়া যাচ্ছে না।’ মুরব্বি প্রবীণ
+          সাধারণত মুখ খারাপ করেন না। এবার করলেন, ধমকও দিলেন। তাঁর বোধে আসে না
+          আমরা কী ‘ফ্যালাইতাছি’। আবার তাড়া দিলেন ‘ধান্দাবাজি’ না করে মানুষ ও
+          মানুষের সমস্যা নিয়ে লেখার জন্য। তিনি প্রথম আলোর একজন গুণমুগ্ধ কিন্তু
+          ছেড়ে কথা না বলা পাঠক। প্রবীণের ধমক খেয়ে মনে পড়ে চট্টগ্রাম মেডিকেল
+          কলেজ হাসপাতালের নেফ্রোলজি বিভাগের ডা. মো. সাদ্দাত হোসেনের কথা। একটি
+          জাতীয় দৈনিকে গত ১০ জুন ২০২৩ প্রকাশিত এক লেখায় তিনি বলেছিলেন,‘আগেও
+          খেতে পোকামাকড় মারার বিষ (ইনসেক্টিসাইড) খেয়ে মানুষ আত্মহত্যা করার
+          চেষ্টা করত। বিশ্বাস করুন, যারা পোকামাকড় মারার বিষ খেয়ে আসত, তারা
+          যদি কোনো হাসপাতালে পৌঁছাতে পারত, তবে তাদের শতকরা ৯৯ ভাগ রোগী ভালো
+          হয়ে যেত। কিন্তু এই ঘাস মারার বিষ খেয়ে যারাই ভর্তি হচ্ছে, এটা এতটাই
+          বিষাক্ত যে ওদের কাউকেই বাঁচানো সম্ভব হচ্ছে না।’ তিনি মানবদেহে এই
+          বিষের প্রতিক্রিয়া ব্যাখ্যা করতে গিয়ে লিখেছিলেন, ‘প্রথম দিকে এর
+          প্রতিক্রিয়া তেমন অনুভূত হয় না। শুধু জিহ্বায় কিছু ঘা দেখা দেয়।
+          এরপর আস্তে আস্তে অন্যান্য অঙ্গ বিকল হতে থাকে। প্রথমে কিডনি, তারপর
+          লিভার, তারপর ফুসফুস। একপর্যায়ে এসে শ্বাসকষ্ট বেড়ে যায়। শেষ
+          মুহূর্তে লাইভ সাপোর্ট দেওয়া লাগে। লাইভ সাপোর্ট দেওয়ার পরও রোগীকে
+          বাঁচানো যায় না। কারণ, ফুসফুস আক্রান্ত হয়ে ফাইব্রোসিস হয়ে যায়, যা
+          আর কোনো চিকিৎসাই ভালো করা যায় না।’ শুধু মানুষ নয় গবাদি প্রাণীও
+          বেঘোরে মারা যাচ্ছে ঘাস মারা বিষের যথেচ্ছ ব্যবহারে গবাদি প্রাণীর
+          মৃত্যু সংবাদের মর্যাদা হারিয়ে নিত্যদিনের ঘটনায় পরিণত হয়েছে। গত বছরের
+          (২০২৩) সেপ্টেম্বরে কুড়িগ্রাম সদর উপজেলার বেলগাছা ইউনিয়নের যুগীর ভিটা
+          গ্রামে ছয়টি ছাগল ঘাস খেতে খেতে মারা যায়। কাউকে না জানিয়ে পুকুরের
+          পাড়ে ঘাসে কীটনাশক ছিটিয়ে দিয়েছিলেন পুকুরের মালিক রিন্টু মিয়া। সেই
+          ঘাস খেয়ে ছাগলগুলো মারা যায়। ঘাস খাওয়ার একপর্যায়ে ছাগলগুলো হঠাৎ
+          নিস্তেজ হয়ে মাটিতে পড়ে যায়। পরে স্থানীয় লোকজন ছাগলগুলো বাড়িতে নিয়ে
+          এলে চারটি ছাগল মারা যায়। আর দুটি ছাগল দ্রুত জবাই করা হয়। এর আগে
+          ঝিনাইদহের শৈলকূপার ভুলুন্দিয়া গ্রাম থেকে বিষাক্ত ঘাস খেয়ে গরু মারা
+          যাওয়ার ঘটনা ঘটে। শুধু ভুলুন্দিয়া গ্রাম নয়, দিন পনরোর ব্যবধানে
+          পার্শ্ববর্তী কয়েক গ্রাম মিলে কমপক্ষে ১২টি গরু মারা যায়।
+        </article>
       </div>
     </div>
 
-    <div class="postBody">
-      <!-- LEFT -->
-      <div class="leftSection">
-        <!-- ADS -->
-        <div class="topAds">
-          <img
-            class="resImg"
-            src="https://dummyimage.com/1200x150/dda/fff"
-            alt="Bottom Ads"
-          />
-        </div>
-        <!-- CATEGORY -->
-        <div class="postCat">
-          <i class="bi bi-tag"></i>
-          <a href="#" title="এই ক্যাটাগরির সকল নিউজ দেখতে ক্লিক করুন"
-            >আন্তর্জাতিক</a
-          >
-          <i class="bi bi-chevron-double-right"></i>
-          <a href="#" title="এই ক্যাটাগরির সকল নিউজ দেখতে ক্লিক করুন"
-            >বাংলাদেশ</a
-          >
-        </div>
+    <!-- RIGHT -->
+    <div class="rightSection">
+      <!-- LATEST -->
+      <div class="latest">
+        <!-- BLOCK -->
+        <span class="latestText marginBottom__05">
+          <h2>সর্বশেষ খবর</h2>
+        </span>
 
-        <!-- POST TITLE -->
-        <h1 class="text__16">রাজধানীর বেইলি রোডে বহুতল ভবনে আগুনে অন্তত তিনজন নিহত হয়েছেন</h1>
-        <!-- WRITER INFORMATION -->
-        <div class="writerContainer flexJustifyStartAlignCenter gap__05 flexWrap border__Bottom marginBottom__20 paddingTB__08">
-          <span>
-            <i class="bi bi-person"></i>&nbsp;
-            <a href="#" title="লেখাটির লেখক">সুরজিত সিংহ শিশির</a>
-          </span>
-          <span>
-            <i class="bi bi-calendar"></i>&nbsp;
-            <a href="#" title="নিউজটি প্রকাশের সময়">১লা মার্চ, ২০২৪</a>
-          </span>
-          <span style="display: flex; align-items: center">
-            <i class="bi bi-stopwatch"></i>&nbsp;
-            <p title="সংবাদ প্রকাশের সময়">১৪:৩০ ঘটিকা</p>
-          </span>
-        </div>
-        <!-- FEATURE IMAGE -->
-        <div class="featureImg">
-          <img class="resImg" src="https://dummyimage.com/800x600" alt="" />
-        </div>
+        <!-- NEWS 1-->
+        <a class="latestPosts new1 border__Bottom padding__05" href="#">
+          <img class="resImgLatest" src="img.png" alt="" />
+          <div>
+            <p>‘দম বন্ধ হয়ে যাচ্ছে’ বলেছিলেন ভিকারুননিসার</p>
 
-        <div class="postDescription">
-          <article>
-            খুলনা–বাগেরহাট আসা–যাওয়ার পথে সুযোগ পেলে ভ্যাট্টেপাড়ায় (ভাটিয়াপাড়া)
-            বিরতি নেওয়ার চেষ্টা করি। সেখানে এক প্রবীণ চা বিক্রেতা খুব আদর করে চা
-            পরিবেশন করেন। চায়ের চেয়ে মন টানে তাঁর কথায়। কত খবর যে জমা থাকে তাঁর
-            বুকে!! শুধু খেই ধরিয়ে দিলেই হলো। তিনিও জানতে চান, ‘কী ধান্দায় কোথায়
-            মেলা করছি। কত দিনের সফর? ফেরার পথে রাত হবে কি না? তাড়া থাকলে একটা
-            মিসড কল মাইরে দেবেন। সর (দুধের সর) উঠায়ে রাখব মালাই চা খাইয়ে যাবেন।’
-            এবার ফেরার পথে দেখি, সন্ধ্যার আগেই তাঁর দোকানের ঝাঁপ নামানো। খোঁজ
-            নিতেই জানা গেল, তাদের গ্রামের একজন বিষ খেয়েছে, তাকে নিয়ে ছোটাছুটি
-            চলছে। দোকান বন্ধ করে ছোটাছুটির দলের নেতৃত্ব দিতে গেছেন প্রবীণ চা
-            বিক্রেতা। আমার মিসড কলের সূত্র ধরে রাত ১১টার দিকে ফোন করলেন প্রবীণ।
-            তিনি তখনো রোগীর সঙ্গে মেডিকেলের পথে। ফোনে তিনি জানালেন, ‘আমরা পদ্মা
-            সেতুতে। মালা (ছদ্মনাম), পড়াশোনা না করে মোবাইল হাতড়াইতে ছিল। তাই
-            বাবায় তারে বকা দেয়। আর তাতেই রাগ করে মালা ঘাস মারার বিষ গিলে ফেলে।
-            মুমূর্ষু মালাকে নিয়ে এখন যমে মানুষের টানাটানি চলছে। অবস্থা কেরোসিন
-            (আশঙ্কাজনক)। কচি বেডিডা বাঁচবে কি না কওয়া যাচ্ছে না।’ মুরব্বি প্রবীণ
-            সাধারণত মুখ খারাপ করেন না। এবার করলেন, ধমকও দিলেন। তাঁর বোধে আসে না
-            আমরা কী ‘ফ্যালাইতাছি’। আবার তাড়া দিলেন ‘ধান্দাবাজি’ না করে মানুষ ও
-            মানুষের সমস্যা নিয়ে লেখার জন্য। তিনি প্রথম আলোর একজন গুণমুগ্ধ কিন্তু
-            ছেড়ে কথা না বলা পাঠক। প্রবীণের ধমক খেয়ে মনে পড়ে চট্টগ্রাম মেডিকেল
-            কলেজ হাসপাতালের নেফ্রোলজি বিভাগের ডা. মো. সাদ্দাত হোসেনের কথা। একটি
-            জাতীয় দৈনিকে গত ১০ জুন ২০২৩ প্রকাশিত এক লেখায় তিনি বলেছিলেন,‘আগেও
-            খেতে পোকামাকড় মারার বিষ (ইনসেক্টিসাইড) খেয়ে মানুষ আত্মহত্যা করার
-            চেষ্টা করত। বিশ্বাস করুন, যারা পোকামাকড় মারার বিষ খেয়ে আসত, তারা
-            যদি কোনো হাসপাতালে পৌঁছাতে পারত, তবে তাদের শতকরা ৯৯ ভাগ রোগী ভালো
-            হয়ে যেত। কিন্তু এই ঘাস মারার বিষ খেয়ে যারাই ভর্তি হচ্ছে, এটা এতটাই
-            বিষাক্ত যে ওদের কাউকেই বাঁচানো সম্ভব হচ্ছে না।’ তিনি মানবদেহে এই
-            বিষের প্রতিক্রিয়া ব্যাখ্যা করতে গিয়ে লিখেছিলেন, ‘প্রথম দিকে এর
-            প্রতিক্রিয়া তেমন অনুভূত হয় না। শুধু জিহ্বায় কিছু ঘা দেখা দেয়।
-            এরপর আস্তে আস্তে অন্যান্য অঙ্গ বিকল হতে থাকে। প্রথমে কিডনি, তারপর
-            লিভার, তারপর ফুসফুস। একপর্যায়ে এসে শ্বাসকষ্ট বেড়ে যায়। শেষ
-            মুহূর্তে লাইভ সাপোর্ট দেওয়া লাগে। লাইভ সাপোর্ট দেওয়ার পরও রোগীকে
-            বাঁচানো যায় না। কারণ, ফুসফুস আক্রান্ত হয়ে ফাইব্রোসিস হয়ে যায়, যা
-            আর কোনো চিকিৎসাই ভালো করা যায় না।’ শুধু মানুষ নয় গবাদি প্রাণীও
-            বেঘোরে মারা যাচ্ছে ঘাস মারা বিষের যথেচ্ছ ব্যবহারে গবাদি প্রাণীর
-            মৃত্যু সংবাদের মর্যাদা হারিয়ে নিত্যদিনের ঘটনায় পরিণত হয়েছে। গত বছরের
-            (২০২৩) সেপ্টেম্বরে কুড়িগ্রাম সদর উপজেলার বেলগাছা ইউনিয়নের যুগীর ভিটা
-            গ্রামে ছয়টি ছাগল ঘাস খেতে খেতে মারা যায়। কাউকে না জানিয়ে পুকুরের
-            পাড়ে ঘাসে কীটনাশক ছিটিয়ে দিয়েছিলেন পুকুরের মালিক রিন্টু মিয়া। সেই
-            ঘাস খেয়ে ছাগলগুলো মারা যায়। ঘাস খাওয়ার একপর্যায়ে ছাগলগুলো হঠাৎ
-            নিস্তেজ হয়ে মাটিতে পড়ে যায়। পরে স্থানীয় লোকজন ছাগলগুলো বাড়িতে নিয়ে
-            এলে চারটি ছাগল মারা যায়। আর দুটি ছাগল দ্রুত জবাই করা হয়। এর আগে
-            ঝিনাইদহের শৈলকূপার ভুলুন্দিয়া গ্রাম থেকে বিষাক্ত ঘাস খেয়ে গরু মারা
-            যাওয়ার ঘটনা ঘটে। শুধু ভুলুন্দিয়া গ্রাম নয়, দিন পনরোর ব্যবধানে
-            পার্শ্ববর্তী কয়েক গ্রাম মিলে কমপক্ষে ১২টি গরু মারা যায়।
-          </article>
-        </div>
-      </div>
-
-      <!-- RIGHT -->
-      <div class="rightSection">
-        <!-- LATEST -->
-        <div class="latest">
-          <!-- BLOCK -->
-          <span class="latestText marginBottom__05">
-            <h2>সর্বশেষ খবর</h2>
-          </span>
-
-          <!-- NEWS 1-->
-          <a class="latestPosts new1 border__Bottom padding__05" href="#">
-            <img class="resImgLatest" src="img.png" alt="" />
-            <div>
-              <p>‘দম বন্ধ হয়ে যাচ্ছে’ বলেছিলেন ভিকারুননিসার</p>
-
-              <span title="সংবাদটি প্রকাশের সময়"
-                ><i class="bi bi-clock"></i>
-                <p>২ ঘন্টা আগে</p>
-              </span>
-            </div>
-          </a>
-          <!-- NEWS 2-->
-          <a class="latestPosts new2 border__Bottom padding__05" href="#">
-            <img class="resImgLatest" src="img.png" alt="" />
-            <div>
-              <p>
-                ‘দম বন্ধ হয়ে যাচ্ছে’ বলেছিলেন ভিকারুননিসার শিক্ষক ও তাঁর মেয়ে
-              </p>
-
-              <span title="সংবাদটি প্রকাশের সময়"
-                ><i class="bi bi-clock"></i>
-                <p>৩ ঘন্টা আগে</p>
-              </span>
-            </div>
-          </a>
-          <!-- NEWS 3-->
-          <a class="latestPosts new3 border__Bottom padding__05" href="#">
-            <img class="resImgLatest" src="img.png" alt="" />
-            <div>
-              <p>
-                ‘দম বন্ধ হয়ে যাচ্ছে’ বলেছিলেন ভিকারুননিসার শিক্ষক ও তাঁর মেয়ে মা
-                লুৎফুন নাহার করিম লাকী
-              </p>
-
-              <span title="সংবাদটি প্রকাশের সময়"
-                ><i class="bi bi-clock"></i>
-                <p>৪ ঘন্টা আগে</p>
-              </span>
-            </div>
-          </a>
-          <!-- NEWS 4-->
-          <a class="latestPosts new4 padding__05" href="#">
-           <img class="resImgLatest" src="img.png" alt="" />
-            <div>
-              <p>
-                ‘দম বন্ধ হয়ে যাচ্ছে’ বলেছিলেন ভিকারুননিসার শিক্ষক ও তাঁর মেয়ে মা
-                লুৎফুন নাহার করিম লাকী রাজধানীর ভিকারুননিসা নূন নাহার করিম লাকী
-                রাজধানীর ভিকারুননিসা নূন
-              </p>
-
-              <span title="সংবাদটি প্রকাশের সময়"
-                ><i class="bi bi-clock"></i>
-                <p>১২ ঘন্টা আগে</p>
-              </span>
-            </div>
-          </a>
-        </div>
-
-        <div class="adsCenter">
-          <img class="resImg" src="https://dummyimage.com/1920x400" alt="" />
-        </div>
-
-        <!-- TAB TOGGLE -->
-        <div class="tab-container">
-          <div class="tab">
-            <button class="tab-btn" data-tab="tab1">আন্তর্জাতিক</button>
-            <button class="tab-btn active" data-tab="tab2">জাতীয়</button>
-            <button class="tab-btn hotNews" data-tab="tab3">হট নিউজ</button>
-          </div>
-
-          <div class="tab-content">
-            <!-- TAB CONTENT 1 -->
-            <div id="tab1" class="tab-item">
-              <!-- TAB CONTENTS 1-->
-              <section class="tabCol">
-                <div class="colContents">
-                  <div class="newsCont">
-                    <i class="fa-solid fa-circle"></i>
-                    <a href="#"
-                      >ভিকারুননিসার এক শিক্ষক ও প্রাক্তন–বর্তমান চার শিক্ষার্থীর
-                      মৃত্যু</a
-                    >
-                  </div>
-                </div>
-              </section>
-              <!-- TAB CONTENTS 1 END-->
-
-              <!-- TAB CONTENTS 2-->
-              <section class="tabCol">
-                <div class="colContents">
-                  <div class="newsCont">
-                    <i class="fa-solid fa-circle"></i>
-                    <a href="#"
-                      >ভিকারুননিসার এক শিক্ষক ও প্রাক্তন–বর্তমান চার শিক্ষার্থীর
-                      মৃত্যু</a
-                    >
-                  </div>
-                </div>
-              </section>
-              <!-- TAB CONTENTS 2 END-->
-
-              <!-- TAB CONTENTS 3 -->
-              <section class="tabCol">
-                <div class="colContents">
-                  <div class="newsCont">
-                    <i class="fa-solid fa-circle"></i>
-                    <a href="#"
-                      >ভিকারুননিসার এক শিক্ষক ও প্রাক্তন–বর্তমান চার শিক্ষার্থীর
-                      মৃত্যু</a
-                    >
-                  </div>
-                </div>
-              </section>
-              <!-- TAB CONTENTS 3 END-->
-
-              <!-- TAB CONTENTS 4 -->
-              <section class="tabCol">
-                <div class="colContents">
-                  <div class="newsCont">
-                    <i class="fa-solid fa-circle"></i>
-                    <a href="#"
-                      >ভিকারুননিসার এক শিক্ষক ও প্রাক্তন–বর্তমান চার শিক্ষার্থীর
-                      মৃত্যু</a
-                    >
-                  </div>
-                </div>
-              </section>
-              <!-- TAB CONTENTS 4 END-->
-
-              <!-- TAB CONTENTS 5 -->
-              <section class="tabCol">
-                <div class="colContents">
-                  <div class="newsCont">
-                    <i class="fa-solid fa-circle"></i>
-                    <a href="#"
-                      >রাষ্ট্রের কাছ থেকে নাগরিক হিসেবে আমাদের আশা–ভরসার শেষ
-                      নেই। কিন্তু এই রাষ্ট্র আপনাকে-আমাকে নিরাপদভাবে বাঁচিয়ে
-                      রাখার কতটা চেষ্টা করে আসলে?</a
-                    >
-                  </div>
-                </div>
-              </section>
-              <!-- TAB CONTENTS 5 END-->
-            </div>
-
-            <!-- TAB CONTENT 2 -->
-            <div id="tab2" class="tab-item active">
-              <!-- TAB CONTENTS 1-->
-              <section class="tabCol">
-                <div class="colContents">
-                  <div class="newsCont">
-                    <i class="fa-solid fa-circle"></i>
-                    <a href="#"
-                      >রাষ্ট্রের কাছ থেকে নাগরিক হিসেবে আমাদের আশা–ভরসার শেষ
-                      নেই। কিন্তু এই রাষ্ট্র আপনাকে-আমাকে নিরাপদভাবে বাঁচিয়ে
-                      রাখার কতটা চেষ্টা করে আসলে?</a
-                    >
-                  </div>
-                </div>
-              </section>
-              <!-- TAB CONTENTS 1 END-->
-
-              <!-- TAB CONTENTS 2-->
-              <section class="tabCol">
-                <div class="colContents">
-                  <div class="newsCont">
-                    <i class="fa-solid fa-circle"></i>
-                    <a href="#"
-                      >রাষ্ট্রের কাছ থেকে নাগরিক হিসেবে আমাদের আশা–ভরসার শেষ
-                      নেই। কিন্তু এই রাষ্ট্র আপনাকে-আমাকে নিরাপদভাবে বাঁচিয়ে
-                      রাখার কতটা চেষ্টা করে আসলে?</a
-                    >
-                  </div>
-                </div>
-              </section>
-              <!-- TAB CONTENTS 2 END-->
-
-              <!-- TAB CONTENTS 3 -->
-              <section class="tabCol">
-                <div class="colContents">
-                  <div class="newsCont">
-                    <i class="fa-solid fa-circle"></i>
-                    <a href="#"
-                      >রাষ্ট্রের কাছ থেকে নাগরিক হিসেবে আমাদের আশা–ভরসার শেষ
-                      নেই। কিন্তু এই রাষ্ট্র আপনাকে-আমাকে নিরাপদভাবে বাঁচিয়ে
-                      রাখার কতটা চেষ্টা করে আসলে?</a
-                    >
-                  </div>
-                </div>
-              </section>
-              <!-- TAB CONTENTS 3 END-->
-
-              <!-- TAB CONTENTS 4 -->
-              <section class="tabCol">
-                <div class="colContents">
-                  <div class="newsCont">
-                    <i class="fa-solid fa-circle"></i>
-                    <a href="#"
-                      >রাষ্ট্রের কাছ থেকে নাগরিক হিসেবে আমাদের আশা–ভরসার শেষ
-                      নেই। কিন্তু এই রাষ্ট্র আপনাকে-আমাকে নিরাপদভাবে বাঁচিয়ে
-                      রাখার কতটা চেষ্টা করে আসলে?</a
-                    >
-                  </div>
-                </div>
-              </section>
-              <!-- TAB CONTENTS 4 END-->
-
-              <!-- TAB CONTENTS 5 -->
-              <section class="tabCol">
-                <div class="colContents">
-                  <div class="newsCont">
-                    <i class="fa-solid fa-circle"></i>
-                    <a href="#"
-                      >রাষ্ট্রের কাছ থেকে নাগরিক হিসেবে আমাদের আশা–ভরসার শেষ
-                      নেই। কিন্তু এই রাষ্ট্র আপনাকে-আমাকে নিরাপদভাবে বাঁচিয়ে
-                      রাখার কতটা চেষ্টা করে আসলে?</a
-                    >
-                  </div>
-                </div>
-              </section>
-              <!-- TAB CONTENTS 5 END-->
-            </div>
-
-            <!-- TAB CONTENT 3 -->
-            <div id="tab3" class="tab-item">
-              <!-- TAB CONTENTS 1-->
-              <section class="tabCol">
-                <div class="colContents">
-                  <div class="newsCont">
-                    <i class="fa-solid fa-circle"></i>
-                    <a href="#"
-                      >ভিকারুননিসা নূন পরিবারের এই পাঁচ সদস্যের প্রতি শ্রদ্ধা
-                      জানাতে প্রতিষ্ঠানটির ভারপ্রাপ্ত অধ্যক্ষ কেকা রায় চৌধুরী</a
-                    >
-                  </div>
-                </div>
-              </section>
-              <!-- TAB CONTENTS 1 END-->
-
-              <!-- TAB CONTENTS 2-->
-              <section class="tabCol">
-                <div class="colContents">
-                  <div class="newsCont">
-                    <i class="fa-solid fa-circle"></i>
-                    <a href="#"
-                      >ভিকারুননিসা নূন পরিবারের এই পাঁচ সদস্যের প্রতি শ্রদ্ধা
-                      জানাতে প্রতিষ্ঠানটির ভারপ্রাপ্ত অধ্যক্ষ কেকা রায় চৌধুরী</a
-                    >
-                  </div>
-                </div>
-              </section>
-              <!-- TAB CONTENTS 2 END-->
-
-              <!-- TAB CONTENTS 3 -->
-              <section class="tabCol">
-                <div class="colContents">
-                  <div class="newsCont">
-                    <i class="fa-solid fa-circle"></i>
-                    <a href="#"
-                      >ভিকারুননিসা নূন পরিবারের এই পাঁচ সদস্যের প্রতি শ্রদ্ধা
-                      জানাতে প্রতিষ্ঠানটির ভারপ্রাপ্ত অধ্যক্ষ কেকা রায় চৌধুরী</a
-                    >
-                  </div>
-                </div>
-              </section>
-              <!-- TAB CONTENTS 3 END-->
-
-              <!-- TAB CONTENTS 4 -->
-              <section class="tabCol">
-                <div class="colContents">
-                  <div class="newsCont">
-                    <i class="fa-solid fa-circle"></i>
-                    <a href="#"
-                      >ভিকারুননিসা নূন পরিবারের এই পাঁচ সদস্যের প্রতি শ্রদ্ধা
-                      জানাতে প্রতিষ্ঠানটির ভারপ্রাপ্ত অধ্যক্ষ কেকা রায় চৌধুরী</a
-                    >
-                  </div>
-                </div>
-              </section>
-              <!-- TAB CONTENTS 4 END-->
-
-              <!-- TAB CONTENTS 5 -->
-              <section class="tabCol">
-                <div class="colContents">
-                  <div class="newsCont">
-                    <i class="fa-solid fa-circle"></i>
-                    <a href="#"
-                      >ভিকারুননিসা নূন পরিবারের এই পাঁচ সদস্যের প্রতি শ্রদ্ধা
-                      জানাতে প্রতিষ্ঠানটির ভারপ্রাপ্ত অধ্যক্ষ কেকা রায় চৌধুরী</a
-                    >
-                  </div>
-                </div>
-              </section>
-              <!-- TAB CONTENTS 5 END-->
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ADS -->
-    <div class="postBody bottomAds">
-      <img
-        class="resImg"
-        src="https://dummyimage.com/1200x200/000/fff"
-        alt="Bottom Ads"
-      />
-    </div>
-
-    <!-- CATEGORY 1 : SYLHET -->
-    <div class="category">
-      <div class="catName">
-        <h2>এই ক্যাটাগরিতে আরও পড়ুন :</h2>
-      </div>
-
-      <div class="category1">
-        <!-- 1 -->
-        <a class="newsBox a1" href="#">
-          <img src="https://dummyimage.com/800x600/400/702666.jpg" alt="" />
-          <div class="newsTitle">
-            <h2>
-              জাতির পিতার উদ্যোগের ফলে এবং তার নেতৃত্বে ভাষা আন্দোলনের পথ বেয়ে
-              আমরা আমাদের স্বাধিকার পেয়েছি, স্বাধীনতা পেয়েছি
-            </h2>
-            <p><i class="fa-solid fa-calendar"></i> ২২শে ফেব্রুয়ারি, ২০২২</p>
+            <span title="সংবাদটি প্রকাশের সময়"><i class="bi bi-clock"></i>
+              <p>২ ঘন্টা আগে</p>
+            </span>
           </div>
         </a>
-
-        <!-- 2 -->
-        <a class="newsBox a2" href="#">
-          <img src="https://dummyimage.com/800x600/400/002666.jpg" alt="" />
-          <div class="newsTitle">
-            <h2>
-              জাতির পিতার উদ্যোগের ফলে এবং তার নেতৃত্বে ভাষা আন্দোলনের পথ বেয়ে
-              আমরা আমাদের স্বাধিকার পেয়েছি, স্বাধীনতা পেয়েছি
-            </h2>
-            <p><i class="fa-solid fa-calendar"></i> ২২শে ফেব্রুয়ারি, ২০২২</p>
-          </div>
-        </a>
-
-        <!-- 3 -->
-        <a class="newsBox a3" href="#">
-          <img src="https://dummyimage.com/800x600/400/002666.jpg" alt="" />
-          <div class="newsTitle">
-            <h2>
-              জাতির পিতার উদ্যোগের ফলে এবং তার নেতৃত্বে ভাষা আন্দোলনের পথ বেয়ে
-              আমরা আমাদের স্বাধিকার পেয়েছি, স্বাধীনতা পেয়েছি
-            </h2>
-            <p><i class="fa-solid fa-calendar"></i> ২২শে ফেব্রুয়ারি, ২০২২</p>
-          </div>
-        </a>
-
-        <!-- 4 -->
-        <a class="newsBox a4" href="#">
-          <img src="https://dummyimage.com/800x600/400/002666.jpg" alt="" />
-          <div class="newsTitle">
-            <h2>
-              জাতির পিতার উদ্যোগের ফলে এবং তার নেতৃত্বে ভাষা আন্দোলনের পথ বেয়ে
-              আমরা আমাদের স্বাধিকার পেয়েছি, স্বাধীনতা পেয়েছি
-            </h2>
-            <p><i class="fa-solid fa-calendar"></i> ২২শে ফেব্রুয়ারি, ২০২২</p>
-          </div>
-        </a>
-
-        <!-- 5 -->
-        <a class="newsBox a5" href="#">
-          <img src="https://dummyimage.com/800x600/400/702666.jpg" alt="" />
-          <div class="newsTitle">
-            <h2>
-              জাতির পিতার উদ্যোগের ফলে এবং তার নেতৃত্বে ভাষা আন্দোলনের পথ বেয়ে
-              আমরা আমাদের স্বাধিকার পেয়েছি, স্বাধীনতা পেয়েছি
-            </h2>
-            <p><i class="fa-solid fa-calendar"></i> ২২শে ফেব্রুয়ারি, ২০২২</p>
-          </div>
-        </a>
-      </div>
-    </div>
-
-    <!-- FOOTER -->
-    <footer>
-      <div class="footerDiv">
-        <!-- 1st ROW -->
-        <div
-          class="footerRow1 logo-share marginBottom__10 border__Bottom paddingBottom__10"
-        >
-          <a href="#"><img class="img__10" src="logo.png" alt="LOGO" /></a>
-          <span>
-            <p>ফলো করুন</p>
-            <div class="socialMediaFooter">
-              <a href="#" title="Facebook"
-                ><i class="fa-brands fa-facebook"></i
-              ></a>
-              <a href="#" title="Messenger"
-                ><i class="fa-brands fa-facebook-messenger"></i
-              ></a>
-              <a href="#" title="Instagram"
-                ><i class="fa-brands fa-instagram"></i
-              ></a>
-              <a href="#" title="WhatsApp"
-                ><i class="fa-brands fa-whatsapp"></i
-              ></a>
-              <a href="#" title="Twitter"
-                ><i class="fa-brands fa-x-twitter"></i
-              ></a>
-              <a href="#" title="Linkedin"
-                ><i class="fa-brands fa-linkedin"></i
-              ></a>
-            </div>
-          </span>
-        </div>
-        <!-- 2nd ROW -->
-        <div class="contactsInfo border__Bottom paddingBottom__10">
-          <div class="footerRow2 flexJustifyCenterAlignStart flexColumn">
-            <h3>যোগাযোগ করুন</h3>
-            <p class="text__Align_Center">
-              শপ-৬, নেহার মার্কেট, জিন্দাবাজার, ৩১১০, সিলেট।
+        <!-- NEWS 2-->
+        <a class="latestPosts new2 border__Bottom padding__05" href="#">
+          <img class="resImgLatest" src="img.png" alt="" />
+          <div>
+            <p>
+              ‘দম বন্ধ হয়ে যাচ্ছে’ বলেছিলেন ভিকারুননিসার শিক্ষক ও তাঁর মেয়ে
             </p>
-            <a
-              class="border__01 border__Rad_03 border__Gray_05 padding__04"
-              href="mailto:support@kehem.com"
-              >support@kehem.com</a
-            >
-            <p>মোবাইল : +8801700905268</p>
+
+            <span title="সংবাদটি প্রকাশের সময়"><i class="bi bi-clock"></i>
+              <p>৩ ঘন্টা আগে</p>
+            </span>
           </div>
-          <div
-            class="footerCenter flexJustifyCenterAlignStart flexColumn flexAlignSelfStart"
-          >
-            <h3>সম্পাদনা মন্ডলী</h3>
-            <p>সম্পাদক : সুরজিত সিংহ শিশির</p>
-            <p>উপ-সম্পাদক : অনির্বান সিংহ</p>
+        </a>
+        <!-- NEWS 3-->
+        <a class="latestPosts new3 border__Bottom padding__05" href="#">
+          <img class="resImgLatest" src="img.png" alt="" />
+          <div>
+            <p>
+              ‘দম বন্ধ হয়ে যাচ্ছে’ বলেছিলেন ভিকারুননিসার শিক্ষক ও তাঁর মেয়ে মা
+              লুৎফুন নাহার করিম লাকী
+            </p>
+
+            <span title="সংবাদটি প্রকাশের সময়"><i class="bi bi-clock"></i>
+              <p>৪ ঘন্টা আগে</p>
+            </span>
           </div>
-          <div
-            class="flexJustifyCenterAlignCenter flexColumn flexAlignSelfStart"
-          >
-            <h3>পোর্টাল তৈরি</h3>
-            <a href="https://kehem.com/" class="text__Align_Center"
-              ><img class="logo" src="logo.png" alt="" />
-              <h4>KEHEM IT</h4></a
-            >
+        </a>
+        <!-- NEWS 4-->
+        <a class="latestPosts new4 padding__05" href="#">
+          <img class="resImgLatest" src="img.png" alt="" />
+          <div>
+            <p>
+              ‘দম বন্ধ হয়ে যাচ্ছে’ বলেছিলেন ভিকারুননিসার শিক্ষক ও তাঁর মেয়ে মা
+              লুৎফুন নাহার করিম লাকী রাজধানীর ভিকারুননিসা নূন নাহার করিম লাকী
+              রাজধানীর ভিকারুননিসা নূন
+            </p>
+
+            <span title="সংবাদটি প্রকাশের সময়"><i class="bi bi-clock"></i>
+              <p>১২ ঘন্টা আগে</p>
+            </span>
+          </div>
+        </a>
+      </div>
+
+      <div class="adsCenter">
+        <img class="resImg" src="https://dummyimage.com/1920x400" alt="" />
+      </div>
+
+      <!-- TAB TOGGLE -->
+      <div class="tab-container">
+        <div class="tab">
+          <button class="tab-btn" data-tab="tab1">আন্তর্জাতিক</button>
+          <button class="tab-btn active" data-tab="tab2">জাতীয়</button>
+          <button class="tab-btn hotNews" data-tab="tab3">হট নিউজ</button>
+        </div>
+
+        <div class="tab-content">
+          <!-- TAB CONTENT 1 -->
+          <div id="tab1" class="tab-item">
+            <!-- TAB CONTENTS 1-->
+            <section class="tabCol">
+              <div class="colContents">
+                <div class="newsCont">
+                  <i class="fa-solid fa-circle"></i>
+                  <a href="#">ভিকারুননিসার এক শিক্ষক ও প্রাক্তন–বর্তমান চার শিক্ষার্থীর
+                    মৃত্যু</a>
+                </div>
+              </div>
+            </section>
+            <!-- TAB CONTENTS 1 END-->
+
+            <!-- TAB CONTENTS 2-->
+            <section class="tabCol">
+              <div class="colContents">
+                <div class="newsCont">
+                  <i class="fa-solid fa-circle"></i>
+                  <a href="#">ভিকারুননিসার এক শিক্ষক ও প্রাক্তন–বর্তমান চার শিক্ষার্থীর
+                    মৃত্যু</a>
+                </div>
+              </div>
+            </section>
+            <!-- TAB CONTENTS 2 END-->
+
+            <!-- TAB CONTENTS 3 -->
+            <section class="tabCol">
+              <div class="colContents">
+                <div class="newsCont">
+                  <i class="fa-solid fa-circle"></i>
+                  <a href="#">ভিকারুননিসার এক শিক্ষক ও প্রাক্তন–বর্তমান চার শিক্ষার্থীর
+                    মৃত্যু</a>
+                </div>
+              </div>
+            </section>
+            <!-- TAB CONTENTS 3 END-->
+
+            <!-- TAB CONTENTS 4 -->
+            <section class="tabCol">
+              <div class="colContents">
+                <div class="newsCont">
+                  <i class="fa-solid fa-circle"></i>
+                  <a href="#">ভিকারুননিসার এক শিক্ষক ও প্রাক্তন–বর্তমান চার শিক্ষার্থীর
+                    মৃত্যু</a>
+                </div>
+              </div>
+            </section>
+            <!-- TAB CONTENTS 4 END-->
+
+            <!-- TAB CONTENTS 5 -->
+            <section class="tabCol">
+              <div class="colContents">
+                <div class="newsCont">
+                  <i class="fa-solid fa-circle"></i>
+                  <a href="#">রাষ্ট্রের কাছ থেকে নাগরিক হিসেবে আমাদের আশা–ভরসার শেষ
+                    নেই। কিন্তু এই রাষ্ট্র আপনাকে-আমাকে নিরাপদভাবে বাঁচিয়ে
+                    রাখার কতটা চেষ্টা করে আসলে?</a>
+                </div>
+              </div>
+            </section>
+            <!-- TAB CONTENTS 5 END-->
+          </div>
+
+          <!-- TAB CONTENT 2 -->
+          <div id="tab2" class="tab-item active">
+            <!-- TAB CONTENTS 1-->
+            <section class="tabCol">
+              <div class="colContents">
+                <div class="newsCont">
+                  <i class="fa-solid fa-circle"></i>
+                  <a href="#">রাষ্ট্রের কাছ থেকে নাগরিক হিসেবে আমাদের আশা–ভরসার শেষ
+                    নেই। কিন্তু এই রাষ্ট্র আপনাকে-আমাকে নিরাপদভাবে বাঁচিয়ে
+                    রাখার কতটা চেষ্টা করে আসলে?</a>
+                </div>
+              </div>
+            </section>
+            <!-- TAB CONTENTS 1 END-->
+
+            <!-- TAB CONTENTS 2-->
+            <section class="tabCol">
+              <div class="colContents">
+                <div class="newsCont">
+                  <i class="fa-solid fa-circle"></i>
+                  <a href="#">রাষ্ট্রের কাছ থেকে নাগরিক হিসেবে আমাদের আশা–ভরসার শেষ
+                    নেই। কিন্তু এই রাষ্ট্র আপনাকে-আমাকে নিরাপদভাবে বাঁচিয়ে
+                    রাখার কতটা চেষ্টা করে আসলে?</a>
+                </div>
+              </div>
+            </section>
+            <!-- TAB CONTENTS 2 END-->
+
+            <!-- TAB CONTENTS 3 -->
+            <section class="tabCol">
+              <div class="colContents">
+                <div class="newsCont">
+                  <i class="fa-solid fa-circle"></i>
+                  <a href="#">রাষ্ট্রের কাছ থেকে নাগরিক হিসেবে আমাদের আশা–ভরসার শেষ
+                    নেই। কিন্তু এই রাষ্ট্র আপনাকে-আমাকে নিরাপদভাবে বাঁচিয়ে
+                    রাখার কতটা চেষ্টা করে আসলে?</a>
+                </div>
+              </div>
+            </section>
+            <!-- TAB CONTENTS 3 END-->
+
+            <!-- TAB CONTENTS 4 -->
+            <section class="tabCol">
+              <div class="colContents">
+                <div class="newsCont">
+                  <i class="fa-solid fa-circle"></i>
+                  <a href="#">রাষ্ট্রের কাছ থেকে নাগরিক হিসেবে আমাদের আশা–ভরসার শেষ
+                    নেই। কিন্তু এই রাষ্ট্র আপনাকে-আমাকে নিরাপদভাবে বাঁচিয়ে
+                    রাখার কতটা চেষ্টা করে আসলে?</a>
+                </div>
+              </div>
+            </section>
+            <!-- TAB CONTENTS 4 END-->
+
+            <!-- TAB CONTENTS 5 -->
+            <section class="tabCol">
+              <div class="colContents">
+                <div class="newsCont">
+                  <i class="fa-solid fa-circle"></i>
+                  <a href="#">রাষ্ট্রের কাছ থেকে নাগরিক হিসেবে আমাদের আশা–ভরসার শেষ
+                    নেই। কিন্তু এই রাষ্ট্র আপনাকে-আমাকে নিরাপদভাবে বাঁচিয়ে
+                    রাখার কতটা চেষ্টা করে আসলে?</a>
+                </div>
+              </div>
+            </section>
+            <!-- TAB CONTENTS 5 END-->
+          </div>
+
+          <!-- TAB CONTENT 3 -->
+          <div id="tab3" class="tab-item">
+            <!-- TAB CONTENTS 1-->
+            <section class="tabCol">
+              <div class="colContents">
+                <div class="newsCont">
+                  <i class="fa-solid fa-circle"></i>
+                  <a href="#">ভিকারুননিসা নূন পরিবারের এই পাঁচ সদস্যের প্রতি শ্রদ্ধা
+                    জানাতে প্রতিষ্ঠানটির ভারপ্রাপ্ত অধ্যক্ষ কেকা রায় চৌধুরী</a>
+                </div>
+              </div>
+            </section>
+            <!-- TAB CONTENTS 1 END-->
+
+            <!-- TAB CONTENTS 2-->
+            <section class="tabCol">
+              <div class="colContents">
+                <div class="newsCont">
+                  <i class="fa-solid fa-circle"></i>
+                  <a href="#">ভিকারুননিসা নূন পরিবারের এই পাঁচ সদস্যের প্রতি শ্রদ্ধা
+                    জানাতে প্রতিষ্ঠানটির ভারপ্রাপ্ত অধ্যক্ষ কেকা রায় চৌধুরী</a>
+                </div>
+              </div>
+            </section>
+            <!-- TAB CONTENTS 2 END-->
+
+            <!-- TAB CONTENTS 3 -->
+            <section class="tabCol">
+              <div class="colContents">
+                <div class="newsCont">
+                  <i class="fa-solid fa-circle"></i>
+                  <a href="#">ভিকারুননিসা নূন পরিবারের এই পাঁচ সদস্যের প্রতি শ্রদ্ধা
+                    জানাতে প্রতিষ্ঠানটির ভারপ্রাপ্ত অধ্যক্ষ কেকা রায় চৌধুরী</a>
+                </div>
+              </div>
+            </section>
+            <!-- TAB CONTENTS 3 END-->
+
+            <!-- TAB CONTENTS 4 -->
+            <section class="tabCol">
+              <div class="colContents">
+                <div class="newsCont">
+                  <i class="fa-solid fa-circle"></i>
+                  <a href="#">ভিকারুননিসা নূন পরিবারের এই পাঁচ সদস্যের প্রতি শ্রদ্ধা
+                    জানাতে প্রতিষ্ঠানটির ভারপ্রাপ্ত অধ্যক্ষ কেকা রায় চৌধুরী</a>
+                </div>
+              </div>
+            </section>
+            <!-- TAB CONTENTS 4 END-->
+
+            <!-- TAB CONTENTS 5 -->
+            <section class="tabCol">
+              <div class="colContents">
+                <div class="newsCont">
+                  <i class="fa-solid fa-circle"></i>
+                  <a href="#">ভিকারুননিসা নূন পরিবারের এই পাঁচ সদস্যের প্রতি শ্রদ্ধা
+                    জানাতে প্রতিষ্ঠানটির ভারপ্রাপ্ত অধ্যক্ষ কেকা রায় চৌধুরী</a>
+                </div>
+              </div>
+            </section>
+            <!-- TAB CONTENTS 5 END-->
           </div>
         </div>
-        <!-- 3rd ROW -->
-        <div class="footerRow3 govt padding__06">
-          <p>সরকারি নিবন্ধন নং ০১১২০-৩২১-২৩১</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ADS -->
+  <div class="postBody bottomAds">
+    <img class="resImg" src="https://dummyimage.com/1200x200/000/fff" alt="Bottom Ads" />
+  </div>
+
+  <!-- CATEGORY 1 : SYLHET -->
+  <div class="category">
+    <div class="catName">
+      <h2>এই ক্যাটাগরিতে আরও পড়ুন :</h2>
+    </div>
+
+    <div class="category1">
+      <!-- 1 -->
+      <a class="newsBox a1" href="#">
+        <img src="https://dummyimage.com/800x600/400/702666.jpg" alt="" />
+        <div class="newsTitle">
+          <h2>
+            জাতির পিতার উদ্যোগের ফলে এবং তার নেতৃত্বে ভাষা আন্দোলনের পথ বেয়ে
+            আমরা আমাদের স্বাধিকার পেয়েছি, স্বাধীনতা পেয়েছি
+          </h2>
+          <p><i class="fa-solid fa-calendar"></i> ২২শে ফেব্রুয়ারি, ২০২২</p>
+        </div>
+      </a>
+
+      <!-- 2 -->
+      <a class="newsBox a2" href="#">
+        <img src="https://dummyimage.com/800x600/400/002666.jpg" alt="" />
+        <div class="newsTitle">
+          <h2>
+            জাতির পিতার উদ্যোগের ফলে এবং তার নেতৃত্বে ভাষা আন্দোলনের পথ বেয়ে
+            আমরা আমাদের স্বাধিকার পেয়েছি, স্বাধীনতা পেয়েছি
+          </h2>
+          <p><i class="fa-solid fa-calendar"></i> ২২শে ফেব্রুয়ারি, ২০২২</p>
+        </div>
+      </a>
+
+      <!-- 3 -->
+      <a class="newsBox a3" href="#">
+        <img src="https://dummyimage.com/800x600/400/002666.jpg" alt="" />
+        <div class="newsTitle">
+          <h2>
+            জাতির পিতার উদ্যোগের ফলে এবং তার নেতৃত্বে ভাষা আন্দোলনের পথ বেয়ে
+            আমরা আমাদের স্বাধিকার পেয়েছি, স্বাধীনতা পেয়েছি
+          </h2>
+          <p><i class="fa-solid fa-calendar"></i> ২২শে ফেব্রুয়ারি, ২০২২</p>
+        </div>
+      </a>
+
+      <!-- 4 -->
+      <a class="newsBox a4" href="#">
+        <img src="https://dummyimage.com/800x600/400/002666.jpg" alt="" />
+        <div class="newsTitle">
+          <h2>
+            জাতির পিতার উদ্যোগের ফলে এবং তার নেতৃত্বে ভাষা আন্দোলনের পথ বেয়ে
+            আমরা আমাদের স্বাধিকার পেয়েছি, স্বাধীনতা পেয়েছি
+          </h2>
+          <p><i class="fa-solid fa-calendar"></i> ২২শে ফেব্রুয়ারি, ২০২২</p>
+        </div>
+      </a>
+
+      <!-- 5 -->
+      <a class="newsBox a5" href="#">
+        <img src="https://dummyimage.com/800x600/400/702666.jpg" alt="" />
+        <div class="newsTitle">
+          <h2>
+            জাতির পিতার উদ্যোগের ফলে এবং তার নেতৃত্বে ভাষা আন্দোলনের পথ বেয়ে
+            আমরা আমাদের স্বাধিকার পেয়েছি, স্বাধীনতা পেয়েছি
+          </h2>
+          <p><i class="fa-solid fa-calendar"></i> ২২শে ফেব্রুয়ারি, ২০২২</p>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footerDiv">
+      <!-- 1st ROW -->
+      <div class="footerRow1 logo-share marginBottom__10 border__Bottom paddingBottom__10">
+        <a href="#"><img class="img__10" src="logo.png" alt="LOGO" /></a>
+        <span>
+          <p>ফলো করুন</p>
+          <div class="socialMediaFooter">
+            <a href="#" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" title="Messenger"><i class="fa-brands fa-facebook-messenger"></i></a>
+            <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="#" title="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" title="Linkedin"><i class="fa-brands fa-linkedin"></i></a>
+          </div>
+        </span>
+      </div>
+      <!-- 2nd ROW -->
+      <div class="contactsInfo border__Bottom paddingBottom__10">
+        <div class="footerRow2 flexJustifyCenterAlignStart flexColumn">
+          <h3>যোগাযোগ করুন</h3>
+          <p class="text__Align_Center">
+            শপ-৬, নেহার মার্কেট, জিন্দাবাজার, ৩১১০, সিলেট।
+          </p>
+          <a class="border__01 border__Rad_03 border__Gray_05 padding__04"
+            href="mailto:support@kehem.com">support@kehem.com</a>
+          <p>মোবাইল : +8801700905268</p>
+        </div>
+        <div class="footerCenter flexJustifyCenterAlignStart flexColumn flexAlignSelfStart">
+          <h3>সম্পাদনা মন্ডলী</h3>
+          <p>সম্পাদক : সুরজিত সিংহ শিশির</p>
+          <p>উপ-সম্পাদক : অনির্বান সিংহ</p>
+        </div>
+        <div class="flexJustifyCenterAlignCenter flexColumn flexAlignSelfStart">
+          <h3>পোর্টাল তৈরি</h3>
+          <a href="https://kehem.com/" class="text__Align_Center"><img class="logo" src="logo.png" alt="" />
+            <h4>KEHEM IT</h4>
+          </a>
         </div>
       </div>
-      <!-- 4th ROW -->
-      <div class="footerRow4 copyright padding__06">
-        <p>
-          &copy; <a href="https://kehem.com/">kehem.com</a> all rights reserverd
-        </p>
+      <!-- 3rd ROW -->
+      <div class="footerRow3 govt padding__06">
+        <p>সরকারি নিবন্ধন নং ০১১২০-৩২১-২৩১</p>
       </div>
-    </footer>
-  </body>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <!-- jQuery library -->
-  <script>
-    // HAMBURGER REVEAL
-    function toggleMenu() {
-      $(".hamburger").toggleClass("fa-bars fa-x");
-      $(".fullResNav").toggleClass("show");
-    }
+    </div>
+    <!-- 4th ROW -->
+    <div class="footerRow4 copyright padding__06">
+      <p>
+        &copy; <a href="https://kehem.com/">kehem.com</a> all rights reserverd
+      </p>
+    </div>
+  </footer>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!-- jQuery library -->
+<script>
+  // HAMBURGER REVEAL
+  function toggleMenu() {
+    $(".hamburger").toggleClass("fa-bars fa-x");
+    $(".fullResNav").toggleClass("show");
+  }
 
-    $(document).ready(function () {
-      $("#searchIcon").click(function () {
-        $(".search-input").toggleClass("active"); // Toggle the 'active' class to show/hide input
-        $(this).toggleClass("fa-search fa-x"); // Toggle the search icon to cross
-      });
-
-      $("#closeIcon").click(function () {
-        $(".search-input").removeClass("active"); // Hide the input when close icon is clicked
-        $("#searchIcon").removeClass("fa-x").addClass("fa-search"); // Change the cross back to search icon
-      });
+  $(document).ready(function () {
+    $("#searchIcon").click(function () {
+      $(".search-input").toggleClass("active"); // Toggle the 'active' class to show/hide input
+      $(this).toggleClass("fa-search fa-x"); // Toggle the search icon to cross
     });
 
-    //TAB TOGGLE
-    $(document).ready(function () {
-      $(".tab-btn").click(function () {
-        var tab_id = $(this).attr("data-tab");
-
-        $(".tab-btn").removeClass("active");
-        $(".tab-item").removeClass("active");
-
-        $(this).addClass("active");
-        $("#" + tab_id).addClass("active");
-      });
+    $("#closeIcon").click(function () {
+      $(".search-input").removeClass("active"); // Hide the input when close icon is clicked
+      $("#searchIcon").removeClass("fa-x").addClass("fa-search"); // Change the cross back to search icon
     });
-  </script>
+  });
 
-  <script src="script.js"></script>
+  //TAB TOGGLE
+  $(document).ready(function () {
+    $(".tab-btn").click(function () {
+      var tab_id = $(this).attr("data-tab");
+
+      $(".tab-btn").removeClass("active");
+      $(".tab-item").removeClass("active");
+
+      $(this).addClass("active");
+      $("#" + tab_id).addClass("active");
+    });
+  });
+
+
+  // ARTICLE PROGRESS BAR
+  $(document).ready(function () {
+    $(window).on('scroll', function () {
+      var windowHeight = $(window).height();
+      var documentHeight = $(document).height();
+      var scrollTop = $(window).scrollTop();
+
+      var scrollPercent = (scrollTop / (documentHeight - windowHeight)) * 100;
+
+      $('.progress-bar__mask').width(scrollPercent + '%');
+    });
+  });
+
+</script>
+
+<script src="script.js"></script>
+
 </html>

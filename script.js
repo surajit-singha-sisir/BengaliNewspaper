@@ -90,4 +90,19 @@ function toggleActive(event) {
   });
 
 
+  // ARTICLE PROGRESS BAR
+  $(document).ready(function () {
+    $(window).on('scroll', function () {
+      var windowHeight = $(window).height();
+      var documentHeight = $(document).height();
+      var scrollTop = $(window).scrollTop();
+
+      var scrollPercent = (scrollTop / (documentHeight - windowHeight)) * 100;
+
+      $('.progress-bar__mask').width(scrollPercent + '%');
+    });
+  });
+
+
+
   

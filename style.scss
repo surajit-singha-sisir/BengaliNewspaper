@@ -1,27 +1,45 @@
 *,
 *::before,
-*::after{
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-$text : #121212f1;
-:root{
+//SCROLLBAR HIDE
+*::-webkit-scrollbar {
+    width: 0.4rem; /* Width of the scrollbar */
+}
+
+*::-webkit-scrollbar-track {
+    background: #e2e2e2; /* Color of the scrollbar track */
+}
+
+*::-webkit-scrollbar-thumb {
+    background: #9c8787; /* Color of the scrollbar thumb */
+    border-radius: 1rem; /* Rounded corners of the scrollbar thumb */
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background: #806e6e; /* Color of the scrollbar thumb on hover */
+}
+
+$text: #121212f1;
+:root {
     font-size: 1rem; //Take the default font size of Browser (General : 16px)
-    font-family: 'SolaimanLipi', Helvetica, serif;
+    font-family: "SolaimanLipi", Helvetica, serif;
     color: $text;
 }
 
 // VARIABLES
 @import "var";
-@import 'mixin';
+@import "mixin";
 
 // ROOT CLASSES
-@import 'root-classes';
+@import "root-classes";
 
 // ANCHOR TAG DEFAULT
-$a : #121212f1;
+$a: #121212f1;
 a {
     color: $a;
     text-decoration: none;
@@ -29,14 +47,11 @@ a {
 // FULL WIDTH
 $fullWidth: 90%;
 
-
-
-
 // DATE BLOCK
 @import "dateBlock";
 
 //NAV BAR
-@import 'nav';
+@import "nav";
 
 // MARQUEE
 @import "marquee";
@@ -54,19 +69,13 @@ $fullWidth: 90%;
 @import "clm3";
 
 // GALLERY CAROUSAL
-@import 'gallery';
+@import "gallery";
 
 //FOOTER
 @import "footer";
 
-
 // 2ND PAGE
-@import 'newsView';
-
-
-
-
-
+@import "newsView";
 
 // Responsive
 @import "responsive";

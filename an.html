@@ -15,487 +15,180 @@
 
 <body>
   <style>
-    body {
-      font-family: 'SolaimanLipi', serif;
-      margin: 0;
-      padding: 0;
-      width: 100%;
-    }
-
-    .relativeNav {
-      position: relative;
-      /* background-color: #F1EBEB; */
-    }
-
-    .fullWidth {
-      display: inline-block;
-      position: sticky;
+    .progress-bar {
+      position: fixed;
       top: 0;
-      width: 100%;
-      margin: 0 auto;
-      background-color: #F1EBEB;
-    }
-
-    .navbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 90%;
-      margin: 0 auto;
-    }
-
-    .left-section,
-    .center-section,
-    .right-section {
-      display: flex;
-      align-items: center;
-    }
-
-    .hamburger {
-      cursor: pointer;
-      margin-right: 1rem;
-      font-size: 1.5rem;
-      color: #333;
-    }
-
-
-    .logo {
-      color: white;
-      width: auto;
-      height: 40px;
-    }
-
-    .navMenu {
-      list-style: none;
-      font-size: 1.5rem;
-      display: flex;
-      gap: 20px;
-    }
-
-    .navMenu li {
-      position: relative;
-      /* HOVER UNDERLINE ENABLE */
-    }
-
-    .navMenu li::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
       left: 0;
-      width: 0;
-      height: 2px;
-      background-color: #03695b;
-      transition: width 0.3s ease;
-    }
-
-    .navMenu li:hover::after {
-      width: 100%;
-    }
-
-    .navMenu li a {
-      text-decoration: none;
-      color: #121212;
-      transition: color 0.3s;
-    }
-
-    .navMenu li a:hover {
-      color: #343434;
-    }
-
-    .right-section {
-      position: relative;
-    }
-
-    .right-section i {
-      position: absolute;
-      color: #333333;
-      font-size: 1.6rem;
-      padding: 1rem 0;
-      cursor: pointer;
-      border-top-left-radius: 10%;
-      border-bottom-left-radius: 10%;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 1;
-    }
-
-    .right-section .fa-x {
-      transform: translate(-200%, -50%);
-    }
-
-    .right-section #closeIcon {
-      display: none;
-    }
-
-    .search-input {
-      position: absolute;
-      width: calc(100%);
-      /* Left Cross black area 0% */
-      z-index: 0;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      /* box-shadow: 1px 3px 4px 2px #757575be; */
-      display: none;
-      /* Invisible */
-      transition: display 0.2s ease-in-out;
-    }
-
-    .search-input.active {
-      display: block;
-      /* Visible the Search Input */
-    }
-
-
-    .search-input input {
-      position: relative;
-      width: calc(100%);
-      border: none;
-      outline: none;
-      padding: 1rem 0;
-      text-align: center;
       background: #dbdbdb;
+      width: 100%;
+      height: 0.2rem;
     }
 
-
-    .fa-bars,
-    .fa-x {
-      transition: transform 0.3s ease;
-    }
-
-    .fa-x {
-      transform: rotate(180deg);
+    .progress-bar__mask {
+      background: #ff0000;
+      width: 0;
+      height: 100%;
+      /* transition: width 0.1s ease; */
     }
   </style>
 
-  <div class="relativeNav">
-
-    <span class="fullWidth">
-      <div class="navbar">
-        <div class="left-section">
-          <i class="hamburger fa-solid fa-bars" onclick="toggleMenu()"></i>
-          <img class="logo" src="img.png" alt="">
-        </div>
-        <div class="center-section">
-          <!-- Nav Menu -->
-          <ul class="navMenu">
-            <li><a href="#" title="প্রথম পাতা">প্রথম পাতা</a></li>
-            <li><a href="#" title="সিলেট">সিলেট</a></li>
-            <li><a href="#" title="দেশ">দেশ</a></li>
-            <li><a href="#" title="রাজনীতি">রাজনীতি</a></li>
-            <li><a href="#" title="খেলাধুলা">খেলাধুলা</a></li>
-            <li><a href="#" title="আন্তর্জাতিক">আন্তর্জাতিক</a></li>
-            <li><a href="#" title="বাণিজ্য">বাণিজ্য</a></li>
-            <li><a href="#" title="চাকরি">চাকরি</a></li>
-            <li><a href="#" title="বিনোদন">বিনোদন</a></li>
-            <li><a href="#" title="ধর্ম">ধর্ম</a></li>
-          </ul>
-        </div>
-        <div class="right-section">
-          <!-- Search bar -->
-          <i class="fa-solid fa-search" id="searchIcon"></i>
-          <i class="fa-solid fa-x" id="closeIcon"></i>
-
-        </div>
-        <!-- INPUT BOX -->
-        <div class="search-input">
-          <input type="text" placeholder="Search...">
-        </div>
-      </div>
-    </span>
-
-
-    
-    <style>
-      /* RESNAV */
-      .fullResNav {
-        margin-top: -1.2rem;
-        width: 100%;
-        position: relative;
-        /* background-color: #FFD700; */
-        z-index: -1;
-      }
-
-      .resNav {
-        display: none;
-        /* Initial positioning */
-        width: 90%;
-        display: flex;
-        justify-content: space-around;
-        opacity: 0;
-        margin: 0 auto;
-      }
-
-      .show {
-        display: flex;
-        opacity: 1;
-        transition: opacity 0.3s ease, top 0.5s ease-in-out;
-      }
-
-      .resNav section {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-      }
-
-      .resNav section div {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        border-bottom: 1px solid #ccc;
-      }
-
-      .resNav section div i {
-        display: none;
-      }
-
-      .resNav section ul {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-      }
-
-      .resNav section li {
-        list-style: none;
-      }
-
-      @media screen and (max-width: 768px) {
-        .navMenu {
-          display: none;
-        }
-
-        .resNav {
-          flex-direction: column;
-        }
-
-        .resNav section div i {
-          display: block;
-        }
-      }
-
-      @media screen and (max-width: 1080px) {
-        .navMenu{
-          font-size: 1.1rem;
-        }
-        /* Last 4 Child shows none */
-        .navMenu li:nth-last-child(-n+4) {
-          display: none;
-        }
-      }
-    </style>
-    <section class="fullResNav">
-      <nav class="resNav">
-
-        <section class="col1">
-          <div>
-            <h2>বাংলাদেশ</h2> <i class="fa-solid fa-chevron-right"></i>
-          </div>
-          <ul>
-            <li>
-              <i class="fa fa-angle-right"></i>
-              <a href="#" title="রাজধানী">রাজধানী</a>
-            </li>
-            <li>
-              <i class="fa fa-angle-right"></i> <a href="#" title="জেলা">জেলা</a>
-            </li>
-            <li>
-              <i class="fa fa-angle-right"></i>
-              <a href="#" title="করোনাভাইরাস">করোনাভাইরাস</a>
-            </li>
-            <li>
-              <i class="fa fa-angle-right"></i>
-              <a href="#" title="পরিবেশ">পরিবেশ</a>
-            </li>
-            <li>
-              <i class="fa fa-angle-right"></i>
-              <a href="#" title="অপরাধ">অপরাধ</a>
-            </li>
-          </ul>
-        </section>
-
-        <section class="col2">
-          <div>
-            <h2>বিশ্ব</h2> <i class="fa-solid fa-chevron-right"></i>
-          </div>
-          <ul>
-            <li>
-              <i class="fa fa-angle-right"></i> <a href="#" title="ভারত">ভারত</a>
-            </li>
-            <li>
-              <i class="fa fa-angle-right"></i> <a href="#" title="চীন">চীন</a>
-            </li>
-            <li>
-              <i class="fa fa-angle-right"></i>
-              <a href="#" title="মধ্যপ্রাচ্য">মধ্যপ্রাচ্য</a>
-            </li>
-            <li>
-              <i class="fa fa-angle-right"></i>
-              <a href="#" title="যুক্তরাষ্ট্র">যুক্তরাষ্ট্র</a>
-            </li>
-            <li>
-              <i class="fa fa-angle-right"></i>
-              <a href="#" title="এশিয়া">এশিয়া</a>
-            </li>
-            <li>
-              <i class="fa fa-angle-right"></i>
-              <a href="#" title="ইউরোপ">ইউরোপ</a>
-            </li>
-            <li>
-              <i class="fa fa-angle-right"></i>
-              <a href="#" title="আফ্রিকা">আফ্রিকা</a>
-            </li>
-            <li>
-              <i class="fa fa-angle-right"></i>
-              <a href="#" title="লাতিন আমেরিকা">লাতিন আমেরিকা</a>
-            </li>
-          </ul>
-        </section>
-
-        <section class="col3">
-          <div>
-            <h2>বিদেশ</h2> <i class="fa-solid fa-chevron-right"></i>
-          </div>
-          <ul>
-            <li>
-              <i class="fa fa-angle-right"></i> <a href="#" title="ভারত">ভারত</a>
-            </li>
-            <li>
-              <i class="fa fa-angle-right"></i> <a href="#" title="চীন">চীন</a>
-            </li>
-            <li>
-              <i class="fa fa-angle-right"></i>
-              <a href="#" title="মধ্যপ্রাচ্য">মধ্যপ্রাচ্য</a>
-            </li>
-            <li>
-              <i class="fa fa-angle-right"></i>
-              <a href="#" title="যুক্তরাষ্ট্র">যুক্তরাষ্ট্র</a>
-            </li>
-            <li>
-              <i class="fa fa-angle-right"></i>
-              <a href="#" title="এশিয়া">এশিয়া</a>
-            </li>
-            <li>
-              <i class="fa fa-angle-right"></i>
-              <a href="#" title="ইউরোপ">ইউরোপ</a>
-            </li>
-            <li>
-              <i class="fa fa-angle-right"></i>
-              <a href="#" title="আফ্রিকা">আফ্রিকা</a>
-            </li>
-            <li>
-              <i class="fa fa-angle-right"></i>
-              <a href="#" title="লাতিন আমেরিকা">লাতিন আমেরিকা</a>
-            </li>
-          </ul>
-        </section>
-        <section class="col4">
-          <div>
-            <h2>বিনোদন</h2> <i class="fa-solid fa-chevron-right"></i>
-          </div>
-          <ul>
-            <li>
-              <i class="fa fa-angle-right"></i>
-              <a href="#" title="টেলিভিশন">টেলিভিশন</a>
-            </li>
-            <li>
-              <i class="fa fa-angle-right"></i>
-              <a href="#" title="ওটিটি">ওটিটি</a>
-            </li>
-            <li>
-              <i class="fa fa-angle-right"></i>
-              <a href="#" title="ঢালিউড">ঢালিউড</a>
-            </li>
-            <li>
-              <i class="fa fa-angle-right"></i>
-              <a href="#" title="টালিউড">টালিউড</a>
-            </li>
-            <li>
-              <i class="fa fa-angle-right"></i>
-              <a href="#" title="বলিউড">বলিউড</a>
-            </li>
-            <li>
-              <i class="fa fa-angle-right"></i>
-              <a href="#" title="হলিউড">হলিউড</a>
-            </li>
-            <li>
-              <i class="fa fa-angle-right"></i>
-              <a href="#" title="বিশ্ব চলচ্চিত্র">বিশ্ব চলচ্চিত্র</a>
-            </li>
-            <li>
-              <i class="fa fa-angle-right"></i> <a href="#" title="গান">গান</a>
-            </li>
-            <li>
-              <i class="fa fa-angle-right"></i> <a href="#" title="নাটক">নাটক</a>
-            </li>
-            <li>
-              <i class="fa fa-angle-right"></i>
-              <a href="#" title="আলাপন">আলাপন</a>
-            </li>
-          </ul>
-        </section>
-
-        <section class="col5">
-          <div>
-            <h2>চাকরি</h2> <i class="fa-solid fa-chevron-right"></i>
-          </div>
-          <ul>
-            <li>
-              <i class="fa fa-angle-right"></i>
-              <a href="#" title="নিয়োগ">নিয়োগ</a>
-            </li>
-            <li>
-              <i class="fa fa-angle-right"></i>
-              <a href="#" title="পরামর্শ">পরামর্শ</a>
-            </li>
-            <li>
-              <i class="fa fa-angle-right"></i>
-              <a href="#" title="সাক্ষাৎকার">সাক্ষাৎকার</a>
-            </li>
-          </ul>
-        </section>
-        <section class="col6">
-          <div>
-            <h2>খেলাধুলা</h2> <i class="fa-solid fa-chevron-right"></i>
-          </div>
-          <ul>
-            <li>
-              <i class="fa fa-angle-right"></i>
-              <a href="#" title="ক্রিকেট">ক্রিকেট</a>
-            </li>
-            <li>
-              <i class="fa fa-angle-right"></i>
-              <a href="#" title="ফুটবল">ফুটবল</a>
-            </li>
-            <li>
-              <i class="fa fa-angle-right"></i>
-              <a href="#" title="অন্য খেলা">অন্য খেলা</a>
-            </li>
-            <li>
-              <i class="fa fa-angle-right"></i>
-              <a href="#" title="সাক্ষাৎকার">সাক্ষাৎকার</a>
-            </li>
-            <li>
-              <i class="fa fa-angle-right"></i>
-              <a href="#" title="ফটো ফিচার">ফটো ফিচার</a>
-            </li>
-            <li>
-              <i class="fa fa-angle-right"></i>
-              <a href="#" title="কুইজ">কুইজ</a>
-            </li>
-          </ul>
-        </section>
-      </nav>
-    </section>
-
+  <div class="articleContainer">
+    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+      dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
+      kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+      sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+      voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+      sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+      eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+      duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+      dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
+      kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+      sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+      voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+      sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+      eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+      duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+      dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
+      kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+      sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+      voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+      sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+      eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+      duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+      dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
+      kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+      sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+      voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+      sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+      eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+      duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+      dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
+      kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+      sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+      voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+      sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+      eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+      duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+      dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
+      kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+      sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+      voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+      sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+      eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+      duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+      dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
+      kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+      sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+      voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+      sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+      eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+      duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+      dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
+      kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+      sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+      voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+      sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+      eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+      duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+      dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
+      kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+      sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+      voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+      sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+      eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+      duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+      dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
+      kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+      sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+      voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+      sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+      eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+      duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+      dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
+      kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+      sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+      voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+      sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+      eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+      duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+      dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
+      kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+      sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+      voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+      sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+      eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+      duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+      dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
+      kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+      sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+      voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+      sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+      eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+      duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+      dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
+      kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+      sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+      voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+      sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+      eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+      duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+      dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
+      kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+      sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+      voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+      sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+      eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+      duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+      dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
+      kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+      sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+      voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+      sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+      eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+      duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+      dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
+      kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+      sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+      voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+      sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+      eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+      duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+      dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
+      kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+      sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+      voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+      sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+      eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+      duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+      dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
+      kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+      sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+      voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+      sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+      eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+      duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
   </div>
-
-
-
-
-
-
+  <div class="progress-bar">
+    <div class="progress-bar__mask"></div>
+  </div>
 
 
 </body>
@@ -503,29 +196,17 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> <!-- jQuery library -->
 
 <script>
-
-
-  // HAMBURGER REVEAL
-  function toggleMenu() {
-    $('.hamburger').toggleClass('fa-bars fa-x');
-    $('.resNav').toggleClass('show');
-  }
-
-
-
   $(document).ready(function () {
-    $('#searchIcon').click(function () {
-      $('.search-input').toggleClass('active'); // Toggle the 'active' class to show/hide input
-      $(this).toggleClass('fa-search fa-x'); // Toggle the search icon to cross
-    });
+    $(window).on('scroll', function () {
+      var windowHeight = $(window).height();
+      var documentHeight = $(document).height();
+      var scrollTop = $(window).scrollTop();
 
-    $('#closeIcon').click(function () {
-      $('.search-input').removeClass('active'); // Hide the input when close icon is clicked
-      $('#searchIcon').removeClass('fa-x').addClass('fa-search'); // Change the cross back to search icon
+      var scrollPercent = (scrollTop / (documentHeight - windowHeight)) * 100;
+
+      $('.progress-bar__mask').width(scrollPercent + '%');
     });
   });
-
-
 </script>
 
 
