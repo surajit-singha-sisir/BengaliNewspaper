@@ -1,21 +1,41 @@
-body {
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    margin: auto;
-    font-family: "SolaimanLipi", Helvetica, sans-serif;
 }
 
-@import "var";
+$text : #121212f1;
+:root{
+    font-size: 1rem; //Take the default font size of Browser (General : 16px)
+    font-family: 'SolaimanLipi', Helvetica, serif;
+    color: $text;
+}
 
+// VARIABLES
+@import "var";
+@import 'mixin';
+
+// ROOT CLASSES
+@import 'root-classes';
+
+// ANCHOR TAG DEFAULT
+$a : #121212f1;
 a {
-    color: $TXT;
+    color: $a;
     text-decoration: none;
 }
+// FULL WIDTH
+$fullWidth: 90%;
+
+
+
 
 // DATE BLOCK
 @import "dateBlock";
 
 //NAV BAR
-// @import "navBar";
 @import 'nav';
 
 // MARQUEE
@@ -42,14 +62,11 @@ a {
 
 // 2ND PAGE
 @import 'newsView';
+
+
+
+
+
+
 // Responsive
 @import "responsive";
-
-// home ads 1
-.HomeAds1 {
-    margin: 0 auto;
-    margin-top: 30px;
-    background-color: grey;
-    width: 90%;
-    height: 226px;
-}

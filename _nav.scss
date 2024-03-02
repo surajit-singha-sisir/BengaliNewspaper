@@ -1,6 +1,4 @@
 .relativeNav {
-    position: sticky;
-    top: 0;
     background-color: $NAV; //BG
     z-index: 5;
 }
@@ -137,7 +135,6 @@
 
 /* RESNAV */
 .fullResNav {
-    top: 4.5rem;
     display: none;
     width: 100%;
     background-color: $NTABBG;
