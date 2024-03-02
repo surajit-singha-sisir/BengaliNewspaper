@@ -1,15 +1,14 @@
 // 3 Column NEWS VIEW (clm3)
 .clm3 {
+    @extend .marginAuto;
     display: flex;
-    align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     gap: 1rem;
-    width: 90%;
-    margin: 0 auto;
-    margin-bottom: 1.5rem;
+    width: $fullWidth;
 
     .clm3Left,
     .clm3Right {
+        @extend .marginTB__10;
         display: flex;
         flex-direction: column;
 
@@ -31,21 +30,20 @@
         }
 
         .shortNewsFlex {
+            @extend .border__Bottom;
             display: flex;
             gap: 0rem;
             flex: 1 1;
             margin-bottom: 1rem;
             padding-bottom: 1rem;
-            border-bottom: 1px solid #c4c4c4;
 
             &:hover{
                 color: #972b2b;
             }
             & img {
-                margin-top: 0;
-                width: 100%;
+                aspect-ratio: 4/3;
+                margin-top: 0.4rem;
                 height: auto;
-                object-fit: contain;
                 max-width: 15rem;
             }
             .shortNewsTexts {

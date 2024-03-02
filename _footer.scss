@@ -3,10 +3,9 @@ footer{
     background-color: #F1EBEB;
 }
 .footerDiv {
-    font-family: 'SolaimanLipi', sans-serif;
     display: flex;
     flex-direction: column;
-    width: 90%;
+    width: $fullWidth;
     margin: 0 auto;
     flex-wrap: wrap;
 }
@@ -15,7 +14,6 @@ footer{
     margin-top: 1rem;
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid gray;
     border-width: 80%;
     align-items: center;
     flex-wrap: wrap;
@@ -36,12 +34,12 @@ footer{
     margin-right: 1rem;
 }
 
-.socialMedia > a {
+.socialMediaFooter a {
     display: inline-block;
     font-size: 20px;
 }
 
-.socialMedia > a:hover {
+.socialMediaFooter a:hover {
     color: #B22121;
     text-decoration: none;
     padding: 2px;
@@ -54,10 +52,13 @@ footer{
     display: flex;
     justify-content: space-around;
     width: 80%;
-    border-bottom: 1px solid gray;
     margin: 0 auto;
     flex: 0 1;
     flex-wrap: wrap;
+
+    & a:hover{
+        color: #7c7c7c;
+    }
 }
 .contactsInfo .col3{
     display: flex;
@@ -82,4 +83,9 @@ footer{
     width: 100%;
     align-items: center;
     background-color: #CEBFBF;
+
+    & a:hover{
+        color: black;
+        font-weight: 600;
+    }
 }

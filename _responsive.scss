@@ -21,31 +21,29 @@
             }
         }
     }
+
+    .shortNewsTexts {
+        & h2 {
+            padding-left: 8px; //8px Gap
+            margin-top: 0;
+        }
+        & p {
+            display: block;
+        }
+    }
 }
 
 // 786px SCREEN
 @media screen and (max-width: 768px) {
+
     /* DATE BLOCK & SOCIAL MEDIA ICON */
     .dateBlock {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        padding-bottom: 10px;
-        border-bottom: 1px solid #ccc;
-        margin-bottom: 10px;
-
-        & .titlePopUp p {
-            font-size: 4vw;
-            color: $CAT;
-            transition: all 0.5s ease;
-            text-align: center;
-            margin-bottom: -1px;
-        }
-
-        & .socialMedia {
-            display: none;
-        }
+        color: $TXT;
+        transition: all 0.5s ease;
+        text-align: center;
+    }
+    .socialMedia {
+        display: none;
     }
 
     // THE NAV BAR
@@ -73,29 +71,24 @@
 
     //MARQUEE TEXT BLOCK
     .marqueeBlock {
-        height: 40px;
+        height: 1rem;
 
         & .highlight {
-            height: 40px;
+            height: 2.4rem;
 
             & h2 {
-                font-size: 1.3rem;
+                font-size: 1.2rem;
             }
             & .marquee-bg {
-                position: relative;
-                width: 5rem;
-                height: 100%;
 
                 &::after {
                     content: "";
                     position: relative;
                     display: block;
-                    width: 5.8rem;
-                    height: 100px;
+                    width: 7em; //SET WIDTH
                     top: 0;
-                    border-right: 20px solid transparent;
-                    border-left: 0 solid transparent;
-                    border-top: 40px solid #e3e3e3;
+                    border-right: 0.7rem solid transparent;
+                    border-top: 2.5rem solid #e3e3e3;
                     z-index: 1;
                 }
             }
@@ -103,7 +96,7 @@
                 & ul {
                     & li {
                         & a {
-                            font-size: 1.1rem;
+                            font-size: 1rem;
                         }
                     }
                 }
@@ -153,6 +146,30 @@
             padding-bottom: 20px;
         }
     }
+
+    // FOOTER
+    .footerRow1{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+
+        & span{
+            margin-top: 0.6rem;
+        }
+    }
+    .footerRow2{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 0.6rem;
+    }
+
+    .footerCenter{
+        display: block;
+        text-align: center;
+        margin-bottom: 0.8rem;
+    }
 }
 
 // 576px SCREEN
@@ -168,7 +185,7 @@
         .shortNewsFlex {
             gap: 0rem !important;
             & img {
-                width: 40% !important;
+                aspect-ratio: 4/3;
             }
 
             .shortNewsTexts {

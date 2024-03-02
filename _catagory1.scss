@@ -1,13 +1,15 @@
 // CATEGORY CSS
 .category {
     margin: 0 auto;
-    margin-bottom: 20px;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
     width: $fullWidth;
 
     & .catName {
         display: flex;
         align-items: center;
         color: red;
+        margin-bottom: 1rem;
         
         & i {
             margin-right: 1rem;
@@ -22,6 +24,7 @@
         display: flex;
         position: relative;
         flex-wrap: wrap;
+        margin-bottom: 1rem;
         gap: 1rem;
 
         & .newsBox {
@@ -53,9 +56,11 @@
             }
             
             & img {
+                aspect-ratio: 4/3;
+                @extend .img__100;
                 width: 100%;
-                min-width: 10rem;
                 height: auto;
+                min-width: 10rem;
             }
         }
 
@@ -64,11 +69,10 @@
             & h2 {
                 -webkit-box-orient: block-axis;
                 display: -webkit-box;
-                margin-bottom: 0.5em;
                 -webkit-line-clamp: 2;
                 overflow: hidden;
-                font-size: 1.3rem;
-                text-overflow: ellipsis;
+                font-size: 1.1rem;
+                margin-bottom: 0.5em;
             }
 
             & i{

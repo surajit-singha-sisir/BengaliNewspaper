@@ -9,14 +9,14 @@
     align-items: center;
 
     & .highlight {
-        position: absolute;
-        height: 50px;
+        position: relative;
+        height: 3rem;
         background-color: #f8f8ff;
         display: flex;
         align-items: center;
 
         & h2 {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             position: absolute;
             margin-left: 5%;
             color: #121212;
@@ -34,9 +34,8 @@
                 width: 13em;
                 height: 100px;
                 top: 0;
-                border-right: 20px solid transparent;
-                border-left: 0 solid transparent;
-                border-top: 50px solid #e3e3e3;
+                border-right: 1rem solid transparent;
+                border-top: 3rem solid #e3e3e3;
                 z-index: 1;
             }
         }

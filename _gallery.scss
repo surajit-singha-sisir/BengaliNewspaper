@@ -54,6 +54,9 @@
             }
 
             & span p {
+                @extend .text__White;
+                @extend .text__Shadow_Black;
+                @extend .text__14;
                 position: absolute;
                 display: none;
                 padding: 10px;
