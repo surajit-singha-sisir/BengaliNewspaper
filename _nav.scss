@@ -245,3 +245,19 @@
         display: none;
     }
 }
+
+
+.titleShare{
+    position: relative;
+}
+// .titleShare::after{
+//     content: "";
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     border-top: 0 transparent;
+//     border-right: 20px solid ;
+//     border-left: 20px solid transparent;
+//     border-bottom: 40px solid transparent;
+//     border-style: solid;    
+// }
