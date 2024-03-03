@@ -1,9 +1,13 @@
+@charset "UTF-8";
 *,
 *::before,
 *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
+  -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
 }
 
 *::-webkit-scrollbar {
@@ -29,6 +33,32 @@
   color: rgba(18, 18, 18, 0.9450980392);
 }
 
+/* Define print styles */
+@media print {
+  .postBody {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+  }
+  .navbar, .marqueeBlock, .rightSection, .category, .navMenu, footer, .adsFull {
+    display: none !important;
+  }
+  .postBody::after {
+    content: "এই প্রিন্ট পাতাটির স্বত্ব কেহেম আইটির। দয়া করে কপিরাইট করবেন না।";
+    display: block;
+    color: #ff0000;
+    background-color: #ffffff !important;
+    padding: 10px;
+    font-size: 20px;
+    top: 100px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    position: absolute;
+    clear: both;
+  }
+}
 /* ----------------------------------------------------------------
 ROOT CLASSES
 ----------------------------------------------------------------
@@ -577,6 +607,66 @@ DISPLAY CLASSES
   gap: 2rem;
 }
 
+.gap__21 {
+  gap: 2.1rem;
+}
+
+.gap__22 {
+  gap: 2.2rem;
+}
+
+.gap__23 {
+  gap: 2.3rem;
+}
+
+.gap__24 {
+  gap: 2.4rem;
+}
+
+.gap__25 {
+  gap: 2.5rem;
+}
+
+.gap__26 {
+  gap: 2.6rem;
+}
+
+.gap__27 {
+  gap: 2.7rem;
+}
+
+.gap__28 {
+  gap: 2.8rem;
+}
+
+.gap__29 {
+  gap: 2.9rem;
+}
+
+.gap__30, .gap__3 {
+  gap: 3rem;
+}
+
+.gap__31 {
+  gap: 3.1rem;
+}
+
+.gap__32 {
+  gap: 3.2rem;
+}
+
+.gap__33 {
+  gap: 3.3rem;
+}
+
+.gap__34 {
+  gap: 3.4rem;
+}
+
+.gap__35 {
+  gap: 3.5rem;
+}
+
 /* ----------------------------------------------------------------
 IMAGE (Unit-%) IN PERCENTAGE
 ----------------------------------------------------------------
@@ -916,6 +1006,19 @@ FONTS SIZE
 
 .text__Shadow_Gray {
   text-shadow: 2px 2px 2px #ccc;
+}
+
+.text__00273F {
+  color: #00273F;
+}
+
+.button__101 {
+  background-color: #E8E8E8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
 }
 
 .text__Black {
@@ -2707,6 +2810,10 @@ MARGINS
   margin-right: 2rem;
 }
 
+.margin__00 {
+  margin: 0;
+}
+
 .margin__01 {
   margin: 0.1rem;
 }
@@ -4266,6 +4373,7 @@ a {
 
 .resNav section li {
   list-style: none;
+  font-size: 1.2rem;
 }
 .resNav section li a:hover {
   color: #B22121;
@@ -4817,6 +4925,10 @@ footer {
 .writerContainer a {
   transition: all 0.2s ease-in-out;
 }
+.writerContainer .authorClass {
+  display: flex;
+  flex-direction: column;
+}
 
 .featureImg {
   width: 100%;
@@ -5006,6 +5118,75 @@ footer {
 
 .adsCenter {
   margin: 1rem 0;
+}
+
+.button__01 {
+  background-color: #E8E8E8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  position: relative;
+  overflow: hidden;
+  /* Ensure button contents do not overflow */
+}
+
+.button__01::after {
+  content: "";
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #00273F;
+  transition: bottom 0.5s ease-in-out;
+}
+
+.button__01:hover::after {
+  bottom: 0;
+  color: white;
+}
+
+.button__01:active::after {
+  background-color: red;
+}
+
+.flexJustifyCenterAlignCenter a {
+  text-shadow: none !important; /*Shadow Removed*/
+}
+
+.socials {
+  font-size: 0.8rem;
+  position: absolute;
+  color: #00273F;
+  padding: 1rem;
+  z-index: 1;
+}
+
+.socials:hover {
+  color: white;
+}
+
+.paraPos {
+  position: absolute;
+  top: -30%;
+  right: -30%;
+  padding: 0.5rem;
+  font-size: 0.6rem;
+  border-radius: 50%;
+  background-color: #E28C8C;
+}
+
+.paraPose2 {
+  position: absolute;
+  font-size: 0.6rem;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
 }
 
 @media screen and (max-width: 1080px) {

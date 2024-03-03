@@ -18,7 +18,7 @@
 
 <body>
   <!-- DATE BLOCK -->
-
+  
   <div class="flexJustifySpaceBetweenAlignCenter width__90 marginAuto paddingTB__05">
     <!-- .dateBlock >> p >> a -->
     <div class="text__09 cursor__Help" title="বাংলা, ইংরেজি ও হিজরি তারিখ">
@@ -857,6 +857,19 @@
       $('#searchIcon').removeClass('fa-x').addClass('fa-search'); // Change the cross back to search icon
     });
   });
+
+  $(document).ready(function() {
+    // Smooth scrolling for all anchor links
+    $('a[href^="#"]').on('click', function(event) {
+        var target = $(this.getAttribute('href'));
+        if (target.length) {
+            event.preventDefault();
+            $('html, body').stop().animate({
+                scrollTop: target.offset().top
+            }, 6000); // Adjust the duration for slower or faster scrolling
+        }
+    });
+});
 
 </script>
 

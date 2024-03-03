@@ -62,6 +62,11 @@
     & a {
         transition: all 0.2s ease-in-out;
     }
+
+    .authorClass{
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 .featureImg {

@@ -552,6 +552,70 @@ DISPLAY CLASSES
     gap: 2rem;
 }
 
+.gap__21 {
+    gap: 2.1rem;
+}
+
+.gap__22 {
+    gap: 2.2rem;
+}
+
+.gap__23 {
+    gap: 2.3rem;
+}
+
+.gap__24 {
+    gap: 2.4rem;
+}
+
+.gap__25 {
+    gap: 2.5rem;
+}
+
+.gap__26 {
+    gap: 2.6rem;
+}
+
+.gap__27 {
+    gap: 2.7rem;
+}
+
+.gap__28 {
+    gap: 2.8rem;
+}
+
+.gap__29 {
+    gap: 2.9rem;
+}
+
+.gap__30, .gap__3 {
+    gap: 3rem;
+}
+
+.gap__31 {
+    gap: 3.1rem;
+}
+
+.gap__32 {
+    gap: 3.2rem;
+}
+
+.gap__33 {
+    gap: 3.3rem;
+}
+
+.gap__34 {
+    gap: 3.4rem;
+}
+
+.gap__35 {
+    gap: 3.5rem;
+}
+
+
+
+
+
 /* ----------------------------------------------------------------
 IMAGE (Unit-%) IN PERCENTAGE
 ----------------------------------------------------------------
@@ -848,6 +912,20 @@ FONTS SIZE
 }
 
 //TEXT COLORS
+
+.text__00273F{
+    color: #00273F; //Share Icons
+}
+.button__101{
+    background-color: #E8E8E8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // width: 2.5rem;
+    // height: 2.5rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
 
 .text__Black {
     color: #000;
@@ -1820,6 +1898,7 @@ MARGINS
 ----------------------------------------------------------------
 */
 
+
 //MARGIN LEFT
 
 .marginLeft__01 {
@@ -2630,6 +2709,9 @@ MARGINS
 }
 
 //MARGIN TOP RIGHT BOTTOM LEFT
+.margin__00{
+    margin: 0;
+}
 .margin__01 {
     margin: 0.1rem;
 }
