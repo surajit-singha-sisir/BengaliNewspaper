@@ -4716,7 +4716,11 @@ a {
 }
 
 /* GALLERY CONTAINER */
-.gallery h2 {
+.gallery {
+  padding: 40px 0;
+}
+.gallery h1 {
+  margin-bottom: 20px;
   text-align: center;
   color: red;
 }
