@@ -9,7 +9,6 @@
                 "item1 item1"
                 "item2 item3"
                 "item4 item5";
-
         }
     }
 
@@ -35,7 +34,6 @@
 
 // 786px SCREEN
 @media screen and (max-width: 768px) {
-
     /* DATE BLOCK & SOCIAL MEDIA ICON */
     .dateBlock {
         color: $TXT;
@@ -80,7 +78,6 @@
                 font-size: 1.2rem;
             }
             & .marquee-bg {
-
                 &::after {
                     content: "";
                     position: relative;
@@ -115,7 +112,6 @@
                 "item3"
                 "item4"
                 "item5";
-
         }
     }
 
@@ -141,31 +137,76 @@
         flex-direction: column;
         /* Make it a single column on smaller screens */
 
-        & .rightSection{
+        & .rightSection {
             background-color: $NAV;
             padding-bottom: 20px;
         }
     }
 
+    /* GALLERY CONTAINER */
+    .gallery {
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .gallery-item .active {
+            cursor: grab;
+            cursor: -webkit-grab;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .gallery-item .active.grabbing {
+            cursor: grabbing;
+            cursor: -webkit-grabbing;
+        }
+
+        .gallery-item span {
+            display: none;
+        }
+
+        .gallery-item span.active {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .gallery-item span img {
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .gallery-item span.active img {
+            width: 100%;
+            height: auto;
+            opacity: 1;
+        }
+
+        .gallery-item .active {
+            transition: transform 0.3s ease-in-out;
+        }
+    }
+
     // FOOTER
-    .footerRow1{
+    .footerRow1 {
         width: 100%;
         display: flex;
         justify-content: center;
         text-align: center;
 
-        & span{
+        & span {
             margin-top: 0.6rem;
         }
     }
-    .footerRow2{
+    .footerRow2 {
         display: flex;
         justify-content: center;
         align-items: center;
         margin-bottom: 0.6rem;
     }
 
-    .footerCenter{
+    .footerCenter {
         display: block;
         text-align: center;
         margin-bottom: 0.8rem;

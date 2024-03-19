@@ -590,8 +590,7 @@
           <!-- TEXT BLOCK -->
           <div class="shortNewsTexts">
             <!-- NEWS HEADING -->
-            <h2>জাতির পিতার উদ্যোগের ফলে এবং তার নেতৃত্বে ভাষা আন্দোলনের পথ বেয়ে আমরা আমাদের স্বাধিকার পেয়েছি,
-              স্বাধীনতা পেয়েছি</h2>
+            <h2>জাতির পিতার উদ্যোগের ফলে এবং তার নেতৃত্বে ভাষা আন্দোলনের পথ বেয়ে আমরা আমাদের স্বাধিকার পেয়েছি, স্বাধীনতা পেয়েছি</h2>
 
             <!-- NEWS SHORT DESCRIPTION -->
             <p>আন্তর্জাতিক মাতৃভাষা ইনস্টিটিউটের মহাপরিচালক হাকিম আরিফ। ধরনের প্রতিষ্ঠানের উদ্দেশ্যকে ভিত্তি করে যে
@@ -617,7 +616,7 @@
     <!-- GALLERY -->
     <div class="gallery-container">
 
-      <div class="gallery-item" onclick="toggleActive(event)">
+      <div class="gallery-item mobile-gallery-item" onclick="toggleActive(event)">
         <!-- IMG 1 -->
         <span class="active">
           <img src="https://images.alphacoders.com/903/90353.jpg" alt="">
@@ -630,7 +629,8 @@
         </span>
         <!-- IMG 3 -->
         <span>
-          <img src="https://wallpaperswide.com/download/iceland_nature_travel_photography-wallpaper-1920x1080.jpg" alt="">
+          <img src="https://wallpaperswide.com/download/iceland_nature_travel_photography-wallpaper-1920x1080.jpg"
+            alt="">
           <p>তবে বড় ধাক্কা আসে গত বছর। এ বছর ভাগনারের বিদ্রোহ এবং বাহিনীটির প্রতিষ্ঠাতা ইয়েভগেনি</p>
         </span>
         <!-- IMG 4 -->
@@ -645,7 +645,8 @@
         </span>
         <!-- IMG 5 -->
         <span>
-          <img src="https://www.hollywoodreporter.com/wp-content/uploads/2024/02/Moana_Original_size-copy.jpg?w=1296" alt="">
+          <img src="https://www.hollywoodreporter.com/wp-content/uploads/2024/02/Moana_Original_size-copy.jpg?w=1296"
+            alt="">
           <p>তবে বড় ধাক্কা আসে গত বছর। এ বছর ভাগনারের বিদ্রোহ এবং বাহিনীটির প্রতিষ্ঠাতা ইয়েভগেনি</p>
         </span>
       </div>
@@ -868,6 +869,53 @@
         }
     });
 });
+
+// GALLERY SCECTION
+
+// Active span change Event
+$(document).ready(function () {
+  $(".gallery-item span").on("click", function () {
+    $(".gallery-item span").removeClass("active");
+    $(this).addClass("active");
+  });
+
+  // 3 Second scroll
+  function toggleActive() {
+    var $active = $(".gallery-item .active");
+    var $next = $active.next().length
+      ? $active.next()
+      : $(".gallery-item span").first();
+
+    // Check if viewport width is 768px or less
+    if ($(window).width() <= 768) {
+      // Fade out the current active span
+      $active.fadeOut("slow", function() {
+        $active.removeClass("active");
+        // Fade in the next span and add the active class
+        $next.fadeIn("slow").addClass("active");
+      });
+    } 
+    else {
+      // No transition for larger devices, simply change the active class
+      $active.removeClass("active");
+      $next.addClass("active");
+    }
+  }
+
+  // Set interval to change active span every 3 seconds
+  var interval = setInterval(toggleActive, 3000);
+
+  // Pause on mouse hover
+  $(".gallery-item").hover(
+    function () {
+      clearInterval(interval);
+    },
+    function () {
+      interval = setInterval(toggleActive, 3000);
+    }
+  );
+});
+
 
 </script>
 

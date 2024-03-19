@@ -63,46 +63,49 @@ function removeActive() {
 }
 
 // GALLERY SCECTION
-function toggleActive(event) {
-  const spans = document.querySelectorAll(".gallery-item span");
-  spans.forEach((span) => {
-    span.classList.remove("active");
+
+// Active span change Event
+$(document).ready(function () {
+  $(".gallery-item span").on("click", function () {
+    $(".gallery-item span").removeClass("active");
+    $(this).addClass("active");
   });
-  if (event.target.tagName === "IMG" || event.target.tagName === "P") {
-    event.target.parentNode.classList.add("active");
-  } else if (event.target.tagName === "SPAN") {
-    event.target.classList.add("active");
+});
+
+// 3 Second scroll
+$(document).ready(function () {
+  function toggleActive() {
+    var $active = $(".mobile-gallery-item .active");
+    var $next = $active.next().length
+      ? $active.next()
+      : $(".mobile-gallery-item span").first();
+    $active.removeClass("active");
+    $next.addClass("active");
   }
-}
 
+  // Set interval to change active span every 3 seconds
+  var interval = setInterval(toggleActive, 3000);
 
+  // Pause on mouse hover
+  $(".mobile-gallery-item").hover(
+    function () {
+      clearInterval(interval);
+    },
+    function () {
+      interval = setInterval(toggleActive, 3000);
+    }
+  );
+});
 
-  $(document).ready(function () {
-    $('#searchIcon').click(function () {
-      $('.search-input').toggleClass('active'); // Toggle the 'active' class to show/hide input
-      $(this).toggleClass('fa-search fa-x'); // Toggle the search icon to cross
-    });
+// ARTICLE PROGRESS BAR
+$(document).ready(function () {
+  $(window).on("scroll", function () {
+    var windowHeight = $(window).height();
+    var documentHeight = $(document).height();
+    var scrollTop = $(window).scrollTop();
 
-    $('#closeIcon').click(function () {
-      $('.search-input').removeClass('active'); // Hide the input when close icon is clicked
-      $('#searchIcon').removeClass('fa-x').addClass('fa-search'); // Change the cross back to search icon
-    });
+    var scrollPercent = (scrollTop / (documentHeight - windowHeight)) * 100;
+
+    $(".progress-bar__mask").width(scrollPercent + "%");
   });
-
-
-  // ARTICLE PROGRESS BAR
-  $(document).ready(function () {
-    $(window).on('scroll', function () {
-      var windowHeight = $(window).height();
-      var documentHeight = $(document).height();
-      var scrollTop = $(window).scrollTop();
-
-      var scrollPercent = (scrollTop / (documentHeight - windowHeight)) * 100;
-
-      $('.progress-bar__mask').width(scrollPercent + '%');
-    });
-  });
-
-
-
-  
+});
