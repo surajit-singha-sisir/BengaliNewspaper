@@ -12,6 +12,13 @@
         }
     }
 
+    //CATEGORY
+    .category {
+        .category1 {
+            grid-template-columns: repeat(4, auto);
+        }
+    }
+
     // 3 Column NEWS VIEW (clm3)
     .clm3 {
         .shortNewsFlex {
@@ -115,9 +122,11 @@
         }
     }
 
-    //CATEOGRY
-    .newsBox {
-        flex: 1 30%;
+    //CATEGORY
+    .category {
+        .category1 {
+            grid-template-columns: repeat(3, auto);
+        }
     }
 
     // 3 Column NEWS VIEW (clm3)
@@ -218,6 +227,14 @@
     .newsBox {
         flex-basis: calc(100% - 1rem);
     }
+
+    //CATEGORY
+    .category {
+        .category1 {
+            grid-template-columns: repeat(2, auto);
+        }
+    }
+
     // 3 Column NEWS VIEW (clm3)
     .clm3 {
         display: flex;
@@ -244,6 +261,16 @@
                     display: none !important;
                 }
             }
+        }
+    }
+}
+
+
+@media screen and (max-width: 420px){
+    //CATEGORY
+    .category {
+        .category1 {
+            grid-template-columns: repeat(1, auto);
         }
     }
 }
