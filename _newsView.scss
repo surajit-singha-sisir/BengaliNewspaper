@@ -136,8 +136,11 @@
 
     & div p {
         margin-top: -5px;
-        @extend .text__Ellipsis_4;
-        @extend .text__13;
+        display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: block-axis;
+    font-size: 1.3rem;
     }
 
     & span{

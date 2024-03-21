@@ -10,7 +10,7 @@
         align-items: center;
         color: red;
         margin-bottom: 1rem;
-        
+
         & i {
             margin-right: 1rem;
         }
@@ -49,15 +49,16 @@
 
             &:hover::after {
                 transition: background-color 0.5s ease;
-                box-shadow: 1px 3px 4px 2px rgba(0, 0, 0, .25);
-                background-color: #F1EBEB;
+                box-shadow: 1px 3px 4px 2px rgba(0, 0, 0, 0.25);
+                background-color: #f1ebeb;
                 width: calc(100% + 1rem);
                 height: calc(100% + 1rem);
             }
-            
+
             & img {
                 aspect-ratio: 4/3;
-                @extend .img__100;
+                width: 100%;
+                height: auto;
                 width: 100%;
                 height: auto;
                 min-width: 10rem;
@@ -65,7 +66,6 @@
         }
 
         .newsTitle {
-
             & h2 {
                 -webkit-box-orient: block-axis;
                 display: -webkit-box;
@@ -75,7 +75,7 @@
                 margin-bottom: 0.5em;
             }
 
-            & i{
+            & i {
                 color: #8d8d8d;
             }
 
@@ -87,5 +87,3 @@
         }
     }
 }
-
-

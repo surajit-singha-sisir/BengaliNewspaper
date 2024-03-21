@@ -10,11 +10,164 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.cdnfonts.com/css/solaimanlipi" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+        integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="gallery.css">
-
-
+    <!-- MASTORS CDN -->
+    <link rel="stylesheet" href="https://surajit-singha-sisir.github.io/mastorCDN/mastors.css">
 </head>
+
+<style>
+    .overlayStatic {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        color: rgb(255, 255, 255);
+        z-index: 1;
+        background: linear-gradient(to bottom,
+                rgba(0, 0, 0, 0) 10%,
+                rgba(0, 0, 0, 0.8) 100%);
+        padding: 0 1rem;
+        border-radius: 0.3rem;
+    }
+
+    .newsImage {
+        display: block;
+        overflow: hidden;
+        width: 100%;
+        height: auto;
+        margin-bottom: 0.6rem;
+        border-radius: 0.3rem;
+    }
+
+    .newsImage img {
+        display: block;
+        transition: all 0.4s ease-in-out;
+        object-fit: cover;
+    }
+
+    .newsImage img:hover {
+        transform: scale(1.1);
+    }
+
+
+    .categoryGrid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 1fr);
+        grid-template-rows: auto;
+        gap: 1rem;
+        overflow-wrap: anywhere;
+    }
+
+    .newsContant p:last-child {
+        font-size: 1.3rem;
+        text-shadow: 1px 2px 4px #000000b7;
+        padding-bottom: 0.5rem;
+    }
+
+    .categoryGrid> :first-child {
+        grid-column: 1 / span 3;
+        grid-row: span 2;
+    }
+
+    .categoryGrid> :nth-child(2) {
+        grid-column: 4;
+    }
+
+    .categoryGrid> :nth-child(3) {
+        grid-column: 5;
+    }
+
+    .categoryGrid> :nth-child(4) {
+        grid-row: 2;
+        grid-column: 4;
+    }
+
+    .categoryGrid> :nth-child(4+n) {
+        grid-row: auto;
+        grid-column: auto;
+    }
+
+
+    .newsIMG div {
+        display: block;
+        height: 30%;
+        background-color: aqua;
+    }
+
+    @media screen and (max-width: 1080px) {
+        .overlayStatic {
+            position: relative;
+            background: none;
+            color: black;
+            padding: 0;
+        }
+
+        .newsContant p:last-child {
+            font-size: 1.5rem !important;
+            text-shadow: none;
+            padding-bottom: 0.5rem;
+        }
+
+        .newsIMG p {
+            text-shadow: none !important;
+            margin-top: 0.8rem;
+            font-size: 1.5rem !important;
+        }
+
+        .newsItem p:nth-child(n+2) {
+            font-size: 1.3rem;
+        }
+
+        .categoryGrid {
+            grid-template-columns: auto auto auto;
+            gap: 0.5rem;
+            overflow-wrap: anywhere;
+        }
+
+        .categoryGrid :nth-child(1) {
+            grid-column: 1/ span 2;
+            grid-row: 1/ span 2;
+        }
+
+        .categoryGrid> :nth-child(n+2) {
+            grid-column: span 1;
+        }
+
+
+    }
+
+
+
+
+    @media screen and (max-width: 768px) {
+        .categoryGrid {
+            grid-template-columns: auto auto;
+        }
+
+        .categoryGrid> :nth-child(1) {
+            grid-row: 1;
+        }
+
+        .categoryGrid> :nth-child(n+2) {
+            grid-column: span 1;
+        }
+    }
+
+    @media screen and (max-width: 468px) {
+        .categoryGrid {
+            grid-template-columns: 1fr;
+        }
+
+        .categoryGrid> :nth-child(n) {
+            grid-column: span 1;
+        }
+
+        .overlayStatic {
+            font-size: 1rem !important;
+        }
+    }
+</style>
 
 <body>
     <!-- DATE BLOCK -->
@@ -38,15 +191,13 @@
         </div>
     </div>
 
-
     <!-- NAVIGATION BAR -->
     <div class="relativeNav position__Sticky top__0">
-
         <span class="fullWidth">
             <div class="navbar paddingTB__06">
                 <div class="left-section">
                     <i class="hamburger fa-solid fa-bars" onclick="toggleMenu()"></i>
-                    <img class="logo" src="img.png" alt="">
+                    <img class="logo" src="https://dummyimage.com/800x800/31c" alt="" />
                 </div>
                 <div class="center-section">
                     <!-- Nav Menu -->
@@ -67,22 +218,24 @@
                     <!-- Search bar -->
                     <i class="fa-solid fa-search" id="searchIcon"></i>
                     <i class="fa-solid fa-x" id="closeIcon"></i>
-
                 </div>
                 <!-- INPUT BOX -->
                 <div class="search-input">
-                    <input type="text" placeholder="Search...">
+                    <input type="text" placeholder="Search..." />
                 </div>
+            </div>
+            <!-- ARTICLE PROGRESS BAR -->
+            <div class="progress-bar">
+                <div class="progress-bar__mask"></div>
             </div>
         </span>
 
-
         <section class="fullResNav">
             <nav class="resNav">
-
                 <section class="col1 paddingTB__10">
                     <div class="paddingLB__1">
-                        <h2>বাংলাদেশ</h2> <i class="fa-solid fa-chevron-right"></i>
+                        <h2>বাংলাদেশ</h2>
+                        <i class="fa-solid fa-chevron-right"></i>
                     </div>
                     <ul class="marginTop__05 text__10">
                         <li>
@@ -90,7 +243,8 @@
                             <a href="newsView.html" title="রাজধানী">রাজধানী</a>
                         </li>
                         <li>
-                            <i class="fa fa-angle-right"></i> <a href="newsView.html" title="জেলা">জেলা</a>
+                            <i class="fa fa-angle-right"></i>
+                            <a href="newsView.html" title="জেলা">জেলা</a>
                         </li>
                         <li>
                             <i class="fa fa-angle-right"></i>
@@ -109,14 +263,17 @@
 
                 <section class="col2 paddingTB__10">
                     <div class="paddingLB__1">
-                        <h2>বিশ্ব</h2> <i class="fa-solid fa-chevron-right"></i>
+                        <h2>বিশ্ব</h2>
+                        <i class="fa-solid fa-chevron-right"></i>
                     </div>
                     <ul class="marginTop__05 text__10">
                         <li>
-                            <i class="fa fa-angle-right"></i> <a href="#" title="ভারত">ভারত</a>
+                            <i class="fa fa-angle-right"></i>
+                            <a href="#" title="ভারত">ভারত</a>
                         </li>
                         <li>
-                            <i class="fa fa-angle-right"></i> <a href="#" title="চীন">চীন</a>
+                            <i class="fa fa-angle-right"></i>
+                            <a href="#" title="চীন">চীন</a>
                         </li>
                         <li>
                             <i class="fa fa-angle-right"></i>
@@ -147,14 +304,17 @@
 
                 <section class="col3 paddingTB__10">
                     <div class="paddingLB__1">
-                        <h2>বিদেশ</h2> <i class="fa-solid fa-chevron-right"></i>
+                        <h2>বিদেশ</h2>
+                        <i class="fa-solid fa-chevron-right"></i>
                     </div>
                     <ul class="marginTop__05 text__10">
                         <li>
-                            <i class="fa fa-angle-right"></i> <a href="#" title="ভারত">ভারত</a>
+                            <i class="fa fa-angle-right"></i>
+                            <a href="#" title="ভারত">ভারত</a>
                         </li>
                         <li>
-                            <i class="fa fa-angle-right"></i> <a href="#" title="চীন">চীন</a>
+                            <i class="fa fa-angle-right"></i>
+                            <a href="#" title="চীন">চীন</a>
                         </li>
                         <li>
                             <i class="fa fa-angle-right"></i>
@@ -184,7 +344,8 @@
                 </section>
                 <section class="col4 paddingTB__10">
                     <div class="paddingLB__1">
-                        <h2>বিনোদন</h2> <i class="fa-solid fa-chevron-right"></i>
+                        <h2>বিনোদন</h2>
+                        <i class="fa-solid fa-chevron-right"></i>
                     </div>
                     <ul class="marginTop__05 text__10">
                         <li>
@@ -216,10 +377,12 @@
                             <a href="#" title="বিশ্ব চলচ্চিত্র">বিশ্ব চলচ্চিত্র</a>
                         </li>
                         <li>
-                            <i class="fa fa-angle-right"></i> <a href="#" title="গান">গান</a>
+                            <i class="fa fa-angle-right"></i>
+                            <a href="#" title="গান">গান</a>
                         </li>
                         <li>
-                            <i class="fa fa-angle-right"></i> <a href="#" title="নাটক">নাটক</a>
+                            <i class="fa fa-angle-right"></i>
+                            <a href="#" title="নাটক">নাটক</a>
                         </li>
                         <li>
                             <i class="fa fa-angle-right"></i>
@@ -230,7 +393,8 @@
 
                 <section class="col5 paddingTB__10">
                     <div class="paddingLB__1">
-                        <h2>চাকরি</h2> <i class="fa-solid fa-chevron-right"></i>
+                        <h2>চাকরি</h2>
+                        <i class="fa-solid fa-chevron-right"></i>
                     </div>
                     <ul class="marginTop__05 text__10">
                         <li>
@@ -249,7 +413,8 @@
                 </section>
                 <section class="col6 paddingTB__10">
                     <div class="paddingLB__1">
-                        <h2>খেলাধুলা</h2> <i class="fa-solid fa-chevron-right"></i>
+                        <h2>খেলাধুলা</h2>
+                        <i class="fa-solid fa-chevron-right"></i>
                     </div>
                     <ul class="marginTop__05 text__10">
                         <li>
@@ -280,174 +445,525 @@
                 </section>
             </nav>
         </section>
-
     </div>
+    <style>
+        .hover__text_White:hover {
+            color: white;
+            transition: color 0.3s ease-in-out;
+        }
+    </style>
+    <div class="postBody">
+        <!-- LEFT -->
+        <div class="leftSection">
+            <!-- ADS -->
+            <img class="width__100 marginTop__15" src="https://dummyimage.com/1920x300" alt="">
+            <!-- CATEGORY PAGE START -->
+            <div class="CategoryContainer">
+                <p
+                    class="text__White bg__SeaGreen text__15 padding__08 border__Left_05 border__MediumSeaGreen text__Shadow_Black marginTB__15">
+                    <a href="index.html"><i class="bi bi-house marginRight__05 text__White hover__text_Green"></i></a>
+                    ক্যাটাগরি
+                    <i class="fa-solid fa-chevron-right text__09 paddingLR__05"></i>
+                    <a class="text__DarkYellow hover__text_White" href="#">বিনোদন</a>
+                </p>
 
-    <!-- MARQUEE TEXT BLOCK -->
-    <div class="marqueeBlock">
-        <div class="highlight">
-            <h2>শিরোনাম</h2>
-            <div class="marquee-bg"></div>
-            <marquee class="marquee" behavior="" direction="">
-                <ul>
-                    <li><a href="#">আন্তর্জাতিক মাতৃভাষা ইনস্টিটিউটের মহাপরিচালক হাকিম আরিফ</a></li>
-                    <li><a href="#">ধরনের প্রতিষ্ঠানের উদ্দেশ্যকে ভিত্তি করে যে কর্মপরিকল্পনা দরকার</a></li>
-                    <li><a href="#">আন্তর্জাতিক মাতৃভাষা ইনস্টিটিউটের সঙ্গে গবেষকদের সম্পৃক্ততা বাড়ানো জরুরি</a></li>
-                    <li><a href="#">১৯৯৯ সালে ইউনেসকো একুশে ফেব্রুয়ারিকে আন্তর্জাতিক মাতৃভাষা দিবস হিসেবে স্বীকৃতি
-                            দেওয়ার</a></li>
-                    <li><a href="#">এই ইনস্টিটিউটের ২৩টি দায়িত্ব পালন করার কথা</a></li>
-                </ul>
-            </marquee>
+                <!-- CATEGORY NEWS -->
+                <div class="CategoryNews">
+
+
+
+                    <div class="categoryGrid">
+                        <!-- CAT NEWS 1 -->
+                        <a href="#" class="newsItem catGrid1">
+                            <div class="newsContant position__Relative">
+                                <div class="newsImage newsIMG">
+                                    <img class="img__100" src="https://dummyimage.com/800x600" alt="">
+                                </div>
+                                <p class=" text__Align_Justify overlayStatic">
+                                    বর্তমানে চাকরির পরীক্ষার হলে বসে এক শ্রেণির অসাধু চাকরিপ্রার্থী কানে দেওয়া ছোট
+                                    একটি ডিভাইসের মাধ্যমে জালিয়াতি করে বলে অভিযোগ আছে। কখনো কখনো তা ধরাও পড়ে
+                                </p>
+                            </div>
+                        </a>
+
+                        <!-- CAT NEWS 2 -->
+                        <a href="#" class="newsItem">
+                            <div class="newsImage">
+                                <img class="img__100" src="https://dummyimage.com/800x600" alt="">
+                            </div>
+                            <p class="text__Ellipsis_2">আজ বৃহস্পতিবার নির্বাচন কমিশনের বৈঠকে নির্বাচনের তফসিল চূড়ান্ত
+                                করা হয়। এবারের উপজেলা পরিষদ নির্বাচন হবে চারটি ধাপে</p>
+                        </a>
+
+                        <!-- CAT NEWS 3 -->
+                        <a href="#" class="newsItem">
+                            <div class="newsImage">
+                                <img class="img__100" src="https://dummyimage.com/800x600" alt="">
+                            </div>
+                            <p class="text__Ellipsis_2">বর্তমানে চাকরির পরীক্ষার হলে বসে এক শ্রেণির অসাধু চাকরিপ্রার্থী
+                                কানে দেওয়া ছোট একটি ডিভাইসের মাধ্যমে জালিয়াতি করে বলে অভিযোগ আছে। কখনো কখনো তা ধরাও পড়ে
+                            </p>
+                        </a>
+
+                        <!-- CAT NEWS 4 -->
+                        <a href="#" class="newsItem catGrid4">
+                            <div class="newsImage">
+                                <img class="img__100" src="https://dummyimage.com/800x600" alt="">
+                            </div>
+                            <p class="text__Ellipsis_2">বর্তমানে চাকরির পরীক্ষার হলে বসে এক শ্রেণির অসাধু চাকরিপ্রার্থী
+                                কানে দেওয়া ছোট একটি ডিভাইসের মাধ্যমে জালিয়াতি করে বলে অভিযোগ আছে। কখনো কখনো তা ধরাও পড়ে
+                            </p>
+                        </a>
+
+                        <!-- CAT NEWS 5 -->
+                        <a href="#" class="newsItem catGrid5">
+                            <div class="newsImage">
+                                <img class="img__100" src="https://dummyimage.com/800x600" alt="">
+                            </div>
+                            <p class="text__Ellipsis_2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui
+                                cupiditate
+                                similique numquam in officiis molestiae dolorem voluptatem dignissimos excepturi,
+                                possimus
+                                quidem repellendus dolores cum vel corporis facere eos placeat et.</p>
+                        </a>
+
+                        <!-- CAT NEWS 6 -->
+                        <a href="#" class="newsItem catGrid6">
+                            <div class="newsImage">
+                                <img class="img__100" src="https://dummyimage.com/800x600" alt="">
+                            </div>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui cupiditate similique numquam
+                                in
+                                officiis molestiae dolorem voluptatem dignissimos excepturi, possimus quidem repellendus
+                                dolores
+                                cum vel corporis facere eos placeat et.</p>
+                        </a>
+
+                        <!-- CAT NEWS 7 -->
+                        <a href="#" class="newsItem catGrid7">
+                            <div class="newsImage">
+                                <img class="img__100" src="https://dummyimage.com/800x600" alt="">
+                            </div>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui cupiditate similique numquam
+                                in
+                                officiis molestiae dolorem voluptatem dignissimos excepturi, possimus quidem repellendus
+                                dolores
+                                cum vel corporis facere eos placeat et.</p>
+                        </a>
+
+                        <!-- CAT NEWS 8 -->
+                        <a href="#" class="newsItem catGrid8">
+                            <div class="newsImage">
+                                <img class="img__100" src="https://dummyimage.com/800x600" alt="">
+                            </div>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui cupiditate similique numquam
+                                in
+                                officiis molestiae dolorem voluptatem dignissimos excepturi, possimus quidem repellendus
+                                dolores
+                                cum vel corporis facere eos placeat et.</p>
+                        </a>
+
+                        <!-- CAT NEWS 9 -->
+                        <a href="#" class="newsItem catGrid9">
+                            <div class="newsImage">
+                                <img class="img__100" src="https://dummyimage.com/800x600" alt="">
+                            </div>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui cupiditate similique numquam
+                                in
+                                officiis molestiae dolorem voluptatem dignissimos excepturi, possimus quidem repellendus
+                                dolores
+                                cum vel corporis facere eos placeat et.</p>
+                        </a>
+
+                        <!-- CAT NEWS 10 -->
+                        <a href="#" class="newsItem catGrid10">
+                            <div class="newsImage">
+                                <img class="img__100" src="https://dummyimage.com/800x600" alt="">
+                            </div>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui cupiditate similique numquam
+                                in
+                                officiis molestiae dolorem voluptatem dignissimos excepturi, possimus quidem repellendus
+                                dolores
+                                cum vel corporis facere eos placeat et.</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- CATEGORY PAGE END -->
+
+
+
+        </div>
+
+        <!-- RIGHT -->
+        <div class="rightSection marginTB__15">
+            <!-- LATEST -->
+            <div class="latest">
+                <!-- BLOCK -->
+                <span class="latestText marginBottom__05">
+                    <h2>সর্বশেষ খবর</h2>
+                </span>
+
+                <!-- NEWS 1-->
+                <a class="latestPosts new1 border__Bottom padding__05" href="#">
+                    <img class="resImgLatest" src="https://dummyimage.com/800x600" alt="" />
+                    <div>
+                        <p>‘দম বন্ধ হয়ে যাচ্ছে’ বলেছিলেন ভিকারুননিসার</p>
+
+                        <span title="সংবাদটি প্রকাশের সময়"><i class="bi bi-clock"></i>
+                            <p>২ ঘন্টা আগে</p>
+                        </span>
+                    </div>
+                </a>
+                <!-- NEWS 2-->
+                <a class="latestPosts new2 border__Bottom padding__05" href="#">
+                    <img class="resImgLatest" src="https://dummyimage.com/800x600" alt="" />
+                    <div>
+                        <p>
+                            ‘দম বন্ধ হয়ে যাচ্ছে’ বলেছিলেন ভিকারুননিসার শিক্ষক ও তাঁর মেয়ে
+                        </p>
+
+                        <span title="সংবাদটি প্রকাশের সময়"><i class="bi bi-clock"></i>
+                            <p>৩ ঘন্টা আগে</p>
+                        </span>
+                    </div>
+                </a>
+                <!-- NEWS 3-->
+                <a class="latestPosts new3 border__Bottom padding__05" href="#">
+                    <img class="resImgLatest" src="https://dummyimage.com/800x600" alt="" />
+                    <div>
+                        <p>
+                            ‘দম বন্ধ হয়ে যাচ্ছে’ বলেছিলেন ভিকারুননিসার শিক্ষক ও তাঁর মেয়ে মা
+                            লুৎফুন নাহার করিম লাকী
+                        </p>
+
+                        <span title="সংবাদটি প্রকাশের সময়"><i class="bi bi-clock"></i>
+                            <p>৪ ঘন্টা আগে</p>
+                        </span>
+                    </div>
+                </a>
+                <!-- NEWS 4-->
+                <a class="latestPosts new4 padding__05" href="#">
+                    <img class="resImgLatest" src="https://dummyimage.com/800x600" alt="" />
+                    <div>
+                        <p>
+                            ‘দম বন্ধ হয়ে যাচ্ছে’ বলেছিলেন ভিকারুননিসার শিক্ষক ও তাঁর মেয়ে মা
+                            লুৎফুন নাহার করিম লাকী রাজধানীর ভিকারুননিসা নূন নাহার করিম লাকী
+                            রাজধানীর ভিকারুননিসা নূন
+                        </p>
+
+                        <span title="সংবাদটি প্রকাশের সময়"><i class="bi bi-clock"></i>
+                            <p>১২ ঘন্টা আগে</p>
+                        </span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="adsCenter">
+                <img class="resImg" src="https://dummyimage.com/1920x400" alt="" />
+            </div>
+
+            <!-- TAB TOGGLE -->
+            <div class="tab-container">
+                <div class="tab">
+                    <button class="tab-btn" data-tab="tab1">আন্তর্জাতিক</button>
+                    <button class="tab-btn active" data-tab="tab2">জাতীয়</button>
+                    <button class="tab-btn hotNews" data-tab="tab3">হট নিউজ</button>
+                </div>
+
+                <div class="tab-content">
+                    <!-- TAB CONTENT 1 -->
+                    <div id="tab1" class="tab-item">
+                        <!-- TAB CONTENTS 1-->
+                        <section class="tabCol">
+                            <div class="colContents">
+                                <div class="newsCont">
+                                    <i class="fa-solid fa-circle"></i>
+                                    <a href="#">ভিকারুননিসার এক শিক্ষক ও প্রাক্তন–বর্তমান চার শিক্ষার্থীর
+                                        মৃত্যু</a>
+                                </div>
+                            </div>
+                        </section>
+                        <!-- TAB CONTENTS 1 END-->
+
+                        <!-- TAB CONTENTS 2-->
+                        <section class="tabCol">
+                            <div class="colContents">
+                                <div class="newsCont">
+                                    <i class="fa-solid fa-circle"></i>
+                                    <a href="#">ভিকারুননিসার এক শিক্ষক ও প্রাক্তন–বর্তমান চার শিক্ষার্থীর
+                                        মৃত্যু</a>
+                                </div>
+                            </div>
+                        </section>
+                        <!-- TAB CONTENTS 2 END-->
+
+                        <!-- TAB CONTENTS 3 -->
+                        <section class="tabCol">
+                            <div class="colContents">
+                                <div class="newsCont">
+                                    <i class="fa-solid fa-circle"></i>
+                                    <a href="#">ভিকারুননিসার এক শিক্ষক ও প্রাক্তন–বর্তমান চার শিক্ষার্থীর
+                                        মৃত্যু</a>
+                                </div>
+                            </div>
+                        </section>
+                        <!-- TAB CONTENTS 3 END-->
+
+                        <!-- TAB CONTENTS 4 -->
+                        <section class="tabCol">
+                            <div class="colContents">
+                                <div class="newsCont">
+                                    <i class="fa-solid fa-circle"></i>
+                                    <a href="#">ভিকারুননিসার এক শিক্ষক ও প্রাক্তন–বর্তমান চার শিক্ষার্থীর
+                                        মৃত্যু</a>
+                                </div>
+                            </div>
+                        </section>
+                        <!-- TAB CONTENTS 4 END-->
+
+                        <!-- TAB CONTENTS 5 -->
+                        <section class="tabCol">
+                            <div class="colContents">
+                                <div class="newsCont">
+                                    <i class="fa-solid fa-circle"></i>
+                                    <a href="#">রাষ্ট্রের কাছ থেকে নাগরিক হিসেবে আমাদের আশা–ভরসার শেষ
+                                        নেই। কিন্তু এই রাষ্ট্র আপনাকে-আমাকে নিরাপদভাবে বাঁচিয়ে
+                                        রাখার কতটা চেষ্টা করে আসলে?</a>
+                                </div>
+                            </div>
+                        </section>
+                        <!-- TAB CONTENTS 5 END-->
+                    </div>
+
+                    <!-- TAB CONTENT 2 -->
+                    <div id="tab2" class="tab-item active">
+                        <!-- TAB CONTENTS 1-->
+                        <section class="tabCol">
+                            <div class="colContents">
+                                <div class="newsCont">
+                                    <i class="fa-solid fa-circle"></i>
+                                    <a href="#">রাষ্ট্রের কাছ থেকে নাগরিক হিসেবে আমাদের আশা–ভরসার শেষ
+                                        নেই। কিন্তু এই রাষ্ট্র আপনাকে-আমাকে নিরাপদভাবে বাঁচিয়ে
+                                        রাখার কতটা চেষ্টা করে আসলে?</a>
+                                </div>
+                            </div>
+                        </section>
+                        <!-- TAB CONTENTS 1 END-->
+
+                        <!-- TAB CONTENTS 2-->
+                        <section class="tabCol">
+                            <div class="colContents">
+                                <div class="newsCont">
+                                    <i class="fa-solid fa-circle"></i>
+                                    <a href="#">রাষ্ট্রের কাছ থেকে নাগরিক হিসেবে আমাদের আশা–ভরসার শেষ
+                                        নেই। কিন্তু এই রাষ্ট্র আপনাকে-আমাকে নিরাপদভাবে বাঁচিয়ে
+                                        রাখার কতটা চেষ্টা করে আসলে?</a>
+                                </div>
+                            </div>
+                        </section>
+                        <!-- TAB CONTENTS 2 END-->
+
+                        <!-- TAB CONTENTS 3 -->
+                        <section class="tabCol">
+                            <div class="colContents">
+                                <div class="newsCont">
+                                    <i class="fa-solid fa-circle"></i>
+                                    <a href="#">রাষ্ট্রের কাছ থেকে নাগরিক হিসেবে আমাদের আশা–ভরসার শেষ
+                                        নেই। কিন্তু এই রাষ্ট্র আপনাকে-আমাকে নিরাপদভাবে বাঁচিয়ে
+                                        রাখার কতটা চেষ্টা করে আসলে?</a>
+                                </div>
+                            </div>
+                        </section>
+                        <!-- TAB CONTENTS 3 END-->
+
+                        <!-- TAB CONTENTS 4 -->
+                        <section class="tabCol">
+                            <div class="colContents">
+                                <div class="newsCont">
+                                    <i class="fa-solid fa-circle"></i>
+                                    <a href="#">রাষ্ট্রের কাছ থেকে নাগরিক হিসেবে আমাদের আশা–ভরসার শেষ
+                                        নেই। কিন্তু এই রাষ্ট্র আপনাকে-আমাকে নিরাপদভাবে বাঁচিয়ে
+                                        রাখার কতটা চেষ্টা করে আসলে?</a>
+                                </div>
+                            </div>
+                        </section>
+                        <!-- TAB CONTENTS 4 END-->
+
+                        <!-- TAB CONTENTS 5 -->
+                        <section class="tabCol">
+                            <div class="colContents">
+                                <div class="newsCont">
+                                    <i class="fa-solid fa-circle"></i>
+                                    <a href="#">রাষ্ট্রের কাছ থেকে নাগরিক হিসেবে আমাদের আশা–ভরসার শেষ
+                                        নেই। কিন্তু এই রাষ্ট্র আপনাকে-আমাকে নিরাপদভাবে বাঁচিয়ে
+                                        রাখার কতটা চেষ্টা করে আসলে?</a>
+                                </div>
+                            </div>
+                        </section>
+                        <!-- TAB CONTENTS 5 END-->
+                    </div>
+
+                    <!-- TAB CONTENT 3 -->
+                    <div id="tab3" class="tab-item">
+                        <!-- TAB CONTENTS 1-->
+                        <section class="tabCol">
+                            <div class="colContents">
+                                <div class="newsCont">
+                                    <i class="fa-solid fa-circle"></i>
+                                    <a href="#">ভিকারুননিসা নূন পরিবারের এই পাঁচ সদস্যের প্রতি শ্রদ্ধা
+                                        জানাতে প্রতিষ্ঠানটির ভারপ্রাপ্ত অধ্যক্ষ কেকা রায় চৌধুরী</a>
+                                </div>
+                            </div>
+                        </section>
+                        <!-- TAB CONTENTS 1 END-->
+
+                        <!-- TAB CONTENTS 2-->
+                        <section class="tabCol">
+                            <div class="colContents">
+                                <div class="newsCont">
+                                    <i class="fa-solid fa-circle"></i>
+                                    <a href="#">ভিকারুননিসা নূন পরিবারের এই পাঁচ সদস্যের প্রতি শ্রদ্ধা
+                                        জানাতে প্রতিষ্ঠানটির ভারপ্রাপ্ত অধ্যক্ষ কেকা রায় চৌধুরী</a>
+                                </div>
+                            </div>
+                        </section>
+                        <!-- TAB CONTENTS 2 END-->
+
+                        <!-- TAB CONTENTS 3 -->
+                        <section class="tabCol">
+                            <div class="colContents">
+                                <div class="newsCont">
+                                    <i class="fa-solid fa-circle"></i>
+                                    <a href="#">ভিকারুননিসা নূন পরিবারের এই পাঁচ সদস্যের প্রতি শ্রদ্ধা
+                                        জানাতে প্রতিষ্ঠানটির ভারপ্রাপ্ত অধ্যক্ষ কেকা রায় চৌধুরী</a>
+                                </div>
+                            </div>
+                        </section>
+                        <!-- TAB CONTENTS 3 END-->
+
+                        <!-- TAB CONTENTS 4 -->
+                        <section class="tabCol">
+                            <div class="colContents">
+                                <div class="newsCont">
+                                    <i class="fa-solid fa-circle"></i>
+                                    <a href="#">ভিকারুননিসা নূন পরিবারের এই পাঁচ সদস্যের প্রতি শ্রদ্ধা
+                                        জানাতে প্রতিষ্ঠানটির ভারপ্রাপ্ত অধ্যক্ষ কেকা রায় চৌধুরী</a>
+                                </div>
+                            </div>
+                        </section>
+                        <!-- TAB CONTENTS 4 END-->
+
+                        <!-- TAB CONTENTS 5 -->
+                        <section class="tabCol">
+                            <div class="colContents">
+                                <div class="newsCont">
+                                    <i class="fa-solid fa-circle"></i>
+                                    <a href="#">ভিকারুননিসা নূন পরিবারের এই পাঁচ সদস্যের প্রতি শ্রদ্ধা
+                                        জানাতে প্রতিষ্ঠানটির ভারপ্রাপ্ত অধ্যক্ষ কেকা রায় চৌধুরী</a>
+                                </div>
+                            </div>
+                        </section>
+                        <!-- TAB CONTENTS 5 END-->
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <!-- CATEGORY 1 : SYLHET -->
-    <div class="category">
-        <div class="catName"><i class="fa-solid fa-square"></i>
-            <h2>সিলেট</h2>
-        </div>
 
-        <div class="category1">
 
-            <!-- 1 -->
-            <a class="newsBox a1" href="#">
-                <img src="https://lumiere-a.akamaihd.net/v1/images/tlk_lyceum-exterior_img_mob_m_4bb87542.jpeg" alt="">
-                <div class="newsTitle">
-                    <h2>জাতির পিতার উদ্যোগের ফলে এবং তার নেতৃত্বে ভাষা আন্দোলনের পথ বেয়ে আমরা আমাদের স্বাধিকার পেয়েছি,
-                        স্বাধীনতা
-                        পেয়েছি</h2>
-                    <p><i class="fa-solid fa-calendar"></i> ২২শে ফেব্রুয়ারি, ২০২২</p>
+
+
+    
+            <!-- ANOTHER CAROUSEL SLIDER-1 -->
+            <div class="newsGalleryBox marginTB__10 paddingBottom__10 width__90 marginAuto">
+                <h2 class="text__00273F marginTB__10"> <i class="fa-solid fa-star"></i> আপনার পছন্দের সব খবর :</h2>
+                <div class="carousel-container">
+                    <i class="fa-solid fa-chevron-left fa-Bg"></i>
+                    <div class="carousel">
+                        <a href="#" class="items">
+                            <img src="https://dummyimage.com/800x600" alt="Image">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam exercitationem
+                                placeat
+                                temporibus sed reiciendis? Aliquam dolorum vero excepturi adipisci, amet tenetur
+                                obcaecati
+                                provident, delectus qui quo consectetur. Atque, doloremque sunt!</p>
+                        </a>
+                        <div class="items">
+                            <img src="https://dummyimage.com/800x600" alt="Image">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore enim dolores ipsum nihil
+                                expedita
+                                libero voluptate eum numquam, quas molestias blanditiis tenetur ex placeat quaerat minus
+                                optio?
+                                Distinctio, et quo?</p>
+                        </div>
+                        <div class="items">
+                            <img src="https://dummyimage.com/800x600" alt="Image">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit harum quisquam eos
+                                laborum. Distinctio voluptatum quod quia aspernatur recusandae sunt quidem. Delectus,
+                                voluptate.
+                                Architecto numquam, cumque minus voluptate possimus labore.</p>
+                        </div>
+                        <div class="items">
+                            <img src="https://dummyimage.com/800x600" alt="Image">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia repellendus modi ut labore
+                                asperiores explicabo, qui doloremque rem vero repellat esse magnam veniam similique
+                                assumenda
+                                maiores iure expedita sapiente voluptatem.</p>
+                        </div>
+                        <a href="#" class="items">
+                            <img src="https://dummyimage.com/800x600" alt="Image">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam exercitationem
+                                placeat
+                                temporibus sed reiciendis? Aliquam dolorum vero excepturi adipisci, amet tenetur
+                                obcaecati
+                                provident, delectus qui quo consectetur. Atque, doloremque sunt!</p>
+                        </a>
+                        <div class="items">
+                            <img src="https://dummyimage.com/800x600" alt="Image">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore enim dolores ipsum nihil
+                                expedita
+                                libero voluptate eum numquam, quas molestias blanditiis tenetur ex placeat quaerat minus
+                                optio?
+                                Distinctio, et quo?</p>
+                        </div>
+                        <div class="items">
+                            <img src="https://dummyimage.com/800x600" alt="Image">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit harum quisquam eos
+                                laborum. Distinctio voluptatum quod quia aspernatur recusandae sunt quidem. Delectus,
+                                voluptate.
+                                Architecto numquam, cumque minus voluptate possimus labore.</p>
+                        </div>
+                        <div class="items">
+                            <img src="https://dummyimage.com/800x600" alt="Image">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia repellendus modi ut labore
+                                asperiores explicabo, qui doloremque rem vero repellat esse magnam veniam similique
+                                assumenda
+                                maiores iure expedita sapiente voluptatem.</p>
+                        </div>
+                        <i class="fa-solid fa-chevron-right fa-Bg"></i>
+                    </div>
                 </div>
-            </a>
+            </div>
 
-            <!-- 2 -->
-            <a class="newsBox a2" href="#">
-                <img src="https://wallpapers.com/images/hd/jesus-aesthetic-cliff-obydv9rxpqmyz9a6.jpg" alt="">
-                <div class="newsTitle">
-                    <h2>জাতির পিতার উদ্যোগের ফলে এবং তার নেতৃত্বে ভাষা আন্দোলনের পথ বেয়ে আমরা আমাদের স্বাধিকার পেয়েছি,
-                        স্বাধীনতা
-                        পেয়েছি</h2>
-                    <p><i class="fa-solid fa-calendar"></i> ২২শে ফেব্রুয়ারি, ২০২২</p>
-                </div>
-            </a>
 
-            <!-- 3 -->
-            <a class="newsBox a3" href="#">
-                <img src="https://tjkelly.com/wp-content/uploads/windows-xp-desktop-background-wallpaper-autumn-800x600.jpg"
-                    alt="">
-                <div class="newsTitle">
-                    <h2>জাতির পিতার উদ্যোগের ফলে এবং তার নেতৃত্বে ভাষা আন্দোলনের পথ বেয়ে আমরা আমাদের স্বাধিকার পেয়েছি,
-                        স্বাধীনতা
-                        পেয়েছি</h2>
-                    <p><i class="fa-solid fa-calendar"></i> ২২শে ফেব্রুয়ারি, ২০২২</p>
-                </div>
-            </a>
 
-            <!-- 4 -->
-            <a class="newsBox a4" href="#">
-                <img src="https://zimfamilycockers.com/Morgans2ndLitter-MadelenaAndMurphy-800x600.jpg" alt="">
-                <div class="newsTitle">
-                    <h2>জাতির পিতার উদ্যোগের ফলে এবং তার নেতৃত্বে ভাষা আন্দোলনের পথ বেয়ে আমরা আমাদের স্বাধিকার পেয়েছি,
-                        স্বাধীনতা
-                        পেয়েছি</h2>
-                    <p><i class="fa-solid fa-calendar"></i> ২২শে ফেব্রুয়ারি, ২০২২</p>
-                </div>
-            </a>
 
-            <!-- 5 -->
-            <a class="newsBox a5" href="#">
-                <img src="https://www.mbari.org/wp-content/uploads/fathomnet-featured.jpg" alt="">
-                <div class="newsTitle">
-                    <h2>জাতির পিতার উদ্যোগের ফলে এবং তার নেতৃত্বে ভাষা আন্দোলনের পথ বেয়ে আমরা আমাদের স্বাধিকার পেয়েছি,
-                        স্বাধীনতা
-                        পেয়েছি</h2>
-                    <p><i class="fa-solid fa-calendar"></i> ২২শে ফেব্রুয়ারি, ২০২২</p>
-                </div>
-            </a>
 
-            <!-- 6 -->
-            <a class="newsBox a6" href="#">
-                <img src="https://lumiere-a.akamaihd.net/v1/images/tlk_lyceum-exterior_img_mob_m_4bb87542.jpeg" alt="">
-                <div class="newsTitle">
-                    <h2>জাতির পিতার উদ্যোগের ফলে এবং তার নেতৃত্বে ভাষা আন্দোলনের পথ বেয়ে আমরা আমাদের স্বাধিকার পেয়েছি,
-                        স্বাধীনতা
-                        পেয়েছি</h2>
-                    <p><i class="fa-solid fa-calendar"></i> ২২শে ফেব্রুয়ারি, ২০২২</p>
-                </div>
-            </a>
 
-            <!-- 6 -->
-            <a class="newsBox a6" href="#">
-                <img src="https://wallpapers.com/images/hd/jesus-aesthetic-cliff-obydv9rxpqmyz9a6.jpg" alt="">
-                <div class="newsTitle">
-                    <h2>জাতির পিতার উদ্যোগের ফলে এবং তার নেতৃত্বে ভাষা আন্দোলনের পথ বেয়ে আমরা আমাদের স্বাধিকার পেয়েছি,
-                        স্বাধীনতা
-                        পেয়েছি</h2>
-                    <p><i class="fa-solid fa-calendar"></i> ২২শে ফেব্রুয়ারি, ২০২২</p>
-                </div>
-            </a>
-
-            <!-- 7 -->
-            <a class="newsBox a7" href="#">
-                <img src="https://tjkelly.com/wp-content/uploads/windows-xp-desktop-background-wallpaper-autumn-800x600.jpg"
-                    alt="">
-                <div class="newsTitle">
-                    <h2>জাতির পিতার উদ্যোগের ফলে এবং তার নেতৃত্বে ভাষা আন্দোলনের পথ বেয়ে আমরা আমাদের স্বাধিকার পেয়েছি,
-                        স্বাধীনতা
-                        পেয়েছি</h2>
-                    <p><i class="fa-solid fa-calendar"></i> ২২শে ফেব্রুয়ারি, ২০২২</p>
-                </div>
-            </a>
-
-            <!-- 8 -->
-            <a class="newsBox a8" href="#">
-                <img src="https://zimfamilycockers.com/Morgans2ndLitter-MadelenaAndMurphy-800x600.jpg" alt="">
-                <div class="newsTitle">
-                    <h2>জাতির পিতার উদ্যোগের ফলে এবং তার নেতৃত্বে ভাষা আন্দোলনের পথ বেয়ে আমরা আমাদের স্বাধিকার পেয়েছি,
-                        স্বাধীনতা
-                        পেয়েছি</h2>
-                    <p><i class="fa-solid fa-calendar"></i> ২২শে ফেব্রুয়ারি, ২০২২</p>
-                </div>
-            </a>
-
-            <!-- 9 -->
-            <a class="newsBox a9" href="#">
-                <img src="https://www.mbari.org/wp-content/uploads/fathomnet-featured.jpg" alt="">
-                <div class="newsTitle">
-                    <h2>জাতির পিতার উদ্যোগের ফলে এবং তার নেতৃত্বে ভাষা আন্দোলনের পথ বেয়ে আমরা আমাদের স্বাধিকার পেয়েছি,
-                        স্বাধীনতা
-                        পেয়েছি</h2>
-                    <p><i class="fa-solid fa-calendar"></i> ২২শে ফেব্রুয়ারি, ২০২২</p>
-                </div>
-            </a>
-
-            <!-- 10 -->
-            <a class="newsBox a10" href="#">
-                <img src="https://www.mbari.org/wp-content/uploads/fathomnet-featured.jpg" alt="">
-                <div class="newsTitle">
-                    <h2>জাতির পিতার উদ্যোগের ফলে এবং তার নেতৃত্বে ভাষা আন্দোলনের পথ বেয়ে আমরা আমাদের স্বাধিকার পেয়েছি,
-                        স্বাধীনতা
-                        পেয়েছি</h2>
-                    <p><i class="fa-solid fa-calendar"></i> ২২শে ফেব্রুয়ারি, ২০২২</p>
-                </div>
-            </a>
-        </div>
-
-    </div>
 
     <!-- ADS -->
-    <div class="adsFull">
-        <img src="https://dummyimage.com/1920x200" alt="">
+    <div class="postBody bottomAds">
+        <img class="resImg" src="https://dummyimage.com/1200x200/000/fff" alt="Bottom Ads" />
     </div>
-
-
 
     <!-- FOOTER -->
     <footer>
         <div class="footerDiv">
             <!-- 1st ROW -->
             <div class="footerRow1 logo-share marginBottom__10 border__Bottom paddingBottom__10">
-                <a href="#"><img class="img__10" src="logo.png" alt="LOGO"></a>
+                <a href="#"><img class="img__10" src="logo.png" alt="LOGO" /></a>
                 <span>
                     <p>ফলো করুন</p>
                     <div class="socialMediaFooter">
@@ -464,7 +980,9 @@
             <div class="contactsInfo border__Bottom paddingBottom__10">
                 <div class="footerRow2 flexJustifyCenterAlignStart flexColumn">
                     <h3>যোগাযোগ করুন</h3>
-                    <p class="text__Align_Center">শপ-৬, নেহার মার্কেট, জিন্দাবাজার, ৩১১০, সিলেট।</p>
+                    <p class="text__Align_Center">
+                        শপ-৬, নেহার মার্কেট, জিন্দাবাজার, ৩১১০, সিলেট।
+                    </p>
                     <a class="border__01 border__Rad_03 border__Gray_05 padding__04"
                         href="mailto:support@kehem.com">support@kehem.com</a>
                     <p>মোবাইল : +8801700905268</p>
@@ -476,7 +994,7 @@
                 </div>
                 <div class="flexJustifyCenterAlignCenter flexColumn flexAlignSelfStart">
                     <h3>পোর্টাল তৈরি</h3>
-                    <a href="https://kehem.com/" class="text__Align_Center"><img class="logo" src="logo.png" alt="">
+                    <a href="https://kehem.com/" class="text__Align_Center"><img class="logo" src="logo.png" alt="" />
                         <h4>KEHEM IT</h4>
                     </a>
                 </div>
@@ -488,55 +1006,48 @@
         </div>
         <!-- 4th ROW -->
         <div class="footerRow4 copyright padding__06">
-            <p>&copy; <a href="https://kehem.com/">kehem.com</a> all rights reserverd</p>
+            <p>
+                &copy; <a href="https://kehem.com/">kehem.com</a> all rights reserverd
+            </p>
         </div>
     </footer>
 </body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> <!-- jQuery library -->
+<!-- jQuery library -->
 <script>
     // HAMBURGER REVEAL
     function toggleMenu() {
-        $('.hamburger').toggleClass('fa-bars fa-x');
-        $('.fullResNav').toggleClass('show');
+        $(".hamburger").toggleClass("fa-bars fa-x");
+        $(".fullResNav").toggleClass("show");
     }
+
+    $(document).ready(function () {
+        $("#searchIcon").click(function () {
+            $(".search-input").toggleClass("active"); // Toggle the 'active' class to show/hide input
+            $(this).toggleClass("fa-search fa-x"); // Toggle the search icon to cross
+        });
+
+        $("#closeIcon").click(function () {
+            $(".search-input").removeClass("active"); // Hide the input when close icon is clicked
+            $("#searchIcon").removeClass("fa-x").addClass("fa-search"); // Change the cross back to search icon
+        });
+    });
 
     //TAB TOGGLE
     $(document).ready(function () {
         $(".tab-btn").click(function () {
-            $(".tab-btn").removeClass('active');
+            var tab_id = $(this).attr("data-tab");
 
+            $(".tab-btn").removeClass("active");
+            $(".tab-item").removeClass("active");
+
+            $(this).addClass("active");
+            $("#" + tab_id).addClass("active");
         });
     });
-
-
-
-    $(document).ready(function () {
-        $('#searchIcon').click(function () {
-            $('.search-input').toggleClass('active'); // Toggle the 'active' class to show/hide input
-            $(this).toggleClass('fa-search fa-x'); // Toggle the search icon to cross
-        });
-
-        $('#closeIcon').click(function () {
-            $('.search-input').removeClass('active'); // Hide the input when close icon is clicked
-            $('#searchIcon').removeClass('fa-x').addClass('fa-search'); // Change the cross back to search icon
-        });
-    });
-
-    $(document).ready(function () {
-        // Smooth scrolling for all anchor links
-        $('a[href^="#"]').on('click', function (event) {
-            var target = $(this.getAttribute('href'));
-            if (target.length) {
-                event.preventDefault();
-                $('html, body').stop().animate({
-                    scrollTop: target.offset().top
-                }, 6000); // Adjust the duration for slower or faster scrolling
-            }
-        });
-    });
-
 </script>
 
 <script src="script.js"></script>
+<!-- MASTORS SCRIPT -->
+<script src="https://surajit-singha-sisir.github.io/mastorCDN/mastors.js"></script>
 
 </html>

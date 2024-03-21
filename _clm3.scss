@@ -1,6 +1,6 @@
 // 3 Column NEWS VIEW (clm3)
 .clm3 {
-    @extend .marginAuto;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     gap: 1rem;
@@ -8,7 +8,8 @@
 
     .clm3Left,
     .clm3Right {
-        @extend .marginTB__10;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
         display: flex;
         flex-direction: column;
 
@@ -30,14 +31,14 @@
         }
 
         .shortNewsFlex {
-            @extend .border__Bottom;
+            border-bottom: 1px solid #ccc;
             display: flex;
             gap: 0rem;
             flex: 1 1;
             margin-bottom: 1rem;
             padding-bottom: 1rem;
 
-            &:hover{
+            &:hover {
                 color: #972b2b;
             }
             & img {
