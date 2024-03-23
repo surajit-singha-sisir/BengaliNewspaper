@@ -265,8 +265,32 @@
     }
 }
 
+@media screen and (max-width: 420px) {
+    // NEWSVIEW RIGHT BAR সর্বশেষ খবর
+    .latestPosts {
+        justify-content: center !important;
+        flex-direction: column;
+    }
+    .resImgLatest {
+        width: 100%;
+        height: auto;
+    }
 
-@media screen and (max-width: 420px){
+    // TAB NEWS
+    .tab-btn {
+        font-size: 1.2rem;
+        padding: 15px 2px;
+    }
+    .hotNews::after {
+        display: none;
+    }
+    .latestPosts p {
+        font-size: 1rem;
+    }
+    .newsCont {
+        margin-left: 0.2rem;
+        margin-right: 0;
+    }
     //CATEGORY
     .category {
         .category1 {
