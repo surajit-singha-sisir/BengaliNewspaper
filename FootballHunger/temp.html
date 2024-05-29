@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nav Menu</title>
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    /* Your existing CSS code here */
+
+    .nav-menu {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      width: inherit;
+    }
+
+    .inner-nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+      position: relative;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .nav-items {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 1rem;
+      overflow: hidden;
+    }
+
+    .nav-items li {
+      white-space: nowrap;
+    }
+
+    .nav-items a {
+      text-decoration: none;
+      padding: 10px 15px;
+      display: block;
+    }
+
+    .ellipsis-container {
+      position: relative;
+      display: block;
+      z-index: 1;
+    }
+
+    .ellipsis-btn {
+      border: none;
+      cursor: pointer;
+      padding: 10px 15px;
+      background-color: #333;
+      color: white;
+    }
+
+    .hidden-items {
+      display: none;
+      position: absolute;
+      background-color: #333;
+      list-style: none;
+      top: 40px;
+      /* Adjust based on your layout */
+      right: 0;
+    }
+
+    .hidden-items li {
+      white-space: nowrap;
+    }
+
+    .hidden-items a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 15px;
+      display: block;
+    }
+
+    @keyframes slideDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-20%);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideUp {
+      0% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      100% {
+        opacity: 0;
+        transform: translateY(-20%);
+      }
+    }
+
+    .hidden-items.show {
+      display: block;
+      animation: slideDown 0.5s forwards;
+    }
+
+    .hidden-items.hide {
+      animation: slideUp 0.5s forwards;
+    }
+
+
+
+
+
+
+    .n-col-grid {
+      background-color: #1f1f1f;
+      width: 90%;
+      height: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
+      gap: 1rem;
+      grid-auto-flow: row;
+      margin-top: 2rem;
+      justify-content: space-between;
+      align-content: center;
+
+      & :is(section) {
+        width: 10rem;
+        width: minmax(10rem, 20rem);
+        height: auto;
+        margin: 1rem 0;
+        background-color: aquamarine;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="nav-menu">
+    <div class="inner-nav">
+      <ul class="nav-items">
+        <li><a href="#" title="FIFA">FIFA</a></li>
+        <li><a href="#" title="Premier League">Premier League</a></li>
+        <li><a href="#" title="Champions League">Champions League</a></li>
+        <li><a href="#" title="Europa League">Europa League</a></li>
+        <li><a href="#" title="Serie A">Serie A</a></li>
+        <li><a href="#" title="Copa America">Copa America</a></li>
+        <li><a href="#" title="Euro 2024">Euro 2024</a></li>
+        <li><a href="#" title="American League">American League</a></li>
+        <li><a href="#" title="Friendly Matches">Friendly Matches</a></li>
+        <li><a href="#" title="African League">African League</a></li>
+      </ul>
+
+      <div class="ellipsis-container">
+        <button class="ellipsis-btn">
+          &#x22EE;
+        </button>
+        <ul class="hidden-items">
+          <!-- Example overflow items -->
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 3 COL STRUCTURE -->
+  <!-- <div class="n-col-grid fullWidth">
+    <section class="col-1">
+      <img src="../img.png" alt="">
+    </section>
+    <section class="col-2">
+      <img src="../img.png" alt="">
+    </section>
+    <section class="col-3">
+      <img src="../img.png" alt="">
+    </section>
+  </div> -->
+
+  <script>
+    $(document).ready(function () {
+      const $navItems = $('.nav-items');
+      const $hiddenItems = $('.hidden-items');
+      const $ellipsisContainer = $('.ellipsis-container');
+      const $ellipsisBtn = $('.ellipsis-btn');
+
+      function updateOverflowItems() {
+        // Reset hidden items
+        $hiddenItems.empty();
+
+        // Hide ellipsis button initially
+        $ellipsisContainer.hide();
+
+        // Iterate over nav items and move overflowing items to hidden list
+        $navItems.children('li').each(function () {
+          if (this.getBoundingClientRect().right > $navItems[0].getBoundingClientRect().right) {
+            const $item = $(this).clone();
+            $hiddenItems.append($item);
+            $(this).hide();
+          } else {
+            $(this).show();
+          }
+        });
+
+        // Show ellipsis button if there are hidden items
+        if ($hiddenItems.children().length > 0) {
+          $ellipsisContainer.show();
+        }
+      }
+
+      // Initial check
+      updateOverflowItems();
+
+      // Update on window resize
+      $(window).on('resize', updateOverflowItems);
+
+      // Toggle hidden items on ellipsis button click
+      $ellipsisBtn.on('click', function (e) {
+        e.stopPropagation();
+        if ($hiddenItems.hasClass('show')) {
+          $hiddenItems.removeClass('show').addClass('hide');
+          setTimeout(() => $hiddenItems.hide(), 500); // Hide after animation
+        } else {
+          $hiddenItems.show().removeClass('hide').addClass('show');
+        }
+      });
+
+      // Hide hidden items when clicking outside
+      $(document).on('click', function () {
+        if ($hiddenItems.hasClass('show')) {
+          $hiddenItems.removeClass('show').addClass('hide');
+          setTimeout(() => $hiddenItems.hide(), 500); // Hide after animation
+        }
+      });
+
+      // Prevent hiding when clicking inside hidden items
+      $hiddenItems.on('click', function (e) {
+        e.stopPropagation();
+      });
+    });
+
+  </script>
+</body>
+
+</html>

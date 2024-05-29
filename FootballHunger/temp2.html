@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navbar with Overflow</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="script.js"></script>
+</head>
+<style>
+    /* styles.css */
+body {
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  background: #333;
+  padding: 10px;
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-items, .hidden-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav-items li, .hidden-items li {
+  margin: 0 5px;
+}
+
+.nav-items li a, .hidden-items li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.hidden-items {
+  position: absolute;
+  background: #444;
+  display: none;
+  flex-direction: column;
+}
+
+.hidden-items.show {
+  display: flex;
+}
+
+.hidden-items.hide {
+  display: none;
+}
+
+.ellipsis-container {
+  position: relative;
+}
+
+.ellipsis-btn {
+  background: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+</style>
+<body>
+  <nav class="navbar">
+    <div class="navbar-container container">
+      <input type="checkbox" name="" id="">
+      <div class="hamburger-lines">
+        <span class="line line1"></span>
+        <span class="line line2"></span>
+        <span class="line line3"></span>
+      </div>
+      <ul class="nav-items">
+        <li><a href="#" title="FIFA">FIFA</a></li>
+        <li><a href="#" title="Premier League">Premier League</a></li>
+        <li><a href="#" title="Champions League">Champions League</a></li>
+        <li><a href="#" title="Europa League">Europa League</a></li>
+        <li><a href="#" title="Serie A">Serie A</a></li>
+        <li><a href="#" title="Copa America">Copa America</a></li>
+        <li><a href="#" title="Euro 2024">Euro 2024</a></li>
+        <li><a href="#" title="American League">American League</a></li>
+        <li><a href="#" title="Friendly Matches">Friendly Matches</a></li>
+        <li><a href="#" title="African League">African League</a></li>
+      </ul>
+      <div class="ellipsis-container">
+        <button class="ellipsis-btn">...</button>
+        <ul class="hidden-items"></ul>
+      </div>
+      <a class="logo" href="#">
+        <img src="resources/LOGO.svg" alt="">
+      </a>
+    </div>
+  </nav>
+</body>
+<script>
+// script.js
+$(document).ready(function () {
+  const $navItems = $('.nav-items');
+  const $hiddenItems = $('.hidden-items');
+  const $ellipsisContainer = $('.ellipsis-container');
+  const $ellipsisBtn = $('.ellipsis-btn');
+
+  function updateOverflowItems() {
+    // Reset hidden items
+    $hiddenItems.empty();
+
+    // Hide ellipsis button initially
+    $ellipsisContainer.hide();
+
+    // Iterate over nav items and move overflowing items to hidden list
+    $navItems.children('li').each(function () {
+      if (this.getBoundingClientRect().right > $navItems[0].getBoundingClientRect().right) {
+        const $item = $(this).clone();
+        $hiddenItems.append($item);
+        $(this).hide();
+      } else {
+        $(this).show();
+      }
+    });
+
+    // Show ellipsis button if there are hidden items
+    if ($hiddenItems.children().length > 0) {
+      $ellipsisContainer.show();
+    }
+  }
+
+  // Initial check
+  updateOverflowItems();
+
+  // Update on window resize
+  $(window).on('resize', updateOverflowItems);
+
+  // Toggle hidden items on ellipsis button click
+  $ellipsisBtn.on('click', function (e) {
+    e.stopPropagation();
+    if ($hiddenItems.hasClass('show')) {
+      $hiddenItems.removeClass('show').addClass('hide');
+      setTimeout(() => $hiddenItems.hide(), 500); // Hide after animation
+    } else {
+      $hiddenItems.show().removeClass('hide').addClass('show');
+    }
+  });
+
+  // Hide hidden items when clicking outside
+  $(document).on('click', function () {
+    if ($hiddenItems.hasClass('show')) {
+      $hiddenItems.removeClass('show').addClass('hide');
+      setTimeout(() => $hiddenItems.hide(), 500); // Hide after animation
+    }
+  });
+
+  // Prevent hiding when clicking inside hidden items
+  $hiddenItems.on('click', function (e) {
+    e.stopPropagation();
+  });
+});
+
+</script>
+</html>

@@ -30,38 +30,37 @@
 
 $text: #121212f1;
 :root {
-    font-size: 1rem; //Take the default font size of Browser (General : 16px)
-    font-family: "SolaimanLipi", Helvetica, serif;
+    font-size: 16px; //Take the default font size of Browser (General : 16px)
     color: $text;
 }
 
 // PRINT AREA SELECTION
 /* Define print styles */
-@media print {
-    .postBody {
-        width: 100%;
-        margin: 0 auto;
-        padding: 20px;
-        border: 1px solid #ccc;
-    }
-    .navbar, .marqueeBlock, .rightSection, .category, .navMenu, footer, .adsFull{
-        display: none !important;
-    }
-    .postBody::after{
-        content: "এই প্রিন্ট পাতাটির স্বত্ব কেহেম আইটির। দয়া করে কপিরাইট করবেন না।";
-        display: block;
-        color: #ff0000;
-        background-color: #ffffff !important;
-        padding: 10px;
-        font-size: 20px;
-        top: 100px;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        border-radius: 10px;
-        position: absolute;
-        clear: both;
-    }
-}
+// @media print {
+//     .postBody {
+//         width: 100%;
+//         margin: 0 auto;
+//         padding: 20px;
+//         border: 1px solid #ccc;
+//     }
+//     .navbar, .marqueeBlock, .rightSection, .category, .navMenu, footer, .adsFull{
+//         display: none !important;
+//     }
+//     .postBody::after{
+//         content: "এই প্রিন্ট পাতাটির স্বত্ব কেহেম আইটির। দয়া করে কপিরাইট করবেন না।";
+//         display: block;
+//         color: #ff0000;
+//         background-color: #ffffff !important;
+//         padding: 10px;
+//         font-size: 20px;
+//         top: 100px;
+//         left: 50%;
+//         transform: translate(-50%, -50%);
+//         border-radius: 10px;
+//         position: absolute;
+//         clear: both;
+//     }
+// }
 
 
 // VARIABLES
