@@ -1,0 +1,189 @@
+// CATEGORY CSS
+// .category {
+//     margin: 0 auto;
+//     margin-top: 1.5rem;
+//     margin-bottom: 1.5rem;
+//     width: $fullWidth;
+
+//     & .catName {
+//         display: flex;
+//         align-items: center;
+//         color: red;
+//         margin-bottom: 1rem;
+
+//         & i {
+//             margin-right: 1rem;
+//         }
+
+//         & h2 {
+//             font-size: 1.5rem;
+//         }
+//     }
+
+//     & .category1 {
+//         display: flex;
+//         position: relative;
+//         flex-wrap: wrap;
+//         margin-bottom: 1rem;
+//         gap: 1rem;
+
+//         & .newsBox {
+//             position: relative;
+//             flex: 1 1;
+//             transition: all 0.3s ease; /* Add transition effect */
+//             border-radius: 5px;
+
+//             &::after {
+//                 display: flex;
+//                 position: absolute;
+//                 top: 50%;
+//                 left: 50%;
+//                 justify-content: center;
+//                 align-items: center;
+//                 transform: translate(-50%, -50%);
+//                 z-index: -1;
+//                 transition: all 0.2s ease;
+//                 background-color: #ffffff;
+//                 content: "";
+//             }
+
+//             &:hover::after {
+//                 transition: background-color 0.5s ease;
+//                 box-shadow: 1px 3px 4px 2px rgba(0, 0, 0, 0.25);
+//                 background-color: #f1ebeb;
+//                 width: calc(100% + 1rem);
+//                 height: calc(100% + 1rem);
+//             }
+
+//             & img {
+//                 aspect-ratio: 4/3;
+//                 width: 100%;
+//                 height: auto;
+//                 width: 100%;
+//                 height: auto;
+//                 min-width: 10rem;
+//             }
+//         }
+
+//         .newsTitle {
+//             & h2 {
+//                 -webkit-box-orient: block-axis;
+//                 display: -webkit-box;
+//                 -webkit-line-clamp: 2;
+//                 overflow: hidden;
+//                 font-size: 1.1rem;
+//                 margin-bottom: 0.5em;
+//             }
+
+//             & i {
+//                 color: #8d8d8d;
+//             }
+
+//             & p {
+//                 margin: 0;
+//                 color: #343434;
+//                 font-size: 14px;
+//             }
+//         }
+//     }
+// }
+
+// CATEGORY CSS
+.category {
+    margin: 0 auto;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    width: $fullWidth;
+
+    & .catName {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: red;
+        margin-bottom: 1rem;
+
+        span {
+            display: flex;
+            align-items: center;
+            i {
+                margin-right: 1rem;
+            }
+
+            span h2 {
+                font-size: 1.5rem;
+            }
+        }
+        
+        .seeMore:hover{
+            color: white;
+            background-color: #103986;
+        }
+    }
+
+    & .category1 {
+        display: grid;
+        grid-template-columns: repeat(5, auto);
+        grid-auto-flow: row;
+        position: relative;
+        margin-bottom: 1rem;
+        gap: 0.8rem;
+
+        & .newsBox {
+            position: relative;
+            transition: all 0.3s ease;
+
+            &::after {
+                display: flex;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                justify-content: center;
+                align-items: center;
+                transform: translate(-50%, -50%);
+                z-index: -1;
+                transition: all 0.2s ease;
+                background-color: #ffffff;
+                content: "";
+            }
+
+            &:hover::after {
+                transition: background-color 0.5s ease;
+                box-shadow: 1px 3px 4px 2px rgba(0, 0, 0, 0.25);
+                background-color: #f1ebeb;
+                width: calc(100% + 1rem);
+                height: calc(100% + 1rem);
+            }
+
+            & img {
+                aspect-ratio: 4/3;
+                width: 100%;
+                height: auto;
+                width: 100%;
+                height: auto;
+                min-width: 10rem;
+                border-radius: 0.5rem;
+            }
+        }
+
+        .newsTitle {
+            & h2 {
+                -webkit-box-orient: block-axis;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                overflow: hidden;
+                font-size: 1.1rem;
+                margin-bottom: 0.5em;
+            }
+
+            & i {
+                color: #8d8d8d;
+            }
+
+            & p {
+                margin: 0;
+                color: #343434;
+                font-size: 14px;
+            }
+        }
+    }
+}

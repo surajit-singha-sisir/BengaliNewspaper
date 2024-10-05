@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zoom Text Example</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-lQpYSt5nZH65K5P7S5faw3lGScQ+h8vp8FboosnJ+5+6+joYSppSlCb6ZSD80vZ5" crossorigin="anonymous">
+<style>
+    .postBody {
+        font-size: 1rem; /* Initial font size */
+    }
+</style>
+</head>
+<body>
+
+<div class="postBody">
+    <p>This is the text that will be zoomed.</p>
+</div>
+
+<a class="position__Relative top__0 plus-btn" href="#">
+    <span class="button__01">
+        <i class="fas fa-plus"></i> Plus
+    </span>
+</a>
+<a class="position__Relative top__0 minus-btn" href="#">
+    <span class="button__01">
+        <i class="fas fa-minus"></i> Minus
+    </span>
+</a>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+    $('.plus-btn').on('click', function(e) {
+        e.preventDefault();
+        var currentFontSize = parseFloat($('.postBody').css('font-size'));
+        var newFontSize = currentFontSize + 1;
+        $('.postBody').css('font-size', newFontSize + 'px');
+    });
+
+    $('.minus-btn').on('click', function(e) {
+        e.preventDefault();
+        var currentFontSize = parseFloat($('.postBody').css('font-size'));
+        var newFontSize = currentFontSize - 1;
+        $('.postBody').css('font-size', newFontSize + 'px');
+    });
+});
+</script>
+
+</body>
+</html>

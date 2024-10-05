@@ -1,0 +1,11 @@
+//MIXIN FUNCTIONS
+@mixin resImg{
+    width: 100%;
+    height: auto;
+}
+
+@mixin borderBottom{
+    border-bottom: 1px solid #ccc;
+    padding: 0.5rem;
+}
+

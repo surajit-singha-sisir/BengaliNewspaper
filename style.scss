@@ -1,0 +1,118 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    print-color-adjust: exact;
+}
+
+
+
+//SCROLLBAR HIDE
+*::-webkit-scrollbar {
+    width: 0.4rem; /* Width of the scrollbar */
+}
+
+*::-webkit-scrollbar-track {
+    background: #e2e2e2; /* Color of the scrollbar track */
+}
+
+*::-webkit-scrollbar-thumb {
+    background: #9c8787; /* Color of the scrollbar thumb */
+    border-radius: 1rem; /* Rounded corners of the scrollbar thumb */
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background: #806e6e; /* Color of the scrollbar thumb on hover */
+}
+
+$text: #121212f1;
+:root {
+    font-size: 16px; //Take the default font size of Browser (General : 16px)
+    color: $text;
+}
+
+// PRINT AREA SELECTION
+/* Define print styles */
+// @media print {
+//     .postBody {
+//         width: 100%;
+//         margin: 0 auto;
+//         padding: 20px;
+//         border: 1px solid #ccc;
+//     }
+//     .navbar, .marqueeBlock, .rightSection, .category, .navMenu, footer, .adsFull{
+//         display: none !important;
+//     }
+//     .postBody::after{
+//         content: "এই প্রিন্ট পাতাটির স্বত্ব কেহেম আইটির। দয়া করে কপিরাইট করবেন না।";
+//         display: block;
+//         color: #ff0000;
+//         background-color: #ffffff !important;
+//         padding: 10px;
+//         font-size: 20px;
+//         top: 100px;
+//         left: 50%;
+//         transform: translate(-50%, -50%);
+//         border-radius: 10px;
+//         position: absolute;
+//         clear: both;
+//     }
+// }
+
+
+// VARIABLES
+@import "var";
+@import "mixin";
+
+// ROOT CLASSES
+// @import "root-classes";
+
+// ANCHOR TAG DEFAULT
+$a: #121212f1;
+
+a {
+    color: $a;
+    text-decoration: none;
+}
+// FULL WIDTH
+$fullWidth: 90%;
+
+// DATE BLOCK
+@import "dateBlock";
+
+//NAV BAR
+@import "nav";
+
+// MARQUEE
+@import "marquee";
+
+//TOP LEAD CONTAINER
+@import "top_lead";
+
+// CATAGORY 1
+@import "catagory1";
+
+// ADS
+@import "ads";
+
+// 3 Column clm3
+@import "clm3";
+
+// GALLERY CAROUSAL
+@import "gallery";
+
+//FOOTER
+@import "footer";
+
+// 2ND PAGE
+@import "newsView";
+
+// SHARE POST ICONS
+
+@import "sharePost";
+
+// Responsive
+@import "responsive";

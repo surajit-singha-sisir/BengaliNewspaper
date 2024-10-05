@@ -1,0 +1,64 @@
+.marqueeBlock {
+    margin-bottom: 20px;
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
+    height: 50px;
+    background-color: #f8f8ff;
+    display: flex;
+    align-items: center;
+
+    & .highlight {
+        position: relative;
+        height: 3rem;
+        background-color: #f8f8ff;
+        display: flex;
+        align-items: center;
+
+        & h2 {
+            font-size: 1.5rem;
+            position: absolute;
+            margin-left: 5%;
+            color: #121212;
+            z-index: 2;
+        }
+        & .marquee-bg {
+            position: relative;
+            width: 5.5rem;
+            height: 100%;
+
+            &::after {
+                content: "";
+                position: relative;
+                display: block;
+                width: 13em;
+                height: 100px;
+                top: 0;
+                border-right: 1rem solid transparent;
+                border-top: 3rem solid #e3e3e3;
+                z-index: 1;
+            }
+        }
+        .marquee {
+            & ul {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                width: 100%;
+                height: auto;
+                float: left;
+
+                & li {
+                    padding-right: 2.5rem;
+
+                    & a {
+                        font-size: 1.3rem;
+                    }
+                    & a:hover {
+                        color: red;
+                    }
+                }
+            }
+        }
+    }
+}

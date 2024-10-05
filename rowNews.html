@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Flexbox Hover Animation</title>
+<style>
+    .NewsContainer {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    .box {
+        width: calc(20% - 40px); /* 20% width with margin */
+        max-width: 400px;
+        min-width: 200px; /* Minimum width for responsiveness */
+        height: 300px;
+        margin: 20px;
+        background-color: #3498db;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative; /* Position relative for absolutely positioned pseudo-elements */
+        transition: background-color 0.3s ease;
+    }
+    .box:before,
+    .box:after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        border: 4px solid transparent;
+        transition: all 0.3s ease;
+    }
+    .box:hover {
+        background-color: #2980b9;
+    }
+    .box:hover:before,
+    .box:hover:after {
+        width: calc(100% + 40px);
+        height: calc(100% + 40px);
+        top: -20px;
+        left: -20px;
+    }
+    .box:hover:before {
+        border-top-color: #2ecc71;
+        border-right-color: #2ecc71;
+    }
+    .box:hover:after {
+        border-bottom-color: #2ecc71;
+        border-left-color: #2ecc71;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="box">4</div>
+    <div class="box">5</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+// GALLERY CAROUSAL
+
+/* GALLERY CONTAINER */
+.gallery {
+    padding: 40px 0;
+    & h1 {
+        margin-bottom: 20px;
+        text-align: center;
+        color: red;
+    }
+
+    .gallery-container {
+        position: relative;
+    }
+
+    .gallery-container {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .gallery-item {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .gallery-item span img {
+        max-width: 100%;
+        min-width: 30%;
+        height: 400px;
+        border-radius: 50px;
+        object-fit: cover;
+        transition: all 0.5s ease;
+    }
+
+    .gallery-item span.active img {
+        max-width: 100%;
+        border-radius: 10px;
+        object-fit: cover;
+    }
+
+    .gallery-item span {
+        position: relative;
+        width: 5vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50px;
+        overflow: hidden;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .gallery-item span.active {
+        width: 50%;
+        height: auto;
+        border-radius: 10px;
+    }
+
+    .gallery-item span p {
+        position: absolute;
+        display: none;
+        padding: 1rem;
+        color: white;
+        text-shadow: 2px 2px 4px #000000;
+    }
+
+    .gallery-item span.active p {
+        display: block;
+        bottom: 0;
+    }
+}

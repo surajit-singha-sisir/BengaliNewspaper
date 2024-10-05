@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.cdnfonts.com/css/solaimanlipi" rel="stylesheet" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="gallery.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> <!-- jQuery library -->
+  <!-- MASTORS CDN -->
+  <link rel="stylesheet" href="https://kehem.com/static/news/mastor/css/mastor.css">
+
+</head>
+
+<body>
+  <!-- DATE BLOCK -->
+
+  <div class="flexJustifySpaceBetweenAlignCenter width__90 marginAuto paddingTB__05">
+    <!-- .dateBlock >> p >> a -->
+    <div class="text__09 cursor__Help" title="বাংলা, ইংরেজি ও হিজরি তারিখ">
+      <p class="dateBlock">
+        আজ (বাংলা) বৃহঃস্পতিবার ১১ই মাঘ ১৪৩০ বঙ্গাব্দ, ২৫ জানুয়ারি ২০২৪
+        খ্রিষ্টাব্দ, ১৩ রজব ১৪৪৫ হিজরি
+      </p>
+    </div>
+    <!-- .dateBlock >> .socialMedia -->
+    <div class="socialMedia flexRow gap__05">
+      <a href="#" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+      <a href="#" title="Messenger"><i class="fa-brands fa-facebook-messenger"></i></a>
+      <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+      <a href="#" title="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+      <a href="#" title="Linkedin"><i class="fa-brands fa-linkedin"></i></a>
+    </div>
+  </div>
+
+
+  <!-- NAVIGATION BAR -->
+  <div class="relativeNav position__Sticky top__0">
+
+    <span class="fullWidth">
+      <div class="navbar paddingTB__06">
+        <div class="left-section">
+          <i class="hamburger fa-solid fa-bars" onclick="toggleMenu()"></i>
+          <img class="logo" src="img.png" alt="">
+        </div>
+        <div class="center-section">
+          <!-- Nav Menu -->
+          <ul class="navMenu">
+            <li><a href="newsView.html" title="প্রথম পাতা">প্রথম পাতা</a></li>
+            <li><a href="#" title="সিলেট">সিলেট</a></li>
+            <li><a href="#" title="দেশ">দেশ</a></li>
+            <li><a href="#" title="রাজনীতি">রাজনীতি</a></li>
+            <li><a href="#" title="খেলাধুলা">খেলাধুলা</a></li>
+            <li><a href="#" title="আন্তর্জাতিক">আন্তর্জাতিক</a></li>
+            <li><a href="#" title="বাণিজ্য">বাণিজ্য</a></li>
+            <li><a href="#" title="চাকরি">চাকরি</a></li>
+            <li><a href="#" title="বিনোদন">বিনোদন</a></li>
+            <li><a href="#" title="ধর্ম">ধর্ম</a></li>
+          </ul>
+        </div>
+        <div class="right-section">
+          <!-- Search bar -->
+          <i class="fa-solid fa-search" id="searchIcon"></i>
+          <i class="fa-solid fa-x" id="closeIcon"></i>
+
+        </div>
+        <!-- INPUT BOX -->
+        <div class="search-input">
+          <input type="text" placeholder="Search...">
+        </div>
+      </div>
+    </span>
+
+
+    <section class="fullResNav">
+      <nav class="resNav">
+
+        <section class="col1 paddingTB__10">
+          <div class="paddingLB__1">
+            <h2>বাংলাদেশ</h2> <i class="fa-solid fa-chevron-right"></i>
+          </div>
+          <ul class="marginTop__05 text__10">
+            <li>
+              <i class="fa fa-angle-right"></i>
+              <a href="newsView.html" title="রাজধানী">রাজধানী</a>
+            </li>
+            <li>
+              <i class="fa fa-angle-right"></i> <a href="newsView.html" title="জেলা">জেলা</a>
+            </li>
+            <li>
+              <i class="fa fa-angle-right"></i>
+              <a href="#" title="করোনাভাইরাস">করোনাভাইরাস</a>
+            </li>
+            <li>
+              <i class="fa fa-angle-right"></i>
+              <a href="#" title="পরিবেশ">পরিবেশ</a>
+            </li>
+            <li>
+              <i class="fa fa-angle-right"></i>
+              <a href="#" title="অপরাধ">অপরাধ</a>
+            </li>
+          </ul>
+        </section>
+
+        <section class="col2 paddingTB__10">
+          <div class="paddingLB__1">
+            <h2>বিশ্ব</h2> <i class="fa-solid fa-chevron-right"></i>
+          </div>
+          <ul class="marginTop__05 text__10">
+            <li>
+              <i class="fa fa-angle-right"></i> <a href="#" title="ভারত">ভারত</a>
+            </li>
+            <li>
+              <i class="fa fa-angle-right"></i> <a href="#" title="চীন">চীন</a>
+            </li>
+            <li>
+              <i class="fa fa-angle-right"></i>
+              <a href="#" title="মধ্যপ্রাচ্য">মধ্যপ্রাচ্য</a>
+            </li>
+            <li>
+              <i class="fa fa-angle-right"></i>
+              <a href="#" title="যুক্তরাষ্ট্র">যুক্তরাষ্ট্র</a>
+            </li>
+            <li>
+              <i class="fa fa-angle-right"></i>
+              <a href="#" title="এশিয়া">এশিয়া</a>
+            </li>
+            <li>
+              <i class="fa fa-angle-right"></i>
+              <a href="#" title="ইউরোপ">ইউরোপ</a>
+            </li>
+            <li>
+              <i class="fa fa-angle-right"></i>
+              <a href="#" title="আফ্রিকা">আফ্রিকা</a>
+            </li>
+            <li>
+              <i class="fa fa-angle-right"></i>
+              <a href="#" title="লাতিন আমেরিকা">লাতিন আমেরিকা</a>
+            </li>
+          </ul>
+        </section>
+
+        <section class="col3 paddingTB__10">
+          <div class="paddingLB__1">
+            <h2>বিদেশ</h2> <i class="fa-solid fa-chevron-right"></i>
+          </div>
+          <ul class="marginTop__05 text__10">
+            <li>
+              <i class="fa fa-angle-right"></i> <a href="#" title="ভারত">ভারত</a>
+            </li>
+            <li>
+              <i class="fa fa-angle-right"></i> <a href="#" title="চীন">চীন</a>
+            </li>
+            <li>
+              <i class="fa fa-angle-right"></i>
+              <a href="#" title="মধ্যপ্রাচ্য">মধ্যপ্রাচ্য</a>
+            </li>
+            <li>
+              <i class="fa fa-angle-right"></i>
+              <a href="#" title="যুক্তরাষ্ট্র">যুক্তরাষ্ট্র</a>
+            </li>
+            <li>
+              <i class="fa fa-angle-right"></i>
+              <a href="#" title="এশিয়া">এশিয়া</a>
+            </li>
+            <li>
+              <i class="fa fa-angle-right"></i>
+              <a href="#" title="ইউরোপ">ইউরোপ</a>
+            </li>
+            <li>
+              <i class="fa fa-angle-right"></i>
+              <a href="#" title="আফ্রিকা">আফ্রিকা</a>
+            </li>
+            <li>
+              <i class="fa fa-angle-right"></i>
+              <a href="#" title="লাতিন আমেরিকা">লাতিন আমেরিকা</a>
+            </li>
+          </ul>
+        </section>
+        <section class="col4 paddingTB__10">
+          <div class="paddingLB__1">
+            <h2>বিনোদন</h2> <i class="fa-solid fa-chevron-right"></i>
+          </div>
+          <ul class="marginTop__05 text__10">
+            <li>
+              <i class="fa fa-angle-right"></i>
+              <a href="#" title="টেলিভিশন">টেলিভিশন</a>
+            </li>
+            <li>
+              <i class="fa fa-angle-right"></i>
+              <a href="#" title="ওটিটি">ওটিটি</a>
+            </li>
+            <li>
+              <i class="fa fa-angle-right"></i>
+              <a href="#" title="ঢালিউড">ঢালিউড</a>
+            </li>
+            <li>
+              <i class="fa fa-angle-right"></i>
+              <a href="#" title="টালিউড">টালিউড</a>
+            </li>
+            <li>
+              <i class="fa fa-angle-right"></i>
+              <a href="#" title="বলিউড">বলিউড</a>
+            </li>
+            <li>
+              <i class="fa fa-angle-right"></i>
+              <a href="#" title="হলিউড">হলিউড</a>
+            </li>
+            <li>
+              <i class="fa fa-angle-right"></i>
+              <a href="#" title="বিশ্ব চলচ্চিত্র">বিশ্ব চলচ্চিত্র</a>
+            </li>
+            <li>
+              <i class="fa fa-angle-right"></i> <a href="#" title="গান">গান</a>
+            </li>
+            <li>
+              <i class="fa fa-angle-right"></i> <a href="#" title="নাটক">নাটক</a>
+            </li>
+            <li>
+              <i class="fa fa-angle-right"></i>
+              <a href="#" title="আলাপন">আলাপন</a>
+            </li>
+          </ul>
+        </section>
+
+        <section class="col5 paddingTB__10">
+          <div class="paddingLB__1">
+            <h2>চাকরি</h2> <i class="fa-solid fa-chevron-right"></i>
+          </div>
+          <ul class="marginTop__05 text__10">
+            <li>
+              <i class="fa fa-angle-right"></i>
+              <a href="#" title="নিয়োগ">নিয়োগ</a>
+            </li>
+            <li>
+              <i class="fa fa-angle-right"></i>
+              <a href="#" title="পরামর্শ">পরামর্শ</a>
+            </li>
+            <li>
+              <i class="fa fa-angle-right"></i>
+              <a href="#" title="সাক্ষাৎকার">সাক্ষাৎকার</a>
+            </li>
+          </ul>
+        </section>
+        <section class="col6 paddingTB__10">
+          <div class="paddingLB__1">
+            <h2>খেলাধুলা</h2> <i class="fa-solid fa-chevron-right"></i>
+          </div>
+          <ul class="marginTop__05 text__10">
+            <li>
+              <i class="fa fa-angle-right"></i>
+              <a href="#" title="ক্রিকেট">ক্রিকেট</a>
+            </li>
+            <li>
+              <i class="fa fa-angle-right"></i>
+              <a href="#" title="ফুটবল">ফুটবল</a>
+            </li>
+            <li>
+              <i class="fa fa-angle-right"></i>
+              <a href="#" title="অন্য খেলা">অন্য খেলা</a>
+            </li>
+            <li>
+              <i class="fa fa-angle-right"></i>
+              <a href="#" title="সাক্ষাৎকার">সাক্ষাৎকার</a>
+            </li>
+            <li>
+              <i class="fa fa-angle-right"></i>
+              <a href="#" title="ফটো ফিচার">ফটো ফিচার</a>
+            </li>
+            <li>
+              <i class="fa fa-angle-right"></i>
+              <a href="#" title="কুইজ">কুইজ</a>
+            </li>
+          </ul>
+        </section>
+      </nav>
+    </section>
+
+  </div>
+
+  <!-- MARQUEE TEXT BLOCK -->
+  <div class="marqueeBlock">
+    <div class="highlight">
+      <h2>শিরোনাম</h2>
+      <div class="marquee-bg"></div>
+      <marquee class="marquee" behavior="" direction="">
+        <ul>
+          <li><a href="#">আন্তর্জাতিক মাতৃভাষা ইনস্টিটিউটের মহাপরিচালক হাকিম আরিফ</a></li>
+          <li><a href="#">ধরনের প্রতিষ্ঠানের উদ্দেশ্যকে ভিত্তি করে যে কর্মপরিকল্পনা দরকার</a></li>
+          <li><a href="#">আন্তর্জাতিক মাতৃভাষা ইনস্টিটিউটের সঙ্গে গবেষকদের সম্পৃক্ততা বাড়ানো জরুরি</a></li>
+          <li><a href="#">১৯৯৯ সালে ইউনেসকো একুশে ফেব্রুয়ারিকে আন্তর্জাতিক মাতৃভাষা দিবস হিসেবে স্বীকৃতি দেওয়ার</a></li>
+          <li><a href="#">এই ইনস্টিটিউটের ২৩টি দায়িত্ব পালন করার কথা</a></li>
+        </ul>
+      </marquee>
+    </div>
+  </div>
+
+
+  <!-- TOP LEAD CONTAINER -->
+  <div class="TopLeadContainer">
+    <div class="row1">
+      <div class="item1">
+        <div class="leadcontent">
+          <img src="https://images.wallpaperscraft.com/image/single/beautiful_scenery_mountains_lake_93318_800x600.jpg"
+            alt="Image">
+          <div class="overlay">
+            <h3>আজ মহান একুশে ফেব্রুয়ারি শহীদ দিবস এবং আন্তর্জাতিক মাতৃভাষা দিবস ঢাকা বিশ্ববিদ্যালয়ের তখনকার আইন
+              বিভাগের ছাত্র বঙ্গবন্ধু শেখ মুজিবুর রহমান উদ্যোগ</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="item2">
+        <div class="item1">
+          <div class="leadcontent">
+            <img src="https://demos.transloadit.com/49/ea88592a2c40d89be6268b2f047b49/desert.jpg" alt="Image">
+            <div class="overlay">
+              <h4>ছাত্র বঙ্গবন্ধু শেখ মুজিবুর রহমান উদ্যোগ নেন, তিনি ছাত্র সংগঠন গড়ে তোলেন</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="item3">
+        <div class="item1">
+          <div class="leadcontent">
+            <img src="https://images.prothomalo.com/prothomalo-bangla%2F2024-03%2F1195948e-38a2-4846-9590-706b4908a482%2Fe7d5e5a6_55b7_4448_a251_2eb7888dd826.jpeg"
+              alt="Image">
+            <div class="overlay">
+              <h4>জাতির পিতার উদ্যোগের ফলে এবং তার নেতৃত্বে ভাষা আন্দোলনের পথ বেয়ে আমরা আমাদের স্বাধিকার পেয়েছি,
+                স্বাধীনতা পেয়েছি</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="item4">
+        <div class="item1">
+          <div class="leadcontent">
+            <img
+              src="https://static-web-wealthclub.s3.amazonaws.com/images/Wealth-Club-Portfolio-Service-arti.2e16d0ba.fill-800x600.jpg"
+              alt="Image">
+            <div class="overlay">
+              <h4>শিক্ষামন্ত্রী মহিবুল হাসান চৌধুরী নওফেলের সভাপতিত্বে উদ্বোধনী অনুষ্ঠানে আরো উপস্থিত</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="item5">
+        <div class="item1">
+          <div class="leadcontent">
+            <img src="https://getwallpapers.com/wallpaper/full/d/9/8/88917.jpg" alt="Image">
+            <div class="overlay">
+              <h4>প্রাথমিক ও গণশিক্ষা প্রতিমন্ত্রী রুমানা আলী, মাধ্যমিক ও উচ্চ শিক্ষা বিভাগের সচিব</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- CATEGORY : SYLHET -->
+  <div class="category">
+    <div class="catName">
+      <span><i class="fa-solid fa-square"></i>
+        <h2>সিলেট</h2>
+      </span>
+      <a class="seeMore border__Gray border__01 padding__05 border__Rad_08" href="#">আরও পড়ুন</a>
+    </div>
+
+    <div class="category1">
+
+      <!-- 1 -->
+      <a class="newsBox a1" href="#">
+        <img src="https://lumiere-a.akamaihd.net/v1/images/tlk_lyceum-exterior_img_mob_m_4bb87542.jpeg" alt="">
+        <div class="newsTitle">
+          <h2>জাতির পিতার উদ্যোগের ফলে এবং তার নেতৃত্বে ভাষা আন্দোলনের পথ বেয়ে আমরা আমাদের স্বাধিকার পেয়েছি, স্বাধীনতা
+            পেয়েছি</h2>
+          <p><i class="fa-solid fa-calendar"></i> ২২শে ফেব্রুয়ারি, ২০২২</p>
+        </div>
+      </a>
+
+      <!-- 2 -->
+      <a class="newsBox a2" href="#">
+        <img src="https://wallpapers.com/images/hd/jesus-aesthetic-cliff-obydv9rxpqmyz9a6.jpg" alt="">
+        <div class="newsTitle">
+          <h2>জাতির পিতার উদ্যোগের ফলে এবং তার নেতৃত্বে ভাষা আন্দোলনের পথ বেয়ে আমরা আমাদের স্বাধিকার পেয়েছি, স্বাধীনতা
+            পেয়েছি</h2>
+          <p><i class="fa-solid fa-calendar"></i> ২২শে ফেব্রুয়ারি, ২০২২</p>
+        </div>
+      </a>
+
+      <!-- 3 -->
+      <a class="newsBox a3" href="#">
+        <img src="https://tjkelly.com/wp-content/uploads/windows-xp-desktop-background-wallpaper-autumn-800x600.jpg"
+          alt="">
+        <div class="newsTitle">
+          <h2>জাতির পিতার উদ্যোগের ফলে এবং তার নেতৃত্বে ভাষা আন্দোলনের পথ বেয়ে আমরা আমাদের স্বাধিকার পেয়েছি, স্বাধীনতা
+            পেয়েছি</h2>
+          <p><i class="fa-solid fa-calendar"></i> ২২শে ফেব্রুয়ারি, ২০২২</p>
+        </div>
+      </a>
+
+      <!-- 4 -->
+      <a class="newsBox a4" href="#">
+        <img src="https://zimfamilycockers.com/Morgans2ndLitter-MadelenaAndMurphy-800x600.jpg" alt="">
+        <div class="newsTitle">
+          <h2>জাতির পিতার উদ্যোগের ফলে এবং তার নেতৃত্বে ভাষা আন্দোলনের পথ বেয়ে আমরা আমাদের স্বাধিকার পেয়েছি, স্বাধীনতা
+            পেয়েছি</h2>
+          <p><i class="fa-solid fa-calendar"></i> ২২শে ফেব্রুয়ারি, ২০২২</p>
+        </div>
+      </a>
+
+      <!-- 5 -->
+      <a class="newsBox a5" href="#">
+        <img src="https://www.mbari.org/wp-content/uploads/fathomnet-featured.jpg" alt="">
+        <div class="newsTitle">
+          <h2>জাতির পিতার উদ্যোগের ফলে এবং তার নেতৃত্বে ভাষা আন্দোলনের পথ বেয়ে আমরা আমাদের স্বাধিকার পেয়েছি, স্বাধীনতা
+            পেয়েছি</h2>
+          <p><i class="fa-solid fa-calendar"></i> ২২শে ফেব্রুয়ারি, ২০২২</p>
+        </div>
+      </a>
+
+
+  </div>
+
+  <!-- ADS -->
+  <div class="adsFull">
+    <img src="https://dummyimage.com/1920x200" alt="">
+  </div>
+
+  <!-- 3clm -->
+  <div class="clm3 flexJustifyCenter">
+
+    <!-- LEFT LABEL -->
+    <div class="clm3Left">
+
+      <!-- HEADING NAME -->
+      <div class="heading">
+        <i class="fa-solid fa-square"></i>
+        <h2><a href="#">জাতীয়</a></h2>
+      </div>
+
+      <!-- SHORT NEWS PREVIEW -->
+      <div class="shortNews">
+
+        <!-- SHORT NEWS 1 -->
+        <a href="#" class="shortNewsFlex">
+          <!-- FEATURED IMAGE -->
+          <img
+            src="https://www.theaviatorme.com/cloud/2024/02/11/KTuBv5wy-abu-dhabi-zayed-international-airport-800x600.jpg"
+            alt="">
+          <!-- TEXT BLOCK -->
+          <div class="shortNewsTexts">
+            <!-- NEWS HEADING -->
+            <h2>জাতির পিতার উদ্যোগের ফলে এবং তার নেতৃত্বে ভাষা আন্দোলনের পথ বেয়ে আমরা আমাদের স্বাধিকার পেয়েছি,
+              স্বাধীনতা পেয়েছি</h2>
+
+            <!-- NEWS SHORT DESCRIPTION -->
+            <p>আন্তর্জাতিক মাতৃভাষা ইনস্টিটিউটের মহাপরিচালক হাকিম আরিফ। ধরনের প্রতিষ্ঠানের উদ্দেশ্যকে ভিত্তি করে যে
+              কর্মপরিকল্পনা দরকার। আন্তর্জাতিক মাতৃভাষা ইনস্টিটিউটের সঙ্গে গবেষকদের সম্পৃক্ততা বাড়ানো জরুরি। ১৯৯৯ সালে
+              ইউনেসকো একুশে ফেব্রুয়ারিকে আন্তর্জাতিক মাতৃভাষা দিবস হিসেবে স্বীকৃতি দেওয়ার</p>
+          </div>
+        </a>
+
+        <!-- SHORT NEWS 2 -->
+        <a href="#" class="shortNewsFlex">
+          <!-- FEATURED IMAGE -->
+          <img src="https://dci832c741skk.cloudfront.net/assets/files/42814/movie-review-little-mermaid.800x600.jpg"
+            alt="">
+          <!-- TEXT BLOCK -->
+          <div class="shortNewsTexts">
+            <!-- NEWS HEADING -->
+            <h2>জাতির পিতার উদ্যোগের ফলে এবং তার নেতৃত্বে ভাষা আন্দোলনের পথ বেয়ে আমরা আমাদের স্বাধিকার পেয়েছি,
+              স্বাধীনতা পেয়েছি</h2>
+
+            <!-- NEWS SHORT DESCRIPTION -->
+            <p>আন্তর্জাতিক মাতৃভাষা ইনস্টিটিউটের মহাপরিচালক হাকিম আরিফ। ধরনের প্রতিষ্ঠানের উদ্দেশ্যকে ভিত্তি করে যে
+              কর্মপরিকল্পনা দরকার। আন্তর্জাতিক মাতৃভাষা ইনস্টিটিউটের সঙ্গে গবেষকদের সম্পৃক্ততা বাড়ানো জরুরি। ১৯৯৯ সালে
+              ইউনেসকো একুশে ফেব্রুয়ারিকে আন্তর্জাতিক মাতৃভাষা দিবস হিসেবে স্বীকৃতি দেওয়ার</p>
+          </div>
+        </a>
+
+        <!-- SHORT NEWS 3 -->
+        <a href="#" class="shortNewsFlex">
+          <!-- FEATURED IMAGE -->
+          <img
+            src="https://st3.depositphotos.com/1083585/17150/i/450/depositphotos_171509866-stock-photo-woman-buying-the-new-york.jpg"
+            alt="">
+          <!-- TEXT BLOCK -->
+          <div class="shortNewsTexts">
+            <!-- NEWS HEADING -->
+            <h2>জাতির পিতার উদ্যোগের ফলে এবং তার নেতৃত্বে ভাষা আন্দোলনের পথ বেয়ে আমরা আমাদের স্বাধিকার পেয়েছি,
+              স্বাধীনতা পেয়েছি</h2>
+
+            <!-- NEWS SHORT DESCRIPTION -->
+            <p>আন্তর্জাতিক মাতৃভাষা ইনস্টিটিউটের মহাপরিচালক হাকিম আরিফ। ধরনের প্রতিষ্ঠানের উদ্দেশ্যকে ভিত্তি করে যে
+              কর্মপরিকল্পনা দরকার। আন্তর্জাতিক মাতৃভাষা ইনস্টিটিউটের সঙ্গে গবেষকদের সম্পৃক্ততা বাড়ানো জরুরি। ১৯৯৯ সালে
+              ইউনেসকো একুশে ফেব্রুয়ারিকে আন্তর্জাতিক মাতৃভাষা দিবস হিসেবে স্বীকৃতি দেওয়ার</p>
+          </div>
+        </a>
+
+        <!-- SHORT NEWS 4 -->
+        <a href="#" class="shortNewsFlex">
+          <!-- FEATURED IMAGE -->
+          <img
+            src="https://i0.wp.com/anglicanjournal.com/wp-content/uploads/2022/07/IMG_4855-rotated.jpeg?fit=800%2C600&ssl=1"
+            alt="">
+          <!-- TEXT BLOCK -->
+          <div class="shortNewsTexts">
+            <!-- NEWS HEADING -->
+            <h2>জাতির পিতার উদ্যোগের ফলে এবং তার নেতৃত্বে ভাষা আন্দোলনের পথ বেয়ে আমরা আমাদের স্বাধিকার পেয়েছি,
+              স্বাধীনতা পেয়েছি</h2>
+
+            <!-- NEWS SHORT DESCRIPTION -->
+            <p>আন্তর্জাতিক মাতৃভাষা ইনস্টিটিউটের মহাপরিচালক হাকিম আরিফ। ধরনের প্রতিষ্ঠানের উদ্দেশ্যকে ভিত্তি করে যে
+              কর্মপরিকল্পনা দরকার। আন্তর্জাতিক মাতৃভাষা ইনস্টিটিউটের সঙ্গে গবেষকদের সম্পৃক্ততা বাড়ানো জরুরি। ১৯৯৯ সালে
+              ইউনেসকো একুশে ফেব্রুয়ারিকে আন্তর্জাতিক মাতৃভাষা দিবস হিসেবে স্বীকৃতি দেওয়ার</p>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- SEE MORE -->
+      <a class="submit" href="category.html">আরও দেখুন</a>
+    </div>
+
+    <!-- LEFT LABEL IMAGE
+    <div class="clm3Center">
+      <img src="https://dummyimage.com/400x1600" alt="">
+    </div> -->
+
+    <!-- RIGHT LABEL -->
+    <div class="clm3Right">
+
+      <!-- HEADING NAME -->
+      <div class="heading">
+        <i class="fa-solid fa-square"></i>
+        <h2><a href="#">আন্তর্জাতিক</a></h2>
+      </div>
+
+      <!-- SHORT NEWS PREVIEW -->
+      <div class="shortNews">
+
+        <!-- SHORT NEWS 1 -->
+        <a href="#" class="shortNewsFlex">
+          <!-- FEATURED IMAGE -->
+          <img class="photoIcon videoIcon"
+            src="https://images.prothomalo.com/prothomalo-bangla%2F2024-10-05%2F8z6dja0g%2Frg-kor-1.jpg"
+            alt="">
+          <!-- TEXT BLOCK -->
+          <div class="shortNewsTexts">
+            <!-- NEWS HEADING -->
+            <h2>জাতির পিতার উদ্যোগের ফলে এবং তার নেতৃত্বে ভাষা আন্দোলনের পথ বেয়ে আমরা আমাদের স্বাধিকার পেয়েছি,
+              স্বাধীনতা পেয়েছি</h2>
+
+            <!-- NEWS SHORT DESCRIPTION -->
+            <p>আন্তর্জাতিক মাতৃভাষা ইনস্টিটিউটের মহাপরিচালক হাকিম আরিফ। ধরনের প্রতিষ্ঠানের উদ্দেশ্যকে ভিত্তি করে যে
+              কর্মপরিকল্পনা দরকার। আন্তর্জাতিক মাতৃভাষা ইনস্টিটিউটের সঙ্গে গবেষকদের সম্পৃক্ততা বাড়ানো জরুরি। ১৯৯৯ সালে
+              ইউনেসকো একুশে ফেব্রুয়ারিকে আন্তর্জাতিক মাতৃভাষা দিবস হিসেবে স্বীকৃতি দেওয়ার</p>
+          </div>
+        </a>
+
+        <!-- SHORT NEWS 2 -->
+        <a href="#" class="shortNewsFlex">
+          <!-- FEATURED IMAGE -->
+          <img
+            src="https://usa.watchpro.com/cloud/2024/02/07/DDs5TiId-LV_WATCH_PRIZE_RETO_JEAN_ARNAULT_JURY_WINNER_0004_WATCHES_LVWATCHPRIZE_EVENT_WINNER_VISUAL_STELLAR_1920x1080-800x600.jpg"
+            alt="">
+          <!-- TEXT BLOCK -->
+          <div class="shortNewsTexts">
+            <!-- NEWS HEADING -->
+            <h2>জাতির পিতার উদ্যোগের ফলে এবং তার নেতৃত্বে ভাষা আন্দোলনের পথ বেয়ে আমরা আমাদের স্বাধিকার পেয়েছি,
+              স্বাধীনতা পেয়েছি</h2>
+
+            <!-- NEWS SHORT DESCRIPTION -->
+            <p>আন্তর্জাতিক মাতৃভাষা ইনস্টিটিউটের মহাপরিচালক হাকিম আরিফ। ধরনের প্রতিষ্ঠানের উদ্দেশ্যকে ভিত্তি করে যে
+              কর্মপরিকল্পনা দরকার। আন্তর্জাতিক মাতৃভাষা ইনস্টিটিউটের সঙ্গে গবেষকদের সম্পৃক্ততা বাড়ানো জরুরি। ১৯৯৯ সালে
+              ইউনেসকো একুশে ফেব্রুয়ারিকে আন্তর্জাতিক মাতৃভাষা দিবস হিসেবে স্বীকৃতি দেওয়ার</p>
+          </div>
+        </a>
+
+        <!-- SHORT NEWS 3 -->
+        <a href="#" class="shortNewsFlex">
+          <!-- FEATURED IMAGE -->
+          <img src="https://iafll.org/wp-content/uploads/2023/04/lady-of-justice.jpg" alt="">
+          <!-- TEXT BLOCK -->
+          <div class="shortNewsTexts">
+            <!-- NEWS HEADING -->
+            <h2>জাতির পিতার উদ্যোগের ফলে এবং তার নেতৃত্বে ভাষা আন্দোলনের পথ বেয়ে আমরা আমাদের স্বাধিকার পেয়েছি,
+              স্বাধীনতা পেয়েছি</h2>
+
+            <!-- NEWS SHORT DESCRIPTION -->
+            <p>আন্তর্জাতিক মাতৃভাষা ইনস্টিটিউটের মহাপরিচালক হাকিম আরিফ। ধরনের প্রতিষ্ঠানের উদ্দেশ্যকে ভিত্তি করে যে
+              কর্মপরিকল্পনা দরকার। আন্তর্জাতিক মাতৃভাষা ইনস্টিটিউটের সঙ্গে গবেষকদের সম্পৃক্ততা বাড়ানো জরুরি। ১৯৯৯ সালে
+              ইউনেসকো একুশে ফেব্রুয়ারিকে আন্তর্জাতিক মাতৃভাষা দিবস হিসেবে স্বীকৃতি দেওয়ার</p>
+          </div>
+        </a>
+
+        <!-- SHORT NEWS 4 -->
+        <a href="#" class="shortNewsFlex">
+          <!-- FEATURED IMAGE -->
+          <img
+            src="https://qdnewssl-5762.kxcdn.com/images/dev/qatar%20news/large/The%20FIFA%20World%20Cup%20Qatar%20Opening%20Ceremony%20Secures%20The%20Best%20Sporting%20Event%20Accolade_29-21-2023_02-21_JINY%20Article%20Image%20%20August%2020%20%202023%20(98).jpg"
+            alt="">
+          <!-- TEXT BLOCK -->
+          <div class="shortNewsTexts">
+            <!-- NEWS HEADING -->
+            <h2>জাতির পিতার উদ্যোগের ফলে এবং তার নেতৃত্বে ভাষা আন্দোলনের পথ বেয়ে আমরা আমাদের স্বাধিকার পেয়েছি,
+              স্বাধীনতা পেয়েছি</h2>
+
+            <!-- NEWS SHORT DESCRIPTION -->
+            <p>আন্তর্জাতিক মাতৃভাষা ইনস্টিটিউটের মহাপরিচালক হাকিম আরিফ। ধরনের প্রতিষ্ঠানের উদ্দেশ্যকে ভিত্তি করে যে
+              কর্মপরিকল্পনা দরকার। আন্তর্জাতিক মাতৃভাষা ইনস্টিটিউটের সঙ্গে গবেষকদের সম্পৃক্ততা বাড়ানো জরুরি। ১৯৯৯ সালে
+              ইউনেসকো একুশে ফেব্রুয়ারিকে আন্তর্জাতিক মাতৃভাষা দিবস হিসেবে স্বীকৃতি দেওয়ার</p>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- SEE MORE -->
+      <a class="submit" title="এই ক্যাটাগরিতে আরও নিউজ দেখুন" href="category.html">আরও দেখুন</a>
+    </div>
+
+  </div>
+
+
+  <!-- GALLERY SCECTION -->
+  <section class="gallery">
+    <!-- TITLE -->
+    <h1>ছবি ঘর</h1>
+
+    <!-- GALLERY -->
+    <div class="gallery-container">
+
+      <div class="gallery-item mobile-gallery-item" onclick="toggleActive(event)">
+        <!-- IMG 1 -->
+        <span class="active">
+          <img src="https://images.alphacoders.com/903/90353.jpg" alt="">
+          <p>তবে বড় ধাক্কা আসে গত বছর। এ বছর ভাগনারের বিদ্রোহ এবং বাহিনীটির প্রতিষ্ঠাতা ইয়েভগেনি</p>
+        </span>
+        <!-- IMG 2 -->
+        <span>
+          <img src="https://uhdwallpapers.org/download/photographer-takes-pictures-in-nature_84895/1920x1080/" alt="">
+          <p>তবে বড় ধাক্কা আসে গত বছর। এ বছর ভাগনারের বিদ্রোহ এবং বাহিনীটির প্রতিষ্ঠাতা ইয়েভগেনি</p>
+        </span>
+        <!-- IMG 3 -->
+        <span>
+          <img src="https://wallpaperswide.com/download/iceland_nature_travel_photography-wallpaper-1920x1080.jpg"
+            alt="">
+          <p>তবে বড় ধাক্কা আসে গত বছর। এ বছর ভাগনারের বিদ্রোহ এবং বাহিনীটির প্রতিষ্ঠাতা ইয়েভগেনি</p>
+        </span>
+        <!-- IMG 4 -->
+        <span>
+          <img src="https://wallpapers.com/images/hd/4k-16-9-winter-starry-sky-vb38gh10qctubuzx.jpg" alt="">
+          <p>তবে বড় ধাক্কা আসে গত বছর। এ বছর ভাগনারের বিদ্রোহ এবং বাহিনীটির প্রতিষ্ঠাতা ইয়েভগেনি</p>
+        </span>
+        <!-- IMG 5 -->
+        <span>
+          <img src="https://wallpapercave.com/wp/wp1975287.png" alt="">
+          <p>তবে বড় ধাক্কা আসে গত বছর। এ বছর ভাগনারের বিদ্রোহ এবং বাহিনীটির প্রতিষ্ঠাতা ইয়েভগেনি</p>
+        </span>
+        <!-- IMG 5 -->
+        <span>
+          <img src="https://www.hollywoodreporter.com/wp-content/uploads/2024/02/Moana_Original_size-copy.jpg?w=1296"
+            alt="">
+          <p>তবে বড় ধাক্কা আসে গত বছর। এ বছর ভাগনারের বিদ্রোহ এবং বাহিনীটির প্রতিষ্ঠাতা ইয়েভগেনি</p>
+        </span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CATEGORY 1 : SYLHET -->
+  <div class="category">
+    <div class="catName">
+      <span><i class="fa-solid fa-square"></i>
+        <h2>সিলেট</h2>
+      </span>
+      <a class="seeMore border__Gray border__01 padding__05 border__Rad_08" href="#">আরও পড়ুন</a>
+    </div>
+
+    <div class="category1">
+
+      <!-- 1 -->
+      <a class="newsBox a1" href="#">
+        <img src="https://images.wondershare.com/drfone/article/2023/10/ai-art-prompt-4.jpg" alt="">
+        <div class="newsTitle">
+          <h2>জাতির পিতার উদ্যোগের ফলে এবং তার নেতৃত্বে ভাষা আন্দোলনের পথ বেয়ে আমরা আমাদের স্বাধিকার পেয়েছি, স্বাধীনতা
+            পেয়েছি</h2>
+          <p><i class="fa-solid fa-calendar"></i> ২২শে ফেব্রুয়ারি, ২০২২</p>
+        </div>
+      </a>
+
+      <!-- 2 -->
+      <a class="newsBox a2" href="#">
+        <img src="https://wallpapersmug.com/download/800x600/7a8c13/astronaut-in-deep-forest-ai-art.jpeg" alt="">
+        <div class="newsTitle">
+          <h2>জাতির পিতার উদ্যোগের ফলে এবং তার নেতৃত্বে ভাষা আন্দোলনের পথ বেয়ে আমরা আমাদের স্বাধিকার পেয়েছি, স্বাধীনতা
+            পেয়েছি</h2>
+          <p><i class="fa-solid fa-calendar"></i> ২২শে ফেব্রুয়ারি, ২০২২</p>
+        </div>
+      </a>
+
+      <!-- 3 -->
+      <a class="newsBox a3" href="#">
+        <img src="https://images.wondershare.com/drfone/article/2023/10/ai-art-prompt-3.jpg" alt="">
+        <div class="newsTitle">
+          <h2>জাতির পিতার উদ্যোগের ফলে এবং তার নেতৃত্বে ভাষা আন্দোলনের পথ বেয়ে আমরা আমাদের স্বাধিকার পেয়েছি, স্বাধীনতা
+            পেয়েছি</h2>
+          <p><i class="fa-solid fa-calendar"></i> ২২শে ফেব্রুয়ারি, ২০২২</p>
+        </div>
+      </a>
+
+      <!-- 4 -->
+      <a class="newsBox a4" href="#">
+        <img
+          src="https://content.app-sources.com/s/36089249486403308/uploads/03_Blog_post_images/4-6500146.jpg?format=webp"
+          alt="">
+        <div class="newsTitle">
+          <h2>জাতির পিতার উদ্যোগের ফলে এবং তার নেতৃত্বে ভাষা আন্দোলনের পথ বেয়ে আমরা আমাদের স্বাধিকার পেয়েছি, স্বাধীনতা
+            পেয়েছি</h2>
+          <p><i class="fa-solid fa-calendar"></i> ২২শে ফেব্রুয়ারি, ২০২২</p>
+        </div>
+      </a>
+
+      <!-- 5 -->
+      <a class="newsBox a5" href="#">
+        <img src="https://www.esi-africa.com/wp-content/uploads/2023/05/200102479_l_normal_none-1.jpg" alt="">
+        <div class="newsTitle">
+          <h2>জাতির পিতার উদ্যোগের ফলে এবং তার নেতৃত্বে ভাষা আন্দোলনের পথ বেয়ে আমরা আমাদের স্বাধিকার পেয়েছি, স্বাধীনতা
+            পেয়েছি</h2>
+          <p><i class="fa-solid fa-calendar"></i> ২২শে ফেব্রুয়ারি, ২০২২</p>
+        </div>
+      </a>
+    </div>
+
+  </div>
+
+
+  <!-- CATEGORY 2 : INTERNATIONAL -->
+  <div class="category">
+    <div class="catName">
+      <span><i class="fa-solid fa-square"></i>
+        <h2>সিলেট</h2>
+      </span>
+      <a class="seeMore border__Gray border__01 padding__05 border__Rad_08" href="#">আরও পড়ুন</a>
+    </div>
+
+    <div class="category1">
+
+      <!-- 1 -->
+      <a class="newsBox a1" href="#">
+        <img src="https://www.getgenea.com/wp-content/uploads/2020/04/professional-woman-at-desk-800x600.jpg" alt="">
+        <div class="newsTitle">
+          <h2>জাতির পিতার উদ্যোগের ফলে এবং তার নেতৃত্বে ভাষা আন্দোলনের পথ বেয়ে আমরা আমাদের স্বাধিকার পেয়েছি, স্বাধীনতা
+            পেয়েছি</h2>
+          <p><i class="fa-solid fa-calendar"></i> ২২শে ফেব্রুয়ারি, ২০২২</p>
+        </div>
+      </a>
+
+      <!-- 2 -->
+      <a class="newsBox a2" href="#">
+        <img src="https://prod-images.dacast.com/wp-content/uploads/2018/09/Article-size-800-x-600-57.jpg" alt="">
+        <div class="newsTitle">
+          <h2>জাতির পিতার উদ্যোগের ফলে এবং তার নেতৃত্বে ভাষা আন্দোলনের পথ বেয়ে আমরা আমাদের স্বাধিকার পেয়েছি, স্বাধীনতা
+            পেয়েছি</h2>
+          <p><i class="fa-solid fa-calendar"></i> ২২শে ফেব্রুয়ারি, ২০২২</p>
+        </div>
+      </a>
+
+      <!-- 3 -->
+      <a class="newsBox a3" href="#">
+        <img
+          src="https://images.prothomalo.com/prothomalo-bangla%2F2024-10-03%2F1lkhpxpg%2FUntitled-9.jpg"
+          alt="">
+        <div class="newsTitle">
+          <h2>জাতির পিতার উদ্যোগের ফলে এবং তার নেতৃত্বে ভাষা আন্দোলনের পথ বেয়ে আমরা আমাদের স্বাধিকার পেয়েছি, স্বাধীনতা
+            পেয়েছি</h2>
+          <p><i class="fa-solid fa-calendar"></i> ২২শে ফেব্রুয়ারি, ২০২২</p>
+        </div>
+      </a>
+
+      <!-- 4 -->
+      <a class="newsBox a4" href="#">
+        <img src="https://www.umc.edu/news/News_Articles/2018/09/Images/2018-White-Coat-3.jpg" alt="">
+        <div class="newsTitle">
+          <h2>জাতির পিতার উদ্যোগের ফলে এবং তার নেতৃত্বে ভাষা আন্দোলনের পথ বেয়ে আমরা আমাদের স্বাধিকার পেয়েছি, স্বাধীনতা
+            পেয়েছি</h2>
+          <p><i class="fa-solid fa-calendar"></i> ২২শে ফেব্রুয়ারি, ২০২২</p>
+        </div>
+      </a>
+
+      <!-- 5 -->
+      <a class="newsBox a5" href="#">
+        <img src="https://www.umc.edu/news/News_Articles/2019/08/Images/CAY-Ribbon-Cutting-20190815-25.jpg" alt="">
+        <div class="newsTitle">
+          <h2>জাতির পিতার উদ্যোগের ফলে এবং তার নেতৃত্বে ভাষা আন্দোলনের পথ বেয়ে আমরা আমাদের স্বাধিকার পেয়েছি, স্বাধীনতা
+            পেয়েছি</h2>
+          <p><i class="fa-solid fa-calendar"></i> ২২শে ফেব্রুয়ারি, ২০২২</p>
+        </div>
+      </a>
+    </div>
+
+  </div>
+
+
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footerDiv">
+      <!-- 1st ROW -->
+      <div class="footerRow1 logo-share marginBottom__10 border__Bottom paddingBottom__10">
+        <a href="#"><img class="img__20" src="logo.png" alt="LOGO"></a>
+        <span class="flex flexJustifyCenter">
+          <p class="text__Align_Center">ফলো করুন</p>
+          <div class="socialMediaFooter">
+            <a href="#" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" title="Messenger"><i class="fa-brands fa-facebook-messenger"></i></a>
+            <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="#" title="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" title="Linkedin"><i class="fa-brands fa-linkedin"></i></a>
+          </div>
+        </span>
+      </div>
+      <!-- 2nd ROW -->
+      <div class="contactsInfo border__Bottom paddingBottom__10">
+        <div class="footerRow2 flexJustifyCenterAlignCenter flexColumn">
+          <h3>যোগাযোগ করুন</h3>
+          <p class="text__Align_Center">শপ-৬, নেহার মার্কেট, জিন্দাবাজার, ৩১১০, সিলেট।</p>
+          <a class="border__Rad_03 border__Gray_05 padding__04" href="mailto:support@kehem.com">support@kehem.com</a>
+          <p class="text__Align_Center">মোবাইল : +8801700905268</p>
+        </div>
+        <div class="footerCenter flexJustifyCenterAlignCenter flexColumn flexAlignSelfStart">
+          <h3>সম্পাদনা মন্ডলী</h3>
+          <p class="text__Align_Center">সম্পাদক : সুরজিত সিংহ শিশির</p>
+          <p class="text__Align_Center">উপ-সম্পাদক : অনির্বান সিংহ</p>
+        </div>
+        <div class="flexJustifyCenterAlignCenter flexColumn flexAlignSelfStart">
+          <h3>পোর্টাল তৈরি</h3>
+          <a href="https://kehem.com/" class="text__Align_Center"><img class="logo" src="logo.png" alt="">
+            <h4>KEHEM IT</h4>
+          </a>
+        </div>
+      </div>
+      <!-- 3rd ROW -->
+      <div class="footerRow3 govt padding__06">
+        <p class="text__Align_Center">সরকারি নিবন্ধন নং ০১১২০-৩২১-২৩১</p>
+      </div>
+    </div>
+    <!-- 4th ROW -->
+    <div class="footerRow4 copyright padding__06">
+      <p class="text__Align_Center">&copy; <a href="https://kehem.com/">kehem.com</a> all rights reserverd</p>
+    </div>
+  </footer>
+</body>
+
+<script>
+  // HAMBURGER REVEAL
+  function toggleMenu() {
+    $('.hamburger').toggleClass('fa-bars fa-x');
+    $('.fullResNav').toggleClass('show');
+  }
+
+  //TAB TOGGLE
+  $(document).ready(function () {
+    $(".tab-btn").click(function () {
+      $(".tab-btn").removeClass('active');
+
+    });
+  });
+
+
+
+  $(document).ready(function () {
+    $('#searchIcon').click(function () {
+      $('.search-input').toggleClass('active'); // Toggle the 'active' class to show/hide input
+      $(this).toggleClass('fa-search fa-x'); // Toggle the search icon to cross
+    });
+
+    $('#closeIcon').click(function () {
+      $('.search-input').removeClass('active'); // Hide the input when close icon is clicked
+      $('#searchIcon').removeClass('fa-x').addClass('fa-search'); // Change the cross back to search icon
+    });
+  });
+
+  $(document).ready(function () {
+    // Smooth scrolling for all anchor links
+    $('a[href^="#"]').on('click', function (event) {
+      var target = $(this.getAttribute('href'));
+      if (target.length) {
+        event.preventDefault();
+        $('html, body').stop().animate({
+          scrollTop: target.offset().top
+        }, 6000); // Adjust the duration for slower or faster scrolling
+      }
+    });
+  });
+
+  // GALLERY SCECTION
+
+  // Active span change Event
+  $(document).ready(function () {
+    $(".gallery-item span").on("click", function () {
+      $(".gallery-item span").removeClass("active");
+      $(this).addClass("active");
+    });
+
+    // 3 Second scroll
+    function toggleActive() {
+      var $active = $(".gallery-item .active");
+      var $next = $active.next().length
+        ? $active.next()
+        : $(".gallery-item span").first();
+
+      // Check if viewport width is 768px or less
+      if ($(window).width() <= 768) {
+        // Fade out the current active span
+        $active.fadeOut("slow", function () {
+          $active.removeClass("active");
+          // Fade in the next span and add the active class
+          $next.fadeIn("slow").addClass("active");
+        });
+      }
+      else {
+        // No transition for larger devices, simply change the active class
+        $active.removeClass("active");
+        $next.addClass("active");
+      }
+    }
+
+    // Set interval to change active span every 3 seconds
+    var interval = setInterval(toggleActive, 3000);
+
+    // Pause on mouse hover
+    $(".gallery-item").hover(
+      function () {
+        clearInterval(interval);
+      },
+      function () {
+        interval = setInterval(toggleActive, 3000);
+      }
+    );
+  });
+
+
+</script>
+
+<!-- MASTORS SCRIPT -->
+<script src="https://kehem.com/static/news/mastor/js/mastor.js"></script>
+<script src="script.js"></script>
+
+</html>

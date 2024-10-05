@@ -1,0 +1,69 @@
+.button__01 {
+    background-color: #E8E8E8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    position: relative;
+    overflow: hidden;
+    /* Ensure button contents do not overflow */
+  }
+
+  .button__01::after {
+    content: '';
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #00273F;
+    transition: bottom 0.5s ease-in-out;
+  }
+
+  .button__01:hover::after {
+    bottom: 0;
+    color: white;
+  }
+
+  .button__01:active::after{
+    background-color: red;
+  }
+
+
+  .flexJustifyCenterAlignCenter a{
+    text-shadow: none !important; /*Shadow Removed*/
+  }
+
+  .socials {
+    font-size: 0.8rem;
+    position: absolute;
+    color: #00273F;
+    padding:  1rem;
+    z-index: 1;
+  }
+  .socials:hover{
+    color: white;
+  }
+
+  .paraPos {
+    position: absolute;
+    top: -30%;
+    right: -30%;
+    padding: 0.5rem;
+    font-size: 0.6rem;
+    border-radius: 50%;
+    background-color: #E28C8C;
+  }
+
+  .paraPose2 {
+    position: absolute;
+    font-size: 0.6rem;
+    color: white;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+  }
